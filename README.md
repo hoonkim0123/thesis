@@ -35,3 +35,55 @@ In this thesis examines Uber Eats as a system of categorization rather than simp
 The goal of this research is not to redesign the platform. Instead, it seeks to understand how digital classification shapes food visibility and, in turn, how cultural food identities are presented within a structured digital environment.
 
 By analyzing these patterns, the project aims to reveal how the organization of categories influences discovery, and how that organization subtly shapes users’ perception of what kinds of food are central, familiar, or peripheral.
+
+# 02A Concepts and Sketches
+
+## concept sketches for food taxonomy and platform visibility
+
+three visualization concepts exploring how platform level food classification reshapes spatial and semantic visibility with sample data.
+
+Dataset:
+- OpenStreetMap cuisine data (1,171 cuisine entries)
+- 131 unique cuisine categories
+- Uber entry-level taxonomy (40 categories)
+
+## 1. Distorted Cartogram – Platform Visibility Ratio
+
+![Distorted Cartogram](./concepts/1.png)
+
+This visualization explores how platform visibility reshapes geography.
+
+Question:
+If Uber’s entry-level taxonomy determined spatial prominence, which neighborhoods would expand or contract?
+
+Method:
+Neighborhood areas are scaled by a Visibility Ratio:
+
+Visibility Ratio = mapped categories / total OSM categories
+
+## 2. Platform Lens – Same City, Different Classification
+
+![Platform Lens](./concepts/2.png)
+
+This visualization compares how the same restaurants appear under different classification systems.
+
+Question:
+How does the city change when the taxonomy layer changes?
+
+Method:
+- OSM view retains 131 cuisine categories
+- Uber entry view collapses categories to 40
+- Same restaurant locations, different classification output
+
+## 3. Unrepresented Cuisine Map – What Exists but Is Not Indexed
+
+![Unrepresented Cuisine Map](./concepts/3.png)
+
+This map highlights cuisine categories present in OSM but not represented in Uber’s entry-level taxonomy.
+
+Question:
+Which cuisines exist in the city but are absent from entry-level platform classification?
+
+Method:
+Cuisine entries without a corresponding Uber category are marked as “unrepresented.”
+Only these categories are visualized.
