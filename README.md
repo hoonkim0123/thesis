@@ -95,7 +95,7 @@ Only these categories are visualized.
 
 ![NYC Spatial Restructuring](./concepts/mock1.png)
 
-## 1. NYC Multi-Label Cuisine Tag Network
+## 2. NYC Multi-Label Cuisine Tag Network
 
 ### Osm Tag
 ![osmTag](./concepts/osmTag.png)
