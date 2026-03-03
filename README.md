@@ -87,3 +87,14 @@ Which cuisines exist in the city but are absent from entry-level platform classi
 Method:
 Cuisine entries without a corresponding Uber category are marked as “unrepresented.”
 Only these categories are visualized.
+
+
+# 02B Design Mockup
+
+## 1. NYC Spatial Restructuring
+
+![NYC Spatial Restructuring](./concepts/mock1.png)
+
+## 1. NYC Multi-Label Cuisine Tag Network
+
+![NYC Multi-Label Cuisine Tag Network](./concepts/mock2.png)
