@@ -97,4 +97,7 @@ Only these categories are visualized.
 
 ## 1. NYC Multi-Label Cuisine Tag Network
 
+### Osm Tag
+![osmTag](./concepts/osmTag.png)
+
 ![NYC Multi-Label Cuisine Tag Network](./concepts/mock2.png)
