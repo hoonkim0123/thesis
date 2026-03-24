@@ -15,26 +15,23 @@ Portella, Adriana. Visual pollution : advertising, signage and environmental q
 
 # 01D Thesis Abstract
 
-Today, many people discover food through digital platforms instead of walking around a neighborhood. Apps like Uber Eats and Google Maps do not simply list restaurants; they organize food into categories, icons, and search results that shape how users navigate and choose.
+This project examines how outdoor dining in New York City changed after the COVID-19 pandemic, with a focus on Manhattan. During the pandemic, emergency policies allowed restaurants to rapidly expand into streets and sidewalks, making outdoor dining a widespread urban condition. However, most of these structures have since been removed.
+By comparing pandemic-era permits with current outdoor dining approvals, this study identifies where outdoor dining has persisted and where it has disappeared. The analysis suggests that survival is uneven and tends to concentrate along specific streets rather than being evenly distributed across the city.
+To explain this pattern, the project combines spatial data with street-level case studies. A comparative analysis of selected corridors shows that survival does not appear to be determined by sidewalk space alone, but is influenced by how street configuration and regulatory conditions shape where outdoor dining can persist.
+These spatial differences may also shape uneven urban experiences. Streets where outdoor dining remains tend to concentrate activity and social interaction, while others experience its absence or removal, leading to different perceptions among residents and businesses.
 
-I am studying how Uber Eats categorizes food, focusing on several noodle-based dishes as case studies. While some dishes appear prominently with their own labels or icons, others are harder to find unless users type the exact name.
-
-I want to understand how this system of categorization influences what becomes easily discoverable and what requires extra effort to locate.
-
-By examining these differences, this project aims to better understand how digital classification structures the way cultural food identities are presented and experienced online.
 
 
 # 01E Thesis Introduction
 
-In many cities today, food is discovered less through walking and more through digital platforms. Instead of encountering restaurants by chance, people scroll through curated lists, icons, and search results on apps like Uber Eats. These platforms do more than display options. They organize food into structured categories that shape how users browse and what they notice first.
+During the COVID-19 pandemic, New York City allowed restaurants to build outdoor dining structures on streets and sidewalks. These structures quickly became a defining feature of the city. At its peak, outdoor dining permits exceeded 10,000 across New York City. Today, fewer than 500 remain active.
+These structures were not only a response to public health restrictions, but also a survival strategy. By expanding seating capacity, outdoor dining allowed many restaurants to continue operating during a period of economic uncertainty.
+However, several years later, the urban landscape has changed significantly. While some outdoor dining structures remain, many have disappeared. The shift is visible across the city: streets that were once filled with dining sheds now have none, while others continue to maintain a strong outdoor dining presence.
+This uneven pattern raises an important question:
+Why did outdoor dining survive in some places but disappear in others?
+This thesis examines outdoor dining in Manhattan as a spatial and urban phenomenon rather than simply a temporary policy. By comparing pandemic-era permits with current approvals, the project maps where outdoor dining remained and where it disappeared.
+Beyond mapping, this research explores the conditions that may shape survival. It focuses on how street configuration, regulatory constraints, and urban function interact to determine where outdoor dining can persist. These conditions, in turn, may influence how outdoor dining is experienced across the city.
 
-This organization is not random. Certain dishes appear prominently, sometimes with their own visual category or quick-access icon. Others exist within broader groupings, or only become visible when users type their exact names into the search bar. As a result, the experience of discovering food is influenced not only by taste or geography, but by how the platform structures its classification system.
-
-In this thesis examines Uber Eats as a system of categorization rather than simply an interface. By focusing on several noodle-based dishes as case studies, the project explores how different foods occupy different positions within the platform’s structure. Some are treated as distinct categories, while others are grouped under broader national or generic labels.
-
-The goal of this research is not to redesign the platform. Instead, it seeks to understand how digital classification shapes food visibility and, in turn, how cultural food identities are presented within a structured digital environment.
-
-By analyzing these patterns, the project aims to reveal how the organization of categories influences discovery, and how that organization subtly shapes users’ perception of what kinds of food are central, familiar, or peripheral.
 
 # 02A Concepts and Sketches
 
