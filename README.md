@@ -16,8 +16,11 @@ Portella, Adriana. Visual pollution : advertising, signage and environmental q
 # 01D Thesis Abstract
 
 This project examines how outdoor dining in New York City changed after the COVID-19 pandemic, with a focus on Manhattan. During the pandemic, emergency policies allowed restaurants to rapidly expand into streets and sidewalks, making outdoor dining a widespread urban condition. However, most of these structures have since been removed.
+
 By comparing pandemic-era permits with current outdoor dining approvals, this study identifies where outdoor dining has persisted and where it has disappeared. The analysis suggests that survival is uneven and tends to concentrate along specific streets rather than being evenly distributed across the city.
+
 To explain this pattern, the project combines spatial data with street-level case studies. A comparative analysis of selected corridors shows that survival does not appear to be determined by sidewalk space alone, but is influenced by how street configuration and regulatory conditions shape where outdoor dining can persist.
+
 These spatial differences may also shape uneven urban experiences. Streets where outdoor dining remains tend to concentrate activity and social interaction, while others experience its absence or removal, leading to different perceptions among residents and businesses.
 
 
@@ -25,11 +28,17 @@ These spatial differences may also shape uneven urban experiences. Streets where
 # 01E Thesis Introduction
 
 During the COVID-19 pandemic, New York City allowed restaurants to build outdoor dining structures on streets and sidewalks. These structures quickly became a defining feature of the city. At its peak, outdoor dining permits exceeded 10,000 across New York City. Today, fewer than 500 remain active.
+
 These structures were not only a response to public health restrictions, but also a survival strategy. By expanding seating capacity, outdoor dining allowed many restaurants to continue operating during a period of economic uncertainty.
+
 However, several years later, the urban landscape has changed significantly. While some outdoor dining structures remain, many have disappeared. The shift is visible across the city: streets that were once filled with dining sheds now have none, while others continue to maintain a strong outdoor dining presence.
+
 This uneven pattern raises an important question:
+
 Why did outdoor dining survive in some places but disappear in others?
+
 This thesis examines outdoor dining in Manhattan as a spatial and urban phenomenon rather than simply a temporary policy. By comparing pandemic-era permits with current approvals, the project maps where outdoor dining remained and where it disappeared.
+
 Beyond mapping, this research explores the conditions that may shape survival. It focuses on how street configuration, regulatory constraints, and urban function interact to determine where outdoor dining can persist. These conditions, in turn, may influence how outdoor dining is experienced across the city.
 
 
