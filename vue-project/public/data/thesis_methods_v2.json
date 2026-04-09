@@ -1,0 +1,25 @@
+{
+  "raw_total_locations": 367,
+  "analysis_total_points": 318,
+  "dedup_rule": "drop_duplicates(subset=['geometry'])",
+  "analysis_unit": "unique point location",
+  "accessibility_threshold_m": 400,
+  "accessibility_basis": "Jan Gehl 5-minute walk standard",
+  "complaint_buffer_ft": 100,
+  "complaint_cap": 30,
+  "complaint_start_date": "2024-01-01",
+  "complaint_level_definition": {
+    "0": "0",
+    "1-5": "1 to 5",
+    "6-14": "6 to 14",
+    "15+": "15 or more"
+  },
+  "experience_type_definition": {
+    "High access, low friction": "Near transit and complaints <= median (3.0)",
+    "Low access, high friction": "Further from transit and complaints > median (3.0)",
+    "Mixed conditions": "all other cases"
+  },
+  "clustering_method": "DBSCAN",
+  "clustering_eps_ft": 200,
+  "clustering_min_samples": 5
+}
