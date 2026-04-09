@@ -143,10 +143,10 @@ DATA:
       <div class="corridor-grid fade">
         <div class="corridor-copy">
           <div class="s-num">04</div>
-          <h1 class="hed">What remains clusters on just a few streets.</h1>
+          <h1 class="hed">What remains repeats along a small number of streets.</h1>
           
           <p class="body-l">
-            Most locations are scattered. What stands out is the small number of streets where outdoor dining still repeats.
+            What remains is not random, it repeats along specific streets.
           </p>
 
           <CorridorStreetMap @streetSelected="handleStreetSelected" />
