@@ -1,12 +1,19 @@
 <script setup>
-import { onMounted } from 'vue'
-import { CASES } from './data/cases'
+import { onMounted, ref } from 'vue'
+import DeclineMap from './components/DeclineMap.vue'
+import ConditionMap from './components/ConditionMap.vue'
+import ComplaintTypeChart from './components/ComplaintTypeChart.vue'
+import StatCards from './components/StatCards.vue'
+import CorridorStreetMap from './components/CorridorStreetMap.vue'
+import CorridorMap from './components/CorridorMap.vue'
 
-const cases = CASES
-const getCaseClass = (rate) => {
-  if (rate >= 0.15) return 'high'
-  if (rate > 0) return 'low'
-  return 'none'
+const corridorMapRef = ref(null)
+
+function handleStreetSelected(street) {
+  // Pass the selected street to CorridorMap
+  if (corridorMapRef.value) {
+    corridorMapRef.value.highlightStreet(street)
+  }
 }
 
 onMounted(() => {
@@ -26,70 +33,205 @@ onMounted(() => {
 })
 </script>
 
+<!-- 
+NARRATIVE STRUCTURE:
+= S1: Hook
+= S2: Decline
+= S3: Coverage collapse
+= S4: Street corridors
+= S5: Friction
+= S6: Uneven conditions
+= S7: Conclusion
+
+DATA:
+- thesis_points_final_v2.geojson
+- historic_manhattan_clean.geojson
+- thesis_summary_v2.json
+- thesis_complaint_descriptors.csv
+- MTA subway stations
+- corridor_points_labeled.geojson
+- corridor_streets.geojson
+- corridor_labels.geojson
+-->
+
 <template>
   <main>
-    <!-- Section 1 -->
+    <!-- ======================== -->
+    <!-- S1: HOOK                 -->
+    <!-- ======================== -->
     <section id="s1">
       <div class="w">
-        <div class="s-tag fade" data-n="1">Overview</div>
-        <h1 class="s-hed fade">Where did outdoor dining survive?</h1>
-        <p class="s-sub fade">After the pandemic, thousands of temporary dining structures disappeared. But not evenly.</p>
-        <div class="placeholder-map fade">Map: All locations (2020-2024)</div>
+        <div class="s-num fade">01</div>
+        <h1 class="hed fade">If outdoor dining is still there, why does it feel like it's gone?</h1>
+        
+        <p class="body-l fade">
+          During the pandemic, outdoor dining was everywhere. Tables on sidewalks, chairs in the street, entire blocks turned into open-air restaurants. It felt like outdoor dining had become part of everyday city life.
+        </p>
+
+        <p class="body-l fade">
+          Now, most of that is gone. But not completely. It changed in a way that makes it harder to see, harder to access, and easier to overlook.
+        </p>
+
       </div>
     </section>
 
-    <!-- Section 2 -->
-    <section id="s2">
-      <div class="w">
-        <div class="s-tag fade" data-n="2">Peak</div>
-        <h1 class="s-hed fade">They were <em>everywhere.</em></h1>
-        <p class="s-sub fade">During COVID-19, New York City issued over 10,000 outdoor dining permits citywide. On every block, restaurants built structures on sidewalks and streets. For two years, the city looked like this.</p>
-        <div class="placeholder-map fade">Map: Disappeared vs. Survived</div>
-      </div>
-    </section>
+    <!-- ======================== -->
+    <!-- S2: DECLINE              -->
+    <!-- ======================== -->
+    <section id="s2" class="section-decline">
+      <div class="decline-grid">
+        <div class="decline-copy">
+          <div class="s-num fade">02</div>
+          <h1 class="hed fade">Most of it disappeared.</h1>
 
-    <!-- Section 3 -->
-    <section id="s3">
-      <div class="w">
-        <div class="s-tag fade" data-n="3">Today</div>
-        <h1 class="s-hed fade">Most have <em>disappeared.</em></h1>
-        <p class="s-sub fade">When emergency policies ended, the city introduced a permanent program with stricter requirements. The vast majority of structures were removed. In Manhattan, 93.5% of all pandemic-era dining locations are now gone.</p>
-        <div class="placeholder-map fade">Map: Survivors Only</div>
-      </div>
-    </section>
-
-    <!-- Section 4 -->
-    <section id="s4">
-      <div class="w">
-        <div class="s-tag fade" data-n="4">Analysis</div>
-        <h1 class="s-hed fade">Streets with <em>different characteristics</em> had different outcomes.</h1>
-        <p class="s-sub fade">Three corridors. All in Manhattan. All active during the pandemic. Today: one kept it, two lost almost everything.</p>
-    
-        <div class="case-cards fade">
-          <div v-for="(caseData, key) in cases" :key="key" :class="['case-card', getCaseClass(caseData.survival_rate)]">
-            <div class="case-card-header">
-              <h3>{{ caseData.name }}</h3>
-              <div class="rate">{{ (caseData.survival_rate * 100).toFixed(1) }}%</div>
-              <div class="detail">{{ caseData.survived_pts }}/{{ caseData.total_pts }} permits survived</div>
+          <div class="decline-stats fade">
+            <div class="decline-main">
+              <span class="decline-from muted">4,660</span>
+              <span class="decline-arrow">→</span>
+              <span class="decline-to">318</span>
             </div>
-            <div class="case-map">Map: {{ caseData.name }}</div>
+            <div class="decline-sub">Peak → Current</div>
+            <div class="decline-loss">−93%</div>
+          </div>
+
+          <p class="body-l fade">
+            Outdoor dining declined sharply after the pandemic emergency ended. What remains is not random. It reflects a different program, with different rules, costs, and geography.
+          </p>
+        </div>
+
+        <div class="decline-map-wrap fade">
+          <div class="decline-map">
+            <DeclineMap />
+          </div>
+
+          <div class="decline-legend">
+            <div class="legend-row">
+              <span class="legend-dot legend-dot-historic"></span>
+              <span>Peak (4,660)</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-dot legend-dot-current"></span>
+              <span>Current (318)</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-<!-- Section 5 -->
-<section id="s5">
-  <div class="w">
-    <div class="s-tag fade" data-n="5">Street Friction</div>
-    <h1 class="s-hed fade">Different streets experience <em>different kinds of friction.</em></h1>
-    <p class="s-sub fade">Mulberry has the most complaints per foot of any corridor — yet the highest survival. This suggests that not all complaints are equal.</p>
-    
+    <!-- ======================== -->
+    <!-- S3: TRANSITION           -->
+    <!-- ======================== -->
+    <section id="s3">
+      <div class="w">
+        <div class="s-num fade">03</div>
+        <h1 class="hed fade">But 318 locations are still there.<br>So where are they?</h1>
+        
+        <p class="body-l fade">
+          The remaining locations didn't stay everywhere. They concentrated. Some streets retained visible clusters. Most streets retained little or nothing.
+        </p>
 
-    
-    <div class="placeholder-chart fade">Chart: Complaint breakdown by type</div>
-  </div>
-</section>
+        <p class="body-l fade">
+          The question isn't just how many survived. It's where.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S4: Street corridors    -->
+    <!-- ======================== -->
+    <section id="s4" class="section-corridor">
+      <div class="corridor-grid fade">
+        <div class="corridor-copy">
+          <div class="s-num">04</div>
+          <h1 class="hed">What remains clusters on just a few streets.</h1>
+          
+          <p class="body-l">
+            Most locations are scattered. What stands out is the small number of streets where outdoor dining still repeats.
+          </p>
+
+          <CorridorStreetMap @streetSelected="handleStreetSelected" />
+        </div>
+
+        <div class="corridor-map">
+          <CorridorMap ref="corridorMapRef" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S5: WHY                  -->
+    <!-- ======================== -->
+    <section id="s5">
+      <div class="w">
+        <div class="s-num fade">05</div>
+        <h1 class="hed fade">Outdoor dining doesn't just occupy space.<br>It competes for it.</h1>
+        
+        <p class="body-l fade">
+          This is not just about dining. It is about how public space is used. When restaurants place tables on sidewalks or in the street, they take space that pedestrians, cyclists, and delivery vehicles also rely on.
+        </p>
+
+        <p class="body-l fade">
+          311 complaints show where that conflict becomes visible.
+        </p>
+
+        <div class="fade">
+          <ComplaintTypeChart />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S6: CONDITIONS           -->
+    <!-- ======================== -->
+    <section id="s6">
+      <div class="w">
+        <div class="s-num fade">06</div>
+        <h1 class="hed fade">Not all places can support it.</h1>
+        
+        <p class="body-l fade">
+          The remaining locations do not share the same conditions. Some cluster in more connected parts of the city, while others remain more isolated or contested.
+        </p>
+
+        <p class="body-l fade">
+          The same system produces very different conditions depending on location. In some areas, outdoor dining feels visible and accessible. In others, it is rare or absent.
+        </p>
+
+        <div class="fade">
+          <StatCards />
+        </div>
+
+        <div class="fade">
+          <ConditionMap />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S7: MEANING (CONCLUSION) -->
+    <!-- ======================== -->
+    <section id="s7">
+      <div class="w">
+        <div class="s-num fade">07</div>
+        <h1 class="hed fade">What remains is not random.</h1>
+        
+        <p class="body-l fade">
+          Outdoor dining no longer spreads across the city. It concentrates where access is higher and friction is lower.
+        </p>
+
+        <p class="body-l fade">
+          A smaller set of streets and neighborhoods now carry most of what remains. Elsewhere, it becomes sparse or disappears entirely.
+        </p>
+
+        <div class="fade" style="border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 32px 0; margin: 40px 0;">
+          <p class="body-l" style="margin-bottom: 16px; font-family: var(--sans); font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.6; letter-spacing: -0.01em;">
+            <em>Outdoor dining is still there. But it no longer functions as a citywide condition.</em>
+          </p>
+          <p class="body-l" style="margin-bottom: 14px;">
+            It now exists as a partial and uneven pattern across the city.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
