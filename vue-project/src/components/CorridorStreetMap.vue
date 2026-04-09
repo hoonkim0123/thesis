@@ -7,7 +7,7 @@ const emit = defineEmits(['streetSelected'])
 
 const STREETS = [
   { name: 'Amsterdam Avenue', area: 'Upper West Side', corridor_label_clean: 'Amsterdam Avenue (Upper West Side)', n: 19 },
-  { name: '2nd Avenue',       area: 'Midtown / UES',   corridor_label_clean: '2nd Avenue (Midtown / UES)',         n: 19 },
+  { name: '2nd Avenue',       area: 'Midtown / Upper East Side',   corridor_label_clean: '2nd Avenue (Midtown / Upper East Side)',         n: 19 },
   { name: 'Mulberry Street',  area: 'Little Italy',    corridor_label_clean: 'Mulberry Street (Little Italy)',     n: 13 },
   { name: 'Columbus Avenue',  area: 'Upper West Side', corridor_label_clean: 'Columbus Avenue (Upper West Side)',  n: 13 },
 ]
