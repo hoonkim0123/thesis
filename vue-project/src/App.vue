@@ -62,14 +62,14 @@ DATA:
     <section id="s1">
       <div class="w">
         <div class="s-num fade">01</div>
-        <h1 class="hed fade">If outdoor dining is still there, why does it feel like it's gone?</h1>
+        <h1 class="hed fade">Outdoor dining didn’t end. It changed shape.</h1>
         
         <p class="body-l fade">
-          During the pandemic, outdoor dining was everywhere. Tables on sidewalks, chairs in the street, entire blocks turned into open-air restaurants. It felt like outdoor dining had become part of everyday city life.
+          If it still exists, why does it feel like it disappeared? During the pandemic, outdoor dining was everywhere. Today, it remains — but in a much more uneven form.
         </p>
 
         <p class="body-l fade">
-          Now, most of that is gone. But not completely. It changed in a way that makes it harder to see, harder to access, and easier to overlook.
+          What remains is not random, it concentrates along specific streets.
         </p>
 
       </div>
