@@ -12,8 +12,6 @@ const STREETS = [
   { name: 'Columbus Avenue',  area: 'Upper West Side', corridor_label_clean: 'Columbus Avenue (Upper West Side)',  n: 13 },
 ]
 
-const MAX_N = 19
-
 function selectStreet(street) {
   activeStreetName.value = street.corridor_label_clean
   emit('streetSelected', street)
@@ -33,8 +31,6 @@ function buildRows() {
     row.className = 'st-row' + (i === 0 ? ' active' : '')
     row.dataset.label = s.corridor_label_clean
 
-    const barPct = Math.round((s.n / MAX_N) * 100)
-
     row.innerHTML = `
       <div class="st-left">
         <div class="st-name">${s.name}</div>
@@ -42,11 +38,6 @@ function buildRows() {
       </div>
       <div class="st-right">
         <div class="st-count">${s.n}</div>
-        <div class="st-bar-wrap">
-          <div class="st-bar-track">
-            <div class="st-bar-fill" style="width:${barPct}%"></div>
-          </div>
-        </div>
       </div>
     `
 
@@ -141,21 +132,6 @@ onMounted(() => {
   font-weight: 500;
   color: var(--ink);
   line-height: 1;
-}
-
-:deep(.st-bar-wrap) { width: 80px; }
-
-:deep(.st-bar-track) {
-  height: 3px;
-  background: var(--rule);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-:deep(.st-bar-fill) {
-  height: 100%;
-  background: var(--ink);
-  border-radius: 2px;
 }
 
 .st-note {
