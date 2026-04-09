@@ -68,7 +68,8 @@ onMounted(async () => {
   ).addTo(map)
 
   try {
-    const res = await fetch('/data/thesis_points_final_v2.geojson')
+    const BASE = import.meta.env.BASE_URL
+    const res = await fetch(`${BASE}data/thesis_points_final_v2.geojson`)
     if (!res.ok) throw new Error('Failed to load thesis_points_final_v2.geojson')
 
     const geojson = await res.json()

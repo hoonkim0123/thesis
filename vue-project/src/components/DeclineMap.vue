@@ -27,10 +27,11 @@ onMounted(async () => {
   ).addTo(map)
 
   try {
+    const BASE = import.meta.env.BASE_URL
     const [historicRes, currentRes] = await Promise.all([
-      fetch('/data/historic_manhattan_clean.geojson'),
-      fetch('/data/thesis_points_final_v2.geojson'),
-    ])
+      fetch(`${BASE}data/historic_manhattan_clean.geojson`),
+      fetch(`${BASE}data/thesis_points_final_v2.geojson`),
+      ])
 
     if (!historicRes.ok || !currentRes.ok) {
       throw new Error('Failed to load GeoJSON files')

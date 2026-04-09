@@ -98,10 +98,11 @@ onMounted(async () => {
   ).addTo(map)
 
   try {
+    const BASE = import.meta.env.BASE_URL
     const [pointsRes, streetsRes] = await Promise.all([
-      fetch('/data/corridor_points.geojson'),
-      fetch('/data/corridor_streets.geojson'),
-    ])
+      fetch(`${BASE}data/corridor_points.geojson`),
+      fetch(`${BASE}data/corridor_streets.geojson`),
+])
 
     if (!pointsRes.ok || !streetsRes.ok) throw new Error('Failed to load corridor data')
 
