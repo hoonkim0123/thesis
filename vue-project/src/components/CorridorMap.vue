@@ -59,7 +59,7 @@ function highlightStreet(street) {
       {
         pointToLayer: (_, latlng) =>
           L.circleMarker(latlng, {
-            radius: 5.5,
+            radius: 3.5,
             fillColor: '#18140e',
             fillOpacity: 0.95,
             color: 'transparent',
