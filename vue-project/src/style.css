@@ -347,3 +347,60 @@ section:last-child {
   border: 1px solid var(--rule);
   background: var(--off);
 }
+
+/* ======================== */
+/* S1: HERO IMAGES          */
+/* ======================== */
+.hed-main {
+  font-size: 64px;
+  margin-bottom: 8px;
+}
+
+.hed-sub {
+  font-family: var(--sans);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ghost);
+  margin-bottom: 20px;
+}
+
+.s1-images {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 24px 0 48px 0;
+}
+
+.s1-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--off);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.s1-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.body-s {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  max-width: 720px;
+  font-weight: 400;
+}
+
+.body-l.emphasis {
+  font-size: 20px;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
