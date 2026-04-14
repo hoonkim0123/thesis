@@ -59,27 +59,23 @@ DATA:
     <!-- S1: HOOK                 -->
     <!-- ======================== -->
     <section id="s1">
-      <div class="w">
-        <div class="s-num fade">01</div>
-        <h1 class="hed hed-main fade">Outdoor dining didn't disappear.<br>So why does it feel like it did?</h1>
-      </div>
-
       <!-- S1 Images -->
       <div class="s1-images fade">
         <div class="s1-image s1-image-left">
           <img src="/images/s1-vibrant.jpg" alt="Vibrant outdoor dining during pandemic" />
+          <div class="s1-caption">Vibrant</div>
         </div>
         <div class="s1-image s1-image-right">
           <img src="/images/s1-shed.jpg" alt="Empty or contested outdoor dining structures" />
+          <div class="s1-caption">Contested</div>
         </div>
       </div>
 
       <div class="w">
-        <p class="body-s fade">
-          During the pandemic, it was everywhere.
-        </p>
+        <div class="s-num fade">01</div>
+        <h1 class="hed hed-main fade">Outdoor dining didn't disappear.<br>So why does it feel like it did?</h1>
 
-        <p class="body-l fade emphasis">
+        <p class="body-l fade">
           Outdoor dining didn't disappear.<br>
           It became uneven.
         </p>
