@@ -38,9 +38,9 @@ function highlightStreet(street) {
       { type: 'FeatureCollection', features: matchingLines },
       {
         style: () => ({
-          color: '#18140e',
-          weight: 5,
-          opacity: 0.95,
+          color: '#bbbbbb',
+          weight: 1,
+          opacity: 0.5,
           lineCap: 'round',
           lineJoin: 'round',
         }),
@@ -59,11 +59,11 @@ function highlightStreet(street) {
       {
         pointToLayer: (_, latlng) =>
           L.circleMarker(latlng, {
-            radius: 3.5,
-            fillColor: '#18140e',
-            fillOpacity: 0.95,
-            color: 'transparent',
-            weight: 0,
+            radius: 5,
+            fillColor: '#000000',
+            fillOpacity: 1,
+            color: '#ffffff',
+            weight: 1,
             interactive: false,
           }),
       }
@@ -203,8 +203,8 @@ onBeforeUnmount(() => {
 /* line icon — corridor */
 .leg-line {
   width: 20px;
-  height: 3px;
-  background: var(--ink);
+  height: 2px;
+  background: #bbbbbb;
   border-radius: 2px;
   flex-shrink: 0;
 }
