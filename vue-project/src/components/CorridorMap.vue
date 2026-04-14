@@ -87,7 +87,7 @@ onMounted(async () => {
 
   map = L.map(mapEl.value, {
     center: [40.755, -73.985],
-    zoom: 12,
+    zoom: 18,
     zoomControl: false,
     attributionControl: false,
     scrollWheelZoom: false,
