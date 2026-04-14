@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import DeclineMap from './components/DeclineMap.vue'
-import ConditionMap from './components/ConditionMap.vue'
 import ComplaintTypeChart from './components/ComplaintTypeChart.vue'
 import StatCards from './components/StatCards.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
@@ -232,7 +231,6 @@ DATA:
         </div>
 
         <div class="fade">
-          <ConditionMap />
         </div>
       </div>
     </section>
