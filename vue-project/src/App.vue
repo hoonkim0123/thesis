@@ -6,6 +6,7 @@ import ComplaintTypeChart from './components/ComplaintTypeChart.vue'
 import StatCards from './components/StatCards.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
 import CorridorMap from './components/CorridorMap.vue'
+import PublicVoices from './components/PublicVoices.vue'
 
 const corridorMapRef = ref(null)
 
@@ -34,14 +35,13 @@ onMounted(() => {
 </script>
 
 <!-- 
-NARRATIVE STRUCTURE:
-= S1: Hook
-= S2: Decline
-= S3: Coverage collapse
-= S4: Street corridors
-= S5: Friction
-= S6: Uneven conditions
-= S7: Conclusion
+S1: Questioning disappearance  
+S2: Measuring the decline  
+S3: Loss of citywide coverage  
+S4: Emergence of street-level patterns  
+S5: Value and friction  
+S6: Conditions of survival  
+S7: Rethinking urban presence
 
 DATA:
 - thesis_points_final_v2.geojson
@@ -62,16 +62,47 @@ DATA:
     <section id="s1">
       <div class="w">
         <div class="s-num fade">01</div>
-        <h1 class="hed fade">Outdoor dining didn’t end. It changed shape.</h1>
-        
-        <p class="body-l fade">
-          If it still exists, why does it feel like it disappeared? During the pandemic, outdoor dining was everywhere. Today, it remains — but in a much more uneven form.
+        <h1 class="hed hed-main fade">Outdoor dining didn't disappear.<br>So why does it feel like it did?</h1>
+      </div>
+
+      <!-- S1 Images -->
+      <div class="s1-images fade">
+        <div class="s1-image s1-image-left">
+          <img src="/images/s1-vibrant.jpg" alt="Vibrant outdoor dining during pandemic" />
+        </div>
+        <div class="s1-image s1-image-right">
+          <img src="/images/s1-shed.jpg" alt="Empty or contested outdoor dining structures" />
+        </div>
+      </div>
+
+      <div class="w">
+        <p class="body-s fade">
+          During the pandemic, it was everywhere.
         </p>
 
+        <p class="body-l fade emphasis">
+          Outdoor dining didn't disappear.<br>
+          It became uneven.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S1B: PUBLIC VOICES       -->
+    <!-- ======================== -->
+    <section id="s1b">
+      <div class="w">
         <p class="body-l fade">
-          What remains is not random, it concentrates along specific streets.
+          Outdoor dining was not simply accepted or rejected. It produced both public value and public friction.
         </p>
 
+        <div class="fade">
+          <PublicVoices />
+        </div>
+
+        <p class="body-l fade">
+          But despite this, most of it is now gone. What remains is not evenly distributed.
+        </p>
       </div>
     </section>
 
@@ -143,10 +174,10 @@ DATA:
       <div class="corridor-grid fade">
         <div class="corridor-copy">
           <div class="s-num">04</div>
-          <h1 class="hed">What remains repeats along a small number of streets.</h1>
+          <h1 class="hed">What remains clusters on just a few streets.</h1>
           
           <p class="body-l">
-            What remains is not random, it repeats along specific streets.
+            Most locations are scattered. What stands out is the small number of streets where outdoor dining still repeats.
           </p>
 
           <CorridorStreetMap @streetSelected="handleStreetSelected" />
