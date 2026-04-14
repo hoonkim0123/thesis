@@ -12,13 +12,19 @@ let activeLineLayer = null
 let activePointLayer = null
 let pointsGeo = null
 let streetsGeo = null
+let pendingStreet = null
 
 function highlightStreet(street) {
+  if (!street) return
+
+  if (!streetsGeo || !pointsGeo) {
+    pendingStreet = street
+    return
+  }
+
   // clear previous
   if (activeLineLayer)  { map.removeLayer(activeLineLayer);  activeLineLayer = null }
   if (activePointLayer) { map.removeLayer(activePointLayer); activePointLayer = null }
-
-  if (!street || !streetsGeo || !pointsGeo) return
 
   const label = street.corridor_label_clean
 
@@ -123,6 +129,12 @@ onMounted(async () => {
       }).addTo(bgLayer)
     })
     bgLayer.addTo(map)
+
+    if (pendingStreet) {
+      const nextStreet = pendingStreet
+      pendingStreet = null
+      highlightStreet(nextStreet)
+    }
 
     setTimeout(() => map.invalidateSize(), 150)
 
