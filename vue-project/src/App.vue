@@ -107,7 +107,7 @@ DATA:
     <section id="s2" class="section-decline">
       <div class="decline-grid">
         <div class="decline-copy">
-          <div class="s-num fade">02</div>
+          <div class="s-num fade">NEW YORK OUTDOOR DINING</div>
           <h1 class="hed fade">Most of it disappeared.</h1>
 
           <div class="decline-stats fade">
@@ -133,11 +133,11 @@ DATA:
           <div class="decline-legend">
             <div class="legend-row">
               <span class="legend-dot legend-dot-historic"></span>
-              <span>Peak (4,660)</span>
+              <span>Peak 2024 (4,660)</span>
             </div>
             <div class="legend-row">
               <span class="legend-dot legend-dot-current"></span>
-              <span>Current (318)</span>
+              <span>Current 2026 (318)</span>
             </div>
           </div>
         </div>
