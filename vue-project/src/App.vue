@@ -133,11 +133,11 @@ DATA:
           <div class="decline-legend">
             <div class="legend-row">
               <span class="legend-dot legend-dot-historic"></span>
-              <span>Peak 2024 (4,660)</span>
+              <span>2024 (4,660)</span>
             </div>
             <div class="legend-row">
               <span class="legend-dot legend-dot-current"></span>
-              <span>Current 2026 (318)</span>
+              <span>2026 (318)</span>
             </div>
           </div>
         </div>
