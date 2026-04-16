@@ -72,7 +72,6 @@ DATA:
       </div>
 
       <div class="w">
-        <div class="s-num fade">01</div>
         <h1 class="hed hed-main fade">Why does outdoor dining feel gone?</h1>
 
         <p class="body-l fade">

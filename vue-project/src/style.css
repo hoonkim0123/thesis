@@ -353,6 +353,7 @@ section:last-child {
 /* ======================== */
 #s1 {
   padding-top: 0;
+  padding-bottom: 80px;
 }
 
 .hed-main {
@@ -404,4 +405,8 @@ section:last-child {
   background: rgba(24, 20, 14, 0.56);
   border: 1px solid rgba(255, 255, 255, 0.22);
   padding: 5px 9px;
+}
+
+#s1b {
+  padding-top: 40px;
 }
