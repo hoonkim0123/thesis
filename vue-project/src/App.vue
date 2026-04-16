@@ -73,11 +73,10 @@ DATA:
 
       <div class="w">
         <div class="s-num fade">01</div>
-        <h1 class="hed hed-main fade">Outdoor dining didn't disappear.<br>So why does it feel like it did?</h1>
+        <h1 class="hed hed-main fade">Why does outdoor dining feel gone?</h1>
 
         <p class="body-l fade">
-          Outdoor dining didn't disappear.<br>
-          It became uneven.
+          It didn’t disappear. It became uneven.
         </p>
       </div>
     </section>
