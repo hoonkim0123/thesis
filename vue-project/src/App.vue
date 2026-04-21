@@ -6,6 +6,7 @@ import StatCards from './components/StatCards.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
 import CorridorMap from './components/CorridorMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
+import CorridorGuideMap from './components/CorridorGuideMap.vue'
 
 const corridorMapRef = ref(null)
 
@@ -290,6 +291,10 @@ DATA:
             <div class="s8-area">East Village / Midtown East</div>
             <div class="s8-count">15 active locations</div>
           </div>
+        </div>
+
+        <div class="fade">
+          <CorridorGuideMap />
         </div>
 
         <div class="fade s8-closing">
