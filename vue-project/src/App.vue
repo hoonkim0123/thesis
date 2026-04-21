@@ -4,9 +4,9 @@ import DeclineMap from './components/DeclineMap.vue'
 import ComplaintTypeChart from './components/ComplaintTypeChart.vue'
 import StatCards from './components/StatCards.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
+import CorridorGuideMap from './components/CorridorGuideMap.vue'
 import CorridorMap from './components/CorridorMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
-import CorridorGuideMap from './components/CorridorGuideMap.vue'
 
 const corridorMapRef = ref(null)
 
@@ -251,7 +251,7 @@ DATA:
             <em>Outdoor dining is still there. But it no longer feels like it is.</em>
           </p>
           <p class="body-l" style="margin-bottom: 14px;">
-            And yet, it still exists — but only in certain parts of the city. If you want to experience it, you now have to know where to go.
+            And yet, it still exists in only certain parts of the city. If you want to experience it, you now have to know where to go.
           </p>
         </div>
       </div>
@@ -266,7 +266,8 @@ DATA:
         <h1 class="hed fade">Where to find it now.</h1>
 
         <p class="body-l fade">
-          Outdoor dining still exists — but only in certain parts of the city.
+          Outdoor dining still exists, but only in certain parts of the city.
+          It didn't disappear everywhere.
           In those places, it still feels like it used to.
         </p>
 
@@ -299,7 +300,7 @@ DATA:
 
         <div class="fade s8-closing">
           <p class="body-l">
-            What remains is fragile — shaped by cost, regulation, and local conditions.
+            What remains is fragile, shaped by cost, regulation, and local conditions.
           </p>
           <p class="body-l s8-last">
             These are also the places where the system still works. For now.

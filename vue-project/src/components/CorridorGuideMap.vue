@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
     <div class="guide-footer">
       <div class="guide-legend-row">
         <div class="guide-dot"></div>
-        <span>Active corridor — number = locations on that street</span>
+        <span>Active corridor</span>
       </div>
       <div class="guide-legend-row">
         <div class="guide-dot-dim"></div>
