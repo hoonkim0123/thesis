@@ -230,32 +230,77 @@ DATA:
     </section>
 
     <!-- ======================== -->
-    <!-- S7: MEANING (CONCLUSION) -->
+    <!-- S7: REFRAME              -->
     <!-- ======================== -->
     <section id="s7">
       <div class="w">
         <div class="s-num fade">07</div>
-        <h1 class="hed fade">What remains is not random.</h1>
+        <h1 class="hed fade">It didn't disappear.<br>It became uneven.</h1>
         
         <p class="body-l fade">
           Outdoor dining no longer spreads across the city. It concentrates where access is higher and friction is lower.
         </p>
 
         <p class="body-l fade">
-          A smaller set of streets and neighborhoods now carry most of what remains. Elsewhere, it becomes sparse or disappears entirely.
+          A smaller set of streets now carries most of what remains. Elsewhere, it becomes sparse or disappears entirely.
         </p>
 
         <div class="fade" style="border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 32px 0; margin: 40px 0;">
           <p class="body-l" style="margin-bottom: 16px; font-family: var(--sans); font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.6; letter-spacing: -0.01em;">
-            <em>Outdoor dining is still there. But it no longer functions as a citywide condition.</em>
+            <em>Outdoor dining is still there. But it no longer feels like it is.</em>
           </p>
           <p class="body-l" style="margin-bottom: 14px;">
-            It now exists as a partial and uneven pattern across the city.
+            And yet, it still exists — but only in certain parts of the city. If you want to experience it, you now have to know where to go.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S8: WHERE IT STILL IS   -->
+    <!-- ======================== -->
+    <section id="s8">
+      <div class="w">
+        <div class="s-num fade">08</div>
+        <h1 class="hed fade">Where to find it now.</h1>
+
+        <p class="body-l fade">
+          Outdoor dining still exists — but only in certain parts of the city.
+          In those places, it still feels like it used to.
+        </p>
+
+        <div class="s8-locations fade">
+          <div class="s8-location">
+            <div class="s8-street">Amsterdam Avenue</div>
+            <div class="s8-area">Upper West Side</div>
+            <div class="s8-count">18 active locations</div>
+          </div>
+          <div class="s8-location">
+            <div class="s8-street">Columbus Avenue</div>
+            <div class="s8-area">Upper West Side</div>
+            <div class="s8-count">13 active locations</div>
+          </div>
+          <div class="s8-location">
+            <div class="s8-street">Mulberry Street</div>
+            <div class="s8-area">Little Italy</div>
+            <div class="s8-count">13 active locations</div>
+          </div>
+          <div class="s8-location">
+            <div class="s8-street">2nd Avenue</div>
+            <div class="s8-area">East Village / Midtown East</div>
+            <div class="s8-count">15 active locations</div>
+          </div>
+        </div>
+
+        <div class="fade s8-closing">
+          <p class="body-l">
+            What remains is fragile — shaped by cost, regulation, and local conditions.
+          </p>
+          <p class="body-l s8-last">
+            These are also the places where the system still works. For now.
           </p>
         </div>
       </div>
     </section>
   </main>
 </template>
-
-<style scoped></style>
