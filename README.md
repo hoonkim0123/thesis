@@ -10,7 +10,7 @@ https://hoonkim0123.github.io/thesis/
 
 ## Preview
 
-![preview](preview/1.png)
+![preview](preview/preview.png)
 
 ---
 
