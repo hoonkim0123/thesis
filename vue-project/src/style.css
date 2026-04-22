@@ -454,6 +454,11 @@ section:last-child {
   color: var(--ink);
 }
 
+.s8-wide {
+  width: min(1280px, calc(100vw - 120px));
+  margin: 40px auto 0;
+}
+
 .s8-closing {
   margin-top: 8px;
 }

@@ -4,9 +4,9 @@ import DeclineMap from './components/DeclineMap.vue'
 import ComplaintTypeChart from './components/ComplaintTypeChart.vue'
 import StatCards from './components/StatCards.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
-import CorridorGuideMap from './components/CorridorGuideMap.vue'
 import CorridorMap from './components/CorridorMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
+import CorridorGuideMap from './components/CorridorGuideMap.vue'
 
 const corridorMapRef = ref(null)
 
@@ -251,7 +251,7 @@ DATA:
             <em>Outdoor dining is still there. But it no longer feels like it is.</em>
           </p>
           <p class="body-l" style="margin-bottom: 14px;">
-            And yet, it still exists in only certain parts of the city. If you want to experience it, you now have to know where to go.
+            And yet, it still exists — but only in certain parts of the city. If you want to experience it, you now have to know where to go.
           </p>
         </div>
       </div>
@@ -266,47 +266,24 @@ DATA:
         <h1 class="hed fade">Where to find it now.</h1>
 
         <p class="body-l fade">
-          Outdoor dining still exists, but only in certain parts of the city.
-          It didn't disappear everywhere.
-          In those places, it still feels like it used to.
+          Outdoor dining did not disappear everywhere. It became concentrated in a few corridors where it still feels visible, active, and part of the street.
         </p>
+      </div>
 
-        <div class="s8-locations fade">
-          <div class="s8-location">
-            <div class="s8-street">Amsterdam Avenue</div>
-            <div class="s8-area">Upper West Side</div>
-            <div class="s8-count">18 active locations</div>
-          </div>
-          <div class="s8-location">
-            <div class="s8-street">Columbus Avenue</div>
-            <div class="s8-area">Upper West Side</div>
-            <div class="s8-count">13 active locations</div>
-          </div>
-          <div class="s8-location">
-            <div class="s8-street">Mulberry Street</div>
-            <div class="s8-area">Little Italy</div>
-            <div class="s8-count">13 active locations</div>
-          </div>
-          <div class="s8-location">
-            <div class="s8-street">2nd Avenue</div>
-            <div class="s8-area">East Village / Midtown East</div>
-            <div class="s8-count">15 active locations</div>
-          </div>
-        </div>
+      <div class="s8-wide fade">
+        <CorridorGuideMap />
+      </div>
 
-        <div class="fade">
-          <CorridorGuideMap />
-        </div>
-
-        <div class="fade s8-closing">
+      <div class="w">
+        <div class="s8-closing fade">
           <p class="body-l">
-            What remains is fragile, shaped by cost, regulation, and local conditions.
+            What remains is not random. It survives where cost, regulation, and local street conditions still allow it.
           </p>
           <p class="body-l s8-last">
-            These are also the places where the system still works. For now.
+            What remains is fragile, but patterned. Outdoor dining still exists where the city can still support it.
           </p>
         </div>
       </div>
     </section>
   </main>
-</template>
+</template>\
