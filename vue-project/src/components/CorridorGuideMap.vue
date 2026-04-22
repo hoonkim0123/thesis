@@ -18,8 +18,11 @@ const CORRIDORS = [
     area: 'Upper West Side',
     count: 18,
     character: 'Continuous corridor',
-    interpretation: 'One of few streets where outdoor dining still appears as a continuous pattern.',
-    contrast: 'Elsewhere, outdoor dining exists only as isolated remnants.',
+    lines: [
+      'Outdoor dining still appears here as a continuous sequence along the street.',
+      'Restaurant density and repeated frontage sustain that visibility.',
+      'Elsewhere, this continuity breaks into isolated fragments.'
+    ],
     image: '/images/corridor-amsterdam.jpg',
     center: [40.7831, -73.9812],
     matchKey: 'AMSTERDAM',
@@ -30,8 +33,11 @@ const CORRIDORS = [
     area: 'East Village · Midtown East',
     count: 15,
     character: 'Extended corridor',
-    interpretation: 'A long corridor sustaining demand from both local and destination diners.',
-    contrast: 'Most streets no longer span neighborhoods this way.',
+    lines: [
+      'This corridor stretches across multiple neighborhoods.',
+      'Sustained demand from both local and destination diners supports its length.',
+      'Most streets no longer maintain this kind of continuity.'
+    ],
     image: '/images/corridor-2ave.jpg',
     center: [40.7282, -73.9855],
     matchKey: '2 AVENUE',
@@ -42,8 +48,11 @@ const CORRIDORS = [
     area: 'Upper West Side',
     count: 13,
     character: 'Continuous corridor',
-    interpretation: 'The Upper West Side retains two active corridors—a density few neighborhoods match.',
-    contrast: 'Most areas do not reach this level of concentration.',
+    lines: [
+      'Outdoor dining persists here as a secondary continuous corridor.',
+      'Neighborhood demand and walkable access help maintain activity.',
+      'Few areas sustain more than one such corridor.'
+    ],
     image: '/images/corridor-columbus.jpg',
     center: [40.7794, -73.9800],
     matchKey: 'COLUMBUS',
@@ -54,8 +63,11 @@ const CORRIDORS = [
     area: 'Little Italy',
     count: 13,
     character: 'Destination corridor',
-    interpretation: 'A destination street where outdoor dining still reads as part of street identity.',
-    contrast: 'This street-level experience has largely disappeared elsewhere.',
+    lines: [
+      'Outdoor dining here is tied to a strong street identity.',
+      'As a destination street, it retains visibility despite overall decline.',
+      'Outside places like this, that experience has largely disappeared.'
+    ],
     image: '/images/corridor-mulberry.jpg',
     center: [40.7195, -73.9973],
     matchKey: 'MULBERRY',
@@ -260,18 +272,22 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
       <!-- Image area (with floating map + info layers) -->
       <div class="cg-image-wrap">
         <template v-if="displayed() !== null">
-          <!-- Photo (swap with real image when available) -->
+          <!-- Photo -->
           <div
             class="cg-image"
             :style="{
               backgroundImage: `url(${CORRIDORS[displayed()].image})`
             }"
           >
-            <!-- Fallback shown when image not yet loaded or missing -->
             <div class="cg-image-fallback">
               <span class="cg-fb-name">{{ CORRIDORS[displayed()].name }}</span>
               <span class="cg-fb-hint">Street photo coming soon</span>
             </div>
+          </div>
+
+          <!-- Street name overlay (top left) -->
+          <div class="cg-overlay-title">
+            {{ CORRIDORS[displayed()].name }}
           </div>
 
           <!-- Floating locator map (top right) -->
@@ -279,7 +295,10 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
             <div ref="insetEl" class="cg-inset"></div>
           </div>
 
-          <!-- Distribution strip (under map) -->
+          <!-- Distribution strip label -->
+          <div class="cg-strip-label">distribution along street</div>
+
+          <!-- Distribution strip -->
           <div 
             class="cg-distribution"
             :class="`is-${getCorridorType(CORRIDORS[displayed()].character)}`"
@@ -294,13 +313,16 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
 
           <!-- Main info overlay at bottom -->
           <div class="cg-caption">
-            <div class="cg-caption-street">
-              <span class="cg-street-name">{{ CORRIDORS[displayed()].name }}</span>
-              <span class="cg-street-count">{{ CORRIDORS[displayed()].count }}</span>
+            <div class="cg-caption-meta">
+              <span class="cg-caption-type">{{ CORRIDORS[displayed()].character.toUpperCase() }}</span>
+              <span class="cg-caption-count">{{ CORRIDORS[displayed()].count }} locations</span>
             </div>
-            <div class="cg-caption-type">{{ CORRIDORS[displayed()].character }}</div>
-            <p class="cg-cap-text">{{ CORRIDORS[displayed()].interpretation }}</p>
-            <p class="cg-cap-contrast">{{ CORRIDORS[displayed()].contrast }}</p>
+
+            <div class="cg-caption-lines">
+              <p v-for="(line, i) in CORRIDORS[displayed()].lines" :key="i" :class="{ 'is-contrast': i === 2 }">
+                {{ line }}
+              </p>
+            </div>
           </div>
         </template>
 
@@ -321,7 +343,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   display: grid;
   grid-template-columns: 260px 1fr;
   border: 1px solid var(--rule);
-  margin-top: 40px;
+  margin-top: var(--space-5);
   min-height: 480px;
 }
 
@@ -330,6 +352,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   border-right: 1px solid var(--rule);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .cg-item {
@@ -391,12 +414,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
 }
 
 .cg-hint {
-  margin-top: auto;
-  padding: 14px 20px;
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 9px;
-  color: var(--ghost, #ccc);
-  border-top: 1px solid var(--rule);
+  display: none;
 }
 
 /* ── Right panel ── */
@@ -461,11 +479,12 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   width: 140px;
   height: 120px;
   border: none;
-  background: rgba(248, 247, 244, 0.65);
-  border-radius: 3px;
+  background: rgba(248, 247, 244, 0.5);
+  border-radius: 2px;
   z-index: 10;
   box-shadow: none;
   overflow: hidden;
+  opacity: 0.7;
 }
 
 .cg-inset {
@@ -473,18 +492,39 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   height: 100%;
 }
 
+:deep(.cg-inset-overlay .leaflet-tile) {
+  opacity: 0.4;
+}
+
+/* ── Street name overlay (top left) ── */
+.cg-overlay-title {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  z-index: 11;
+  letter-spacing: -0.01em;
+}
+
 /* ── Distribution strip ── */
+.cg-strip-label {
+  display: none;
+}
+
 .cg-distribution {
   position: absolute;
   bottom: 148px;
   left: 0;
   right: 0;
-  height: 24px;
+  height: 20px;
   display: flex;
   align-items: center;
   z-index: 9;
-  padding: 0 28px;
-  gap: 2px;
+  padding: 0 24px;
+  gap: 0;
 }
 
 .cg-dist-dot {
@@ -492,28 +532,27 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   flex-shrink: 0;
-  transition: opacity 0.2s ease;
 }
 
-/* Type-specific styles */
+/* Type-specific distribution styles */
 .cg-distribution.is-continuous .cg-dist-dot {
-  width: 5px;
-  height: 5px;
-  opacity: 0.8;
+  width: 3px;
+  height: 3px;
+  opacity: 0.9;
 }
 
 .cg-distribution.is-extended .cg-dist-dot {
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
   opacity: 0.6;
 }
 
 .cg-distribution.is-destination .cg-dist-dot {
-  width: 6px;
-  height: 6px;
-  opacity: 0.9;
+  width: 4px;
+  height: 4px;
+  opacity: 1;
 }
 
 /* ── Caption (main info overlay) ── */
@@ -522,56 +561,51 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 28px 28px 24px;
-  background: linear-gradient(to top, rgba(24, 20, 14, 0.95) 0%, rgba(24, 20, 14, 0.85) 50%, rgba(24, 20, 14, 0.0) 100%);
+  padding: var(--space-4) var(--space-3) var(--space-3);
+  background: linear-gradient(to top, rgba(24, 20, 14, 0.96) 0%, rgba(24, 20, 14, 0.88) 50%, rgba(24, 20, 14, 0.0) 100%);
   z-index: 5;
 }
 
-.cg-caption-street {
+.cg-caption-meta {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 8px;
-}
-
-.cg-street-name {
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-}
-
-.cg-street-count {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
 }
 
 .cg-caption-type {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 9px;
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.cg-cap-text {
-  font-family: var(--serif, "EB Garamond", serif);
-  font-size: 14px;
+.cg-caption-count {
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cg-caption-lines {
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 16px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cg-caption-lines p {
   margin: 0 0 5px;
 }
 
-.cg-cap-contrast {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.4;
-  margin: 0;
+.cg-caption-lines p.is-contrast {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 /* ── Placeholder ── */
@@ -594,13 +628,17 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
 }
 
+:deep(.cg-inset-overlay .leaflet-tile) {
+  opacity: 0.3 !important;
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .cg-wrap { grid-template-columns: 1fr; }
   .cg-list { border-right: none; border-bottom: 1px solid var(--rule); }
   .cg-image-wrap { min-height: 340px; }
-  .cg-inset-overlay { width: 120px; height: 100px; }
-  .cg-street-name { font-size: 18px; }
+  .cg-inset-overlay { width: 110px; height: 90px; }
+  .cg-overlay-title { font-size: 20px; top: 20px; left: 20px; }
   .cg-distribution { bottom: 128px; }
 }
 </style>

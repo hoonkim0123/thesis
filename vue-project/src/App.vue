@@ -239,19 +239,22 @@ DATA:
         <h1 class="hed fade">It didn't disappear.<br>It became uneven.</h1>
         
         <p class="body-l fade">
-          Outdoor dining no longer spreads across the city. It concentrates where access is higher and friction is lower.
+          The change is not just how much remains, but how it is distributed. Outdoor dining no longer spreads across the city. It concentrates in specific streets where conditions allow it to persist.
         </p>
 
         <p class="body-l fade">
-          A smaller set of streets now carries most of what remains. Elsewhere, it becomes sparse or disappears entirely.
+          What once felt like a citywide experience is now limited to a smaller and more uneven pattern.
         </p>
 
-        <div class="fade" style="border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 32px 0; margin: 40px 0;">
-          <p class="body-l" style="margin-bottom: 16px; font-family: var(--sans); font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.6; letter-spacing: -0.01em;">
-            <em>Outdoor dining is still there. But it no longer feels like it is.</em>
+        <div class="fade s-block">
+          <p class="body-l">
+            <em>Outdoor dining feels gone because most of it is no longer visible.</em>
           </p>
-          <p class="body-l" style="margin-bottom: 14px;">
-            And yet, it still exists — but only in certain parts of the city. If you want to experience it, you now have to know where to go.
+          <p class="body-l">
+            It still exists, but only in certain streets where it remains concentrated and legible.
+          </p>
+          <p class="body-l">
+            To experience it now, you have to know where to look.
           </p>
         </div>
       </div>
@@ -263,10 +266,10 @@ DATA:
     <section id="s8">
       <div class="w">
         <div class="s-num fade">08</div>
-        <h1 class="hed fade">Where to find it now.</h1>
+        <h1 class="hed fade">Where it still feels present.</h1>
 
         <p class="body-l fade">
-          Outdoor dining did not disappear everywhere. It became concentrated in a few corridors where it still feels visible, active, and part of the street.
+          Outdoor dining did not disappear everywhere. What remains is now concentrated in a few streets where it still reads as part of the street.
         </p>
       </div>
 
@@ -277,10 +280,12 @@ DATA:
       <div class="w">
         <div class="s8-closing fade">
           <p class="body-l">
-            What remains is not random. It survives where cost, regulation, and local street conditions still allow it.
+            What remains is not random.
+            It reflects where outdoor dining can still work.
           </p>
           <p class="body-l s8-last">
-            What remains is fragile, but patterned. Outdoor dining still exists where the city can still support it.
+            What once felt like disappearance becomes a pattern.
+            And that pattern can now be seen.
           </p>
         </div>
       </div>
