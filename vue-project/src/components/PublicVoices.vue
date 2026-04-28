@@ -164,9 +164,6 @@ onMounted(() => {
       <div class="quote-text" :class="{ 'quote-text--placeholder': !activeType }">
         {{ activeQuote }}
       </div>
-      <div class="quote-src" v-if="activeType">
-        Representative excerpt from NYC DOT public comment, 2023
-      </div>
     </div>
 
   </div>
@@ -334,9 +331,6 @@ onMounted(() => {
   background: var(--off);
   border: 1px solid var(--rule);
   min-height: 88px;
-}
-
-.quote-panel--oppose {
 }
 
 .quote-category {
