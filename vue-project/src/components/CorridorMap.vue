@@ -4,7 +4,13 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 const mapEl = ref(null)
-const mapCaption = ref('Hover a street to isolate its corridor.')
+const mapCaption = ref('Hover a street to see where it appears.')
+const tooltipText = ref('')
+const tooltipX = ref(0)
+const tooltipY = ref(0)
+const showTooltip = ref(false)
+
+const emit = defineEmits(['pointHover', 'pointLeave'])
 
 let map = null
 let bgLayer = null
@@ -13,6 +19,14 @@ let activePointLayer = null
 let pointsGeo = null
 let streetsGeo = null
 let pendingStreet = null
+
+function getTypeLabel(licenseType) {
+  const typeMap = {
+    'Roadway': 'roadway dining',
+    'Sidewalk': 'sidewalk dining',
+  }
+  return typeMap[licenseType] || licenseType
+}
 
 function highlightStreet(street) {
   if (!street) return
@@ -48,7 +62,7 @@ function highlightStreet(street) {
     ).addTo(map)
   }
 
-  // 2. corridor POINTS on top of lines
+  // 2. corridor POINTS on top of lines with hover interaction
   const matchingPoints = pointsGeo.features.filter(
     f => f.properties?.corridor_label_clean === label
   )
@@ -57,15 +71,41 @@ function highlightStreet(street) {
     activePointLayer = L.geoJSON(
       { type: 'FeatureCollection', features: matchingPoints },
       {
-        pointToLayer: (_, latlng) =>
-          L.circleMarker(latlng, {
+        pointToLayer: (feature, latlng) => {
+          const marker = L.circleMarker(latlng, {
             radius: 5,
-            fillColor: '#000000',
-            fillOpacity: 1,
+            fillColor: '#111111',
+            fillOpacity: 0.8,
             color: '#ffffff',
             weight: 1,
-            interactive: false,
-          }),
+            interactive: true,
+          })
+
+          marker.on('mouseover', (e) => {
+            const props = feature.properties
+            const corridor = props.corridor_label_clean
+            const type = getTypeLabel(props.license_type)
+            
+            // Extract neighborhood from corridor_label_clean (format: "Street (Neighborhood)")
+            const match = corridor.match(/(.+?)\s*\((.+?)\)/)
+            const neighborhood = match ? match[2] : ''
+            const streetName = match ? match[1] : corridor
+
+            tooltipText.value = `${streetName}<br>${neighborhood} · ${type}`
+            tooltipX.value = e.containerPoint.x
+            tooltipY.value = e.containerPoint.y
+            showTooltip.value = true
+
+            emit('pointHover', corridor)
+          })
+
+          marker.on('mouseout', () => {
+            showTooltip.value = false
+            emit('pointLeave')
+          })
+
+          return marker
+        },
       }
     ).addTo(map)
   }
@@ -106,7 +146,7 @@ onMounted(async () => {
   try {
     const BASE = import.meta.env.BASE_URL
     const [pointsRes, streetsRes] = await Promise.all([
-      fetch(`${BASE}data/corridor_points.geojson`),
+      fetch(`${BASE}data/corridor_points_labeled.geojson`),
       fetch(`${BASE}data/corridor_streets.geojson`),
 ])
 
@@ -153,6 +193,12 @@ onBeforeUnmount(() => {
 <template>
   <div class="corridor-map-container">
     <div ref="mapEl" class="s4-map"></div>
+    
+    <!-- Tooltip -->
+    <div v-if="showTooltip" class="map-tooltip" :style="{ left: tooltipX + 'px', top: tooltipY + 'px' }">
+      <div v-html="tooltipText"></div>
+    </div>
+
     <div class="map-footer">
       <div class="map-legend">
         <div class="leg-row">
@@ -170,7 +216,10 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.corridor-map-container { width: 100%; }
+.corridor-map-container {
+  width: 100%;
+  position: relative;
+}
 
 .s4-map {
   width: 100%;
@@ -184,6 +233,7 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  padding-right: 12px;
 }
 
 .map-legend {
@@ -223,6 +273,24 @@ onBeforeUnmount(() => {
   font-size: 11px;
   color: var(--ghost);
   letter-spacing: 0.02em;
+}
+
+/* Tooltip */
+.map-tooltip {
+  position: absolute;
+  background: rgba(17, 17, 17, 0.95);
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translateX(-50%) translateY(-100%);
+  margin-top: -8px;
+  letter-spacing: 0.01em;
 }
 
 :deep(.leaflet-container) {

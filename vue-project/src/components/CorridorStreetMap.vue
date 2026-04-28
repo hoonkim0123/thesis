@@ -1,9 +1,16 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const rowsEl = ref(null)
 const activeStreetName = ref(null)
 const emit = defineEmits(['streetSelected'])
+
+const props = defineProps({
+  hoveredCorridor: {
+    type: String,
+    default: null,
+  },
+})
 
 const STREETS = [
   { name: 'Amsterdam Avenue', area: 'Upper West Side', corridor_label_clean: 'Amsterdam Ave (Upper West Side)', n: 19 },
@@ -42,9 +49,32 @@ function buildRows() {
     `
 
     row.addEventListener('mouseenter', () => selectStreet(s))
+    row.addEventListener('mouseleave', () => {
+      if (!props.hoveredCorridor && activeStreetName.value === s.corridor_label_clean) {
+        selectStreet(STREETS[0])
+      }
+    })
     rowsEl.value.appendChild(row)
   })
 }
+
+// Watch for point hover from map
+watch(
+  () => props.hoveredCorridor,
+  (newValue) => {
+    if (!newValue) return
+    
+    const street = STREETS.find(s => s.corridor_label_clean === newValue)
+    if (street) {
+      if (rowsEl.value) {
+        rowsEl.value.querySelectorAll('.st-row').forEach(r => {
+          r.classList.toggle('active', r.dataset.label === newValue)
+        })
+      }
+      activeStreetName.value = newValue
+    }
+  }
+)
 
 onMounted(() => {
   buildRows()
@@ -56,10 +86,6 @@ onMounted(() => {
 <template>
   <div class="corridor-table-container">
     <div class="street-table">
-      <div class="st-header">
-        <div class="st-col">Street</div>
-        <div class="st-col st-col-right">Locations</div>
-      </div>
       <div ref="rowsEl"></div>
       <div class="st-note">
         Other repeated streets include 3rd Ave, 1st Ave, and 8th Ave.
@@ -72,38 +98,28 @@ onMounted(() => {
 .corridor-table-container { width: 100%; }
 .street-table { width: 100%; }
 
-.st-header {
-  display: grid;
-  grid-template-columns: 1fr 110px;
-  padding: 0 0 10px;
-  border-bottom: 1px solid var(--ink);
-}
-
-.st-col {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ghost);
-}
-
-.st-col-right { text-align: right; }
-
 :deep(.st-row) {
-  display: grid;
-  grid-template-columns: 1fr 110px;
-  padding: 16px 8px 16px 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 14px 12px 14px 12px;
   border-bottom: 1px solid var(--rule);
-  align-items: center;
+  border-left: 2px solid transparent;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: all 0.1s;
 }
 
-:deep(.st-row:hover),
+:deep(.st-row:hover) {
+  opacity: 0.7;
+}
+
 :deep(.st-row.active) {
-  background: var(--off);
-  padding-left: 8px;
+  background: transparent;
+  border-left-color: transparent;
+}
+
+:deep(.st-left) {
+  flex: 1;
 }
 
 :deep(.st-name) {
@@ -121,16 +137,14 @@ onMounted(() => {
 
 :deep(.st-right) {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 7px;
+  align-items: center;
+  gap: 4px;
 }
 
 :deep(.st-count) {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--ink);
+  font-size: 11px;
+  color: var(--ghost);
   line-height: 1;
 }
 
@@ -138,7 +152,7 @@ onMounted(() => {
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   color: var(--ghost);
-  padding-top: 14px;
+  padding-top: 10px;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }

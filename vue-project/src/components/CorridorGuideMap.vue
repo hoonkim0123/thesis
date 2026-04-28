@@ -16,12 +16,12 @@ const CORRIDORS = [
   {
     name: 'Amsterdam Avenue',
     area: 'Upper West Side',
-    count: 18,
-    character: 'Continuous corridor',
+    count: 19,
+    character: 'Fragmented presence',
     lines: [
-      'Outdoor dining still appears here as a continuous sequence along the street.',
-      'Restaurant density and repeated frontage sustain that visibility.',
-      'Elsewhere, this continuity breaks into isolated fragments.'
+      'Outdoor dining is still visible along this street.',
+      'But it appears as separate setups, with gaps between them.',
+      'The presence is real, but no longer continuous.'
     ],
     image: '/images/corridor-amsterdam.jpg',
     center: [40.7831, -73.9812],
@@ -31,12 +31,12 @@ const CORRIDORS = [
   {
     name: '2nd Avenue',
     area: 'East Village · Midtown East',
-    count: 15,
-    character: 'Extended corridor',
+    count: 19,
+    character: 'Repeated but interrupted',
     lines: [
-      'This corridor stretches across multiple neighborhoods.',
-      'Sustained demand from both local and destination diners supports its length.',
-      'Most streets no longer maintain this kind of continuity.'
+      'Outdoor dining repeats along this avenue.',
+      'But the pattern is interrupted from block to block.',
+      'It feels present in some moments, then disappears again.'
     ],
     image: '/images/corridor-2ave.jpg',
     center: [40.7282, -73.9855],
@@ -47,11 +47,11 @@ const CORRIDORS = [
     name: 'Columbus Avenue',
     area: 'Upper West Side',
     count: 13,
-    character: 'Continuous corridor',
+    character: 'Clustered fragments',
     lines: [
-      'Outdoor dining persists here as a secondary continuous corridor.',
-      'Neighborhood demand and walkable access help maintain activity.',
-      'Few areas sustain more than one such corridor.'
+      'Here, outdoor dining appears in small groups.',
+      'The setups are close enough to be noticed, but not continuous.',
+      'What remains is visible as clusters, not a full corridor.'
     ],
     image: '/images/corridor-columbus.jpg',
     center: [40.7794, -73.9800],
@@ -62,11 +62,11 @@ const CORRIDORS = [
     name: 'Mulberry Street',
     area: 'Little Italy',
     count: 13,
-    character: 'Destination corridor',
+    character: 'Fragmented visibility',
     lines: [
-      'Outdoor dining here is tied to a strong street identity.',
-      'As a destination street, it retains visibility despite overall decline.',
-      'Outside places like this, that experience has largely disappeared.'
+      'On a destination street like this, outdoor dining still stands out.',
+      'But even here, it appears in pieces.',
+      'The street keeps its outdoor dining identity, but in a reduced form.'
     ],
     image: '/images/corridor-mulberry.jpg',
     center: [40.7195, -73.9973],
@@ -100,7 +100,7 @@ function calculateDistributions() {
   const distributions = {}
   CORRIDORS.forEach((c, idx) => {
     const matching = allPoints.features.filter(f =>
-      (f.properties?.street_name || '').toUpperCase().includes(c.matchKey)
+      (f.properties?.street_name || '').toUpperCase() === c.matchKey
     )
     
     if (matching.length === 0) {
@@ -122,9 +122,9 @@ function calculateDistributions() {
 
 // ── Get corridor type for CSS ──
 function getCorridorType(character) {
-  if (character.includes('Continuous')) return 'continuous'
-  if (character.includes('Extended')) return 'extended'
-  if (character.includes('Destination')) return 'destination'
+  if (character.includes('Fragmented')) return 'fragmented'
+  if (character.includes('Repeated')) return 'repeated'
+  if (character.includes('Clustered')) return 'clustered'
   return 'default'
 }
 
@@ -315,7 +315,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
           <div class="cg-caption">
             <div class="cg-caption-meta">
               <span class="cg-caption-type">{{ CORRIDORS[displayed()].character.toUpperCase() }}</span>
-              <span class="cg-caption-count">{{ CORRIDORS[displayed()].count }} locations</span>
+              <span class="cg-caption-count">{{ CORRIDORS[displayed()].count }} current locations</span>
             </div>
 
             <div class="cg-caption-lines">
@@ -537,19 +537,19 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
 }
 
 /* Type-specific distribution styles */
-.cg-distribution.is-continuous .cg-dist-dot {
+.cg-distribution.is-fragmented .cg-dist-dot {
   width: 3px;
   height: 3px;
   opacity: 0.9;
 }
 
-.cg-distribution.is-extended .cg-dist-dot {
+.cg-distribution.is-repeated .cg-dist-dot {
   width: 2px;
   height: 2px;
   opacity: 0.6;
 }
 
-.cg-distribution.is-destination .cg-dist-dot {
+.cg-distribution.is-clustered .cg-dist-dot {
   width: 4px;
   height: 4px;
   opacity: 1;

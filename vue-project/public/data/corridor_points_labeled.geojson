@@ -1,336 +1,4947 @@
 {
-"type": "FeatureCollection",
-"name": "corridor_points_labeled",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "corridor_label_clean": "Madison St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.994055451454003, 40.712335300601985 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Market St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.994383683473004, 40.712532940523985 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Baxter St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999953104393995, 40.716482800206002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Baxter St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999660906271018, 40.71695764462001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997759766672999, 40.718448032288009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997694829896005, 40.718519394966016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997655145357996, 40.718588013358016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997510836423004, 40.718859742332 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997474758978996, 40.718928360737998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997092326150991, 40.719823145947998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "John St (Financial District-Battery Park City)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004425556489991, 40.70647254111401 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "John St (Financial District-Battery Park City)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004425556489991, 40.70647254111401 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "South St (Financial District-Battery Park City)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.001944084282982, 40.706930986673001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Beekman St (Financial District-Battery Park City)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002589711887993, 40.707035275178001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Front St (Financial District-Battery Park City)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002532013524998, 40.707326222106005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Fulton St (Financial District-Battery Park City)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004696191508998, 40.708229183248001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Murray St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.009746738043987, 40.71421246245 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Reade St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.007070279953979, 40.715219988793024 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Duane St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.008015534264999, 40.716424879968002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.990466053109998, 40.714459509526016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.990466053109998, 40.714459509526016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991072044326003, 40.714651692112994 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991393077194004, 40.714750528329013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991623933187981, 40.714819164638996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991970220230996, 40.714904277236016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Orchard St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991714065460997, 40.715214417866015 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Canal St (Chinatown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.994138128762003, 40.715582366371983 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Orchard St (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.990295998750994, 40.717975543539005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Broadway (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.007973351519979, 40.716704503034983 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Broadway (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.008048068297001, 40.716984810413997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Duane St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.010245027189001, 40.717396350423002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Duane St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.01025945977301, 40.717415562509998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Leonard St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.007348393634999, 40.718406647230999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Harrison St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.010032397315996, 40.718766008442984 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Broadway (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.005887490861014, 40.719737943896014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "North Moore St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.007074374165995, 40.71979002741201 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "North Moore St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.009845003804983, 40.72008351317799 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997110363591005, 40.719828635938988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997077892142002, 40.719910978144021 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.997012949002993, 40.720075662525019 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Centre St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.998199829814979, 40.720185477997006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Broome St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.996136306804999, 40.720207385185006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.996915533689005, 40.720322689023028 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Broome St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.996908308594001, 40.720536780692001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Grand St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000212847083986, 40.720594462281007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.996706268349982, 40.720860657621984 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mott St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.995573454397984, 40.721310761338991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Broome St (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989971321274993, 40.718030410966996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Chrystie St (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992341058409991, 40.721063561975988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Chrystie St (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992341058409991, 40.721063561975988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bowery (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.993701117258993, 40.72114324298699 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Stanton St (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988809132558004, 40.721551840317012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Eldridge St (Lower East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989840796628997, 40.722323215915019 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988292903673994, 40.723467636190996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988256817110994, 40.723519783072007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 1st St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991734535476994, 40.724642695999023 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bowery (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992012202804986, 40.725748856560017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 11th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.977677859273982, 40.726713120350034 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave B (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.979153119564003, 40.727907371210009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 11th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.981281738153015, 40.728215152107012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave B (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983361472813002, 40.722105622377001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 2nd St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985179585668988, 40.722767360588009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 3rd St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983545261412999, 40.722920844715013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 4th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983620818688991, 40.723749775134998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 5th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983461903370994, 40.724449667849989 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987253599143997, 40.724911272684999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 6th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983407588991994, 40.725240152781993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 7th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.981693863648005, 40.725261850202997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 6th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983504989492985, 40.725284083095005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave A (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983649157445001, 40.725874228517995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave A (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983649150008986, 40.725904420946996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave A (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983475912993001, 40.726143190791007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave A (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983475912993001, 40.726143190791007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 7th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985402368383006, 40.726835133230999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985485247846995, 40.727304498751003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave A (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982559179974984, 40.727405647500994 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bond St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992629129725998, 40.725899860012014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bond St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992885275268989, 40.726020645903994 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 3rd St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991380768534995, 40.726204442053984 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988909258941987, 40.726862973589995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 6th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.98759955741798, 40.727008312080017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 5th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.990723950968999, 40.72751364425401 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987851866135003, 40.728353274395005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988840014971998, 40.730988349684004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988840014971998, 40.730988349684004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988248134301998, 40.731808975350006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988248134301998, 40.731808975350006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "University Pl (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992707612722, 40.734002412600013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 10th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.981873589705003, 40.727699231169005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987599246192005, 40.728674384956996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 9th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.98678377101399, 40.728992686718996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986314421583003, 40.730472060292016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985617855677987, 40.731394216196016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985336324857997, 40.731819619143991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 14th St (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986328346397997, 40.732936860993981 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Irving Pl (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987316429560011, 40.735956215416003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Irving Pl (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987316429560011, 40.735956215416003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 18th St (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986684878069994, 40.736351389879999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Ave A (East Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980772548624003, 40.729812521522 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Murray Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.978243046895003, 40.741548681547989 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 27th St (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.981452171681994, 40.741695398810002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (Murray Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980335770721993, 40.742668922543004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Murray Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.976867504059001, 40.743332508220988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (Murray Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.978440319062997, 40.745265127216001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 34th St (Murray Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980821742973006, 40.746865746166996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Madison Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.981380276359005, 40.749939970847976 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Park Ave Tunnel (Murray Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.978665921567995, 40.750738223690014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 22nd St (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986290955574006, 40.739271772082994 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Park Ave South (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985316119961993, 40.741601955352991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 27th St (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983089386166995, 40.742205496563997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "5th Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987166767891992, 40.744835507502998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "5th Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985596429598004, 40.746995448706997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 32nd St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986953268950003, 40.747755909960013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 33rd St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985462691097993, 40.747931395517 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich St (Civic Center)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.010036320129004, 40.720852031489997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Broadway (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004008110128993, 40.722106759214014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Grand St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003513867989994, 40.722244013775992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Broadway (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003124280993006, 40.723116860955017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Spring St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.00315323801, 40.725123284612991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Spring St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003268691209996, 40.725180921477019 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Sullivan St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003135217815981, 40.725524021006983 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Thompson St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.001941025500997, 40.725680499115995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Sullivan St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002695082160997, 40.726053772095 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mott St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.995548196847992, 40.721373890009012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Lafayette St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.997590095253003, 40.721774687104997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.996175877837004, 40.722153426536991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Spring St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.99810956926099, 40.722702428119987 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Mulberry St (Little Italy / SoHo)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.995843921174981, 40.722979589862014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Lafayette St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.996590688538006, 40.72352582309901 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Houston St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000739628620991, 40.727343841456999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West Houston St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.001270001449001, 40.727604589578014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Thompson St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000335540377989, 40.727648512373008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Thompson St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000292244929994, 40.727667725853003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Thompson St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000205654255993, 40.727802219570002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bleecker St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999155730482002, 40.728170015272973 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bleecker St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999357776931987, 40.728268828151009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bleecker St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999458800382996, 40.728318234455983 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "LaGuardia Pl (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.998325876930991, 40.728804047051 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "LaGuardia Pl (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.998325876930991, 40.728804047051 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Thompson St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999173759803995, 40.729023637543996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 3rd St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.998722741758016, 40.729729038156982 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Hudson St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.007378210775002, 40.727022468914008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "MacDougal St (Little Italy / SoHo)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002475061484006, 40.727653975692014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Carmine St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003737975924992, 40.72992660747601 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Hudson St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.006808507657993, 40.730428758385003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Hudson St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.006801296496008, 40.730478164589009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Cornelia St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002132425859983, 40.731411566573009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bleecker St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003308706172007, 40.731779337194993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Washington St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.008612864661004, 40.732747963592992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Grove St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004416484337, 40.732759180971009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 3rd St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.998784078515001, 40.729756486477996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "MacDougal St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000699966699997, 40.729759235551988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "MacDougal St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000321120880997, 40.730201144471998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 8th St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.996745385119993, 40.732421613743007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999635561441991, 40.733931279931006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Charles St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000647987238992, 40.735138822688988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000422180685987, 40.735391494390001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 13th St (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.99538123942898, 40.735847033040031 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Christopher St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004856728033005, 40.733286158011012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bleecker St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004351586061006, 40.733522228047008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bleecker St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004438197818999, 40.733717103017995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "7th Ave South (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002803642154007, 40.733719899376993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 10th St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.005675850751004, 40.733824094276009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Hudson St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.006256793765985, 40.733900917468979 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 10th St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.005174303497995, 40.733900971403997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 4th St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002940774603999, 40.734112397275005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Hudson St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.006108950431994, 40.734954914987014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Charles St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002294917621001, 40.735007205214004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Perry St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002121738840003, 40.735712612957023 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Hudson St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.005986336556006, 40.735734434497004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Bank St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.006502408016004, 40.736450789832013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Washington St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.008248940491001, 40.736834944495016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 4th St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.003760024616, 40.736991630989984 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Washington St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.008205707509987, 40.737389389895007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 12th St (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004009041464982, 40.737529596265986 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002002732220021, 40.738051153937 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "5th Ave (Greenwich Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.993840463018998, 40.735704232923005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 16th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992151566806001, 40.737103959456014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 18th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989647208522001, 40.737595073509993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Park Ave South (Gramercy)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987799541632995, 40.738215208484995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 20th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989026339752996, 40.738843883246986 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 20th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989047986188979, 40.738874077713 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "5th Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.991505417587007, 40.738918202208005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 25th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989123049645983, 40.743246492273002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.001818688642999, 40.737732764415995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "6th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.99563361880999, 40.739025479376984 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 16th St (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999996391344979, 40.740406178389016 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.001833203947001, 40.740675150523984 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.001688862207999, 40.740872775676998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 19th St (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.995918576079006, 40.740985250790999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 19th St (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.997798674470999, 40.741800496846004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "7th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.997214053698983, 40.74195419085401 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000927445892998, 40.741956965693994 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000757837422, 40.742154589856021 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002154299954981, 40.738347585660009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002226475043983, 40.738473843405998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Greenwich Ave (West Village)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.002226475043983, 40.738473843405998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "10th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.004850496296996, 40.746762945522995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 26th St (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.005955224, 40.750926696186994 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000371704162987, 40.742681586184013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 21st St (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.996889220770996, 40.742945041818999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.999083345409986, 40.744484892006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 24th St (Chelsea)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -74.000808421098995, 40.747177504204004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.968948258633006, 40.754268512125002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 49th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.970662429016997, 40.754944174131992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 48th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.972773917181996, 40.755035271610993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.968337869202998, 40.755105497113995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 68th St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.958892596623983, 40.765678057521001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 75th St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.952518525167989, 40.768988519305012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "York Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.951676828725994, 40.769699059978009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.957518035216992, 40.769973101491985 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.956141280438985, 40.771855486372012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.957519096997018, 40.773952997869003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 51st St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.969275914139999, 40.755997799020996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.964402931568998, 40.756284590615991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.960826611744992, 40.761191054722005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "1st Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.960501472960985, 40.761624615108985 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.963584234171989, 40.761653082302992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 60th St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.968781590752997, 40.763290489620999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 61st St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.967662348155997, 40.763646998224992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.961864623756, 40.763985568121001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 60th St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.970495974227006, 40.764007324937999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "York Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.948265135789981, 40.774338955264014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "York Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.948265135789981, 40.774338955264014 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "York Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.947491621967998, 40.775433761381983 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "York Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.947491621967998, 40.775433761381983 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.954012775837015, 40.774739391413 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 81st St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.957091798191982, 40.775904359811008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.95260687884398, 40.776704064108991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.951999719240007, 40.777497045910991 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 84th St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.956028919778007, 40.777965268286998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "2nd Ave (Upper East Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.950485266075987, 40.779615352945008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.952976283072985, 40.780217501487002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Lexington Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.954933246791001, 40.780366503147 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 88th St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.953983498092981, 40.780511598307996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Lexington Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.953581500572, 40.782218673135993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 91st St (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.957068332627998, 40.784267615779015 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Madison Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.955807622310004, 40.784953325549004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Hamilton Heights-Sugar Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.950475789991003, 40.821324544807993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.965614432775979, 40.800579800343002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.963937246851003, 40.802879384567007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Morningside Heights)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.961124830344005, 40.806696410041006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "La Salle St (Morningside Heights)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.960361854501002, 40.814057556570006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 25th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989963885119991, 40.743359104167993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "5th Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987636037808002, 40.744226221826992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 26th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.990898399599999, 40.744588835620974 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 31st St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987732913442002, 40.747275662702002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 33rd St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989320514772004, 40.749581420927001 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "9th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992062322346001, 40.759188302860004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 46th St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989167180685001, 40.760299693312 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 47th St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988015613767999, 40.760637184114998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 47th St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.992134140047995, 40.762358503663002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "10th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.993173733779997, 40.762773028647025 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 40th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982289137443999, 40.752377462210006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 44th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.984558382743003, 40.756709021073007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 44th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986189751949993, 40.757398163570024 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 46th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983666510564987, 40.757990700134002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 47th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986557401269991, 40.760002983368004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "7th Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983875315041999, 40.760266134670985 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 48th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985622390328999, 40.760433797116008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 48th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985849784283999, 40.760527147165995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 49th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.983990757675997, 40.76055160571098 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "East 41st St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980448381944996, 40.752410100451989 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Park Ave (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.975950427165003, 40.75450075314 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 44th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980830174020014, 40.755160414448 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 46th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.979985181941998, 40.756417370065989 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 48th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980396131806003, 40.75823172684602 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 54th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980726745471998, 40.763298606810004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 58th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.975188764416998, 40.764354274867003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 56th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.979892475195001, 40.764563796929977 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Central Park South (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.974870813753, 40.765078821656999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "8th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986784542495997, 40.761364409896998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 51st St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.984585920741992, 40.762470273155017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 51st St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.98595754696899, 40.763030379787004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Broadway (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982665164747985, 40.763669458260992 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "9th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.987502122269987, 40.765448689729965 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 56th St (Midtown)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982498583522002, 40.76565938209901 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "9th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.986314085955001, 40.767100897914013 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 58th St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982934894249993, 40.767613714727005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "9th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988401226584003, 40.764246580406009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 52nd St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.988455259316993, 40.764916306658009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "10th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.990779929652007, 40.766080293994008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "10th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.989635303786002, 40.767614515400993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 58th St (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.98298543049998, 40.767635680283 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "9th Ave (Hell's Kitchen)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.985432953588983, 40.768313971893988 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 63rd St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982414008302982, 40.771486487080999 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 70th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.982676038221982, 40.777327365479017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.981286872189003, 40.773997760035009 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.981037659501993, 40.774310621208997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.980373055667997, 40.775230002378017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.979986557182002, 40.77579261035401 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.979596461789995, 40.776289342251985 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 71st St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.978621546726004, 40.776448360581007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.979220791054004, 40.776824501976023 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 74th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.976631472177004, 40.778223828693989 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 74th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.978263293553979, 40.778896614003003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.981310731226984, 40.779017919772997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977306253657986, 40.779456358561006 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.980985632664016, 40.779473495502017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 75th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.977710642448002, 40.779511332866996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.980490745123987, 40.780189793146 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.976489835308982, 40.780534882409 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 75th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.980793874295998, 40.780810158530024 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.978922976443997, 40.782308465483993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.978879627755006, 40.782363352574976 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Madison Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.968328188870984, 40.767824704469007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "3rd Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.959994317764995, 40.770566858666996 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Lexington Ave (Upper East Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.961795605141987, 40.771001143830993 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.972895018485985, 40.785510326739995 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.972804703636982, 40.785600882201997 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.971334096733003, 40.787645364564007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.968978089057003, 40.790828663519008 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.971978728215987, 40.791853227041003 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.966955373482008, 40.798743957381987 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 104th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.968717351712996, 40.800004290458972 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977911443232003, 40.783724567735 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977712759218988, 40.783957833302004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977651341292997, 40.784048398195004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977618827214002, 40.784092307900004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977365323331995, 40.784166292653012 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.977091354050998, 40.784852500265998 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Columbus Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.97330331347699, 40.784914811178005 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Broadway (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.978253698288, 40.786137270312004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.975852138568996, 40.786548503077007 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 85th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.976202152710997, 40.787297893390978 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 85th St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.97702176424599, 40.787679580830002 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Amsterdam Ave (Upper West Side)", "is_top_corridor": true }, "geometry": { "type": "Point", "coordinates": [ -73.974724878768001, 40.788060618602017 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "West 91st St (Upper West Side)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.973940226236991, 40.791259771581004 ] } },
-{ "type": "Feature", "properties": { "corridor_label_clean": "Broadway (Hamilton Heights-Sugar Hill)", "is_top_corridor": false }, "geometry": { "type": "Point", "coordinates": [ -73.948757479918001, 40.828723613900983 ] } }
-]
+  "type": "FeatureCollection",
+  "name": "corridor_points_labeled",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Madison St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.994055451454,
+          40.712335300601985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Market St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.994383683473,
+          40.712532940523985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Baxter St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.999953104394,
+          40.716482800206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Baxter St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99966090627102,
+          40.71695764462001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997759766673,
+          40.71844803228801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997694829896,
+          40.718519394966016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997655145358,
+          40.718588013358016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997510836423,
+          40.718859742332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997474758979,
+          40.718928360738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99709232615099,
+          40.719823145948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "John St (Financial District-Battery Park City)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00442555648999,
+          40.70647254111401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "John St (Financial District-Battery Park City)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00442555648999,
+          40.70647254111401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "South St (Financial District-Battery Park City)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00194408428298,
+          40.706930986673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Beekman St (Financial District-Battery Park City)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00258971188799,
+          40.707035275178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Front St (Financial District-Battery Park City)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002532013525,
+          40.707326222106005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Fulton St (Financial District-Battery Park City)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.004696191509,
+          40.708229183248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Murray St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00974673804399,
+          40.71421246245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Reade St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00707027995398,
+          40.715219988793024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Duane St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.008015534265,
+          40.716424879968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99046605311,
+          40.714459509526016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99046605311,
+          40.714459509526016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991072044326,
+          40.714651692112994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991393077194,
+          40.71475052832901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99162393318798,
+          40.714819164638996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991970220231,
+          40.714904277236016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Orchard St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991714065461,
+          40.715214417866015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Canal St (Chinatown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.994138128762,
+          40.71558236637198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Orchard St (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.990295998751,
+          40.717975543539005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Broadway (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00797335151998,
+          40.71670450303498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Broadway (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.008048068297,
+          40.716984810414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Duane St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.010245027189,
+          40.717396350423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Duane St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.01025945977301,
+          40.71741556251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Leonard St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.007348393635,
+          40.718406647231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Harrison St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.010032397316,
+          40.718766008442984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Broadway (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00588749086101,
+          40.719737943896014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "North Moore St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.007074374166,
+          40.71979002741201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "North Moore St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00984500380498,
+          40.72008351317799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997110363591,
+          40.71982863593899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997077892142,
+          40.71991097814402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997012949003,
+          40.72007566252502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Centre St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99819982981498,
+          40.720185477997006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Broome St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996136306805,
+          40.720207385185006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996915533689,
+          40.72032268902303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Broome St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996908308594,
+          40.720536780692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Grand St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00021284708399,
+          40.72059446228101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99670626834998,
+          40.720860657621984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mott St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99557345439798,
+          40.72131076133899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Broome St (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989971321275,
+          40.718030410966996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Chrystie St (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99234105840999,
+          40.72106356197599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Chrystie St (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99234105840999,
+          40.72106356197599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bowery (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.993701117259,
+          40.72114324298699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Stanton St (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988809132558,
+          40.72155184031701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Eldridge St (Lower East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989840796629,
+          40.72232321591502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988292903674,
+          40.723467636190996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988256817111,
+          40.72351978307201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 1st St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991734535477,
+          40.72464269599902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bowery (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99201220280499,
+          40.72574885656002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 11th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97767785927398,
+          40.726713120350034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave B (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979153119564,
+          40.72790737121001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 11th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98128173815302,
+          40.72821515210701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave B (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983361472813,
+          40.722105622377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 2nd St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98517958566899,
+          40.72276736058801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 3rd St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983545261413,
+          40.72292084471501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 4th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98362081868899,
+          40.723749775135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 5th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983461903371,
+          40.72444966784999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987253599144,
+          40.724911272685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 6th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983407588992,
+          40.72524015278199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 7th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981693863648,
+          40.725261850203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 6th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98350498949299,
+          40.725284083095005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave A (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983649157445,
+          40.725874228517995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave A (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98364915000899,
+          40.725904420946996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave A (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983475912993,
+          40.72614319079101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave A (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983475912993,
+          40.72614319079101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 7th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985402368383,
+          40.726835133231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985485247847,
+          40.727304498751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave A (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98255917997498,
+          40.727405647500994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bond St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.992629129726,
+          40.725899860012014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bond St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99288527526899,
+          40.72602064590399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 3rd St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991380768535,
+          40.726204442053984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98890925894199,
+          40.726862973589995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 6th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98759955741798,
+          40.72700831208002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 5th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.990723950969,
+          40.72751364425401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987851866135,
+          40.728353274395005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988840014972,
+          40.730988349684004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988840014972,
+          40.730988349684004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988248134302,
+          40.731808975350006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988248134302,
+          40.731808975350006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "University Pl (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.992707612722,
+          40.73400241260001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 10th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981873589705,
+          40.727699231169005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987599246192,
+          40.728674384956996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 9th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98678377101399,
+          40.728992686718996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.986314421583,
+          40.730472060292016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98561785567799,
+          40.731394216196016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985336324858,
+          40.73181961914399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 14th St (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.986328346398,
+          40.73293686099398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Irving Pl (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98731642956001,
+          40.735956215416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Irving Pl (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98731642956001,
+          40.735956215416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 18th St (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98668487807,
+          40.73635138988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Ave A (East Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980772548624,
+          40.729812521522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Murray Hill)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978243046895,
+          40.74154868154799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 27th St (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981452171682,
+          40.74169539881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (Murray Hill)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980335770722,
+          40.742668922543004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Murray Hill)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.976867504059,
+          40.74333250822099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (Murray Hill)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978440319063,
+          40.745265127216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 34th St (Murray Hill)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980821742973,
+          40.746865746166996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Madison Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981380276359,
+          40.749939970847976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Park Ave Tunnel (Murray Hill)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978665921568,
+          40.750738223690014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 22nd St (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.986290955574,
+          40.73927177208299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Park Ave South (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985316119962,
+          40.74160195535299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 27th St (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983089386167,
+          40.742205496564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "5th Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98716676789199,
+          40.744835507503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "5th Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985596429598,
+          40.746995448707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 32nd St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98695326895,
+          40.74775590996001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 33rd St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985462691098,
+          40.747931395517
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich St (Civic Center)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.010036320129,
+          40.72085203149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Broadway (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00400811012899,
+          40.722106759214014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Grand St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00351386799,
+          40.72224401377599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Broadway (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.003124280993,
+          40.72311686095502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Spring St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00315323801,
+          40.72512328461299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Spring St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00326869121,
+          40.72518092147702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Sullivan St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00313521781598,
+          40.72552402100698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Thompson St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.001941025501,
+          40.725680499115995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Sullivan St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002695082161,
+          40.726053772095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mott St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99554819684799,
+          40.72137389000901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Lafayette St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997590095253,
+          40.721774687105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996175877837,
+          40.72215342653699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Spring St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99810956926099,
+          40.72270242811999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99584392117498,
+          40.722979589862014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Lafayette St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996590688538,
+          40.72352582309901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Houston St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00073962862099,
+          40.727343841457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West Houston St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.001270001449,
+          40.727604589578014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Thompson St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00033554037799,
+          40.72764851237301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Thompson St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00029224493,
+          40.727667725853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Thompson St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00020565425599,
+          40.72780221957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bleecker St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.999155730482,
+          40.72817001527297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bleecker St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99935777693199,
+          40.72826882815101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bleecker St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.999458800383,
+          40.72831823445598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "LaGuardia Pl (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99832587693099,
+          40.728804047051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "LaGuardia Pl (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99832587693099,
+          40.728804047051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Thompson St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.999173759804,
+          40.729023637543996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 3rd St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99872274175802,
+          40.72972903815698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Hudson St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.007378210775,
+          40.72702246891401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "MacDougal St (Little Italy / SoHo)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002475061484,
+          40.727653975692014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Carmine St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00373797592499,
+          40.72992660747601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Hudson St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.006808507658,
+          40.730428758385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Hudson St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00680129649601,
+          40.73047816458901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Cornelia St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00213242585998,
+          40.73141156657301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bleecker St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.003308706172,
+          40.73177933719499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Washington St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.008612864661,
+          40.73274796359299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Grove St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.004416484337,
+          40.73275918097101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 3rd St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.998784078515,
+          40.729756486477996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "MacDougal St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0006999667,
+          40.72975923555199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "MacDougal St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.000321120881,
+          40.730201144472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 8th St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99674538512,
+          40.73242161374301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99963556144199,
+          40.73393127993101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Charles St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00064798723899,
+          40.73513882268899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00042218068599,
+          40.73539149439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 13th St (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99538123942898,
+          40.73584703304003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Christopher St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.004856728033,
+          40.73328615801101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bleecker St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.004351586061,
+          40.73352222804701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bleecker St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.004438197819,
+          40.733717103017995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "7th Ave South (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002803642154,
+          40.73371989937699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 10th St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.005675850751,
+          40.73382409427601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Hudson St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00625679376598,
+          40.73390091746898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 10th St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.005174303498,
+          40.733900971404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 4th St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002940774604,
+          40.734112397275005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Hudson St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.006108950432,
+          40.734954914987014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Charles St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.002294917621,
+          40.735007205214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Perry St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00212173884,
+          40.73571261295702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Hudson St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.005986336556,
+          40.735734434497004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Bank St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.006502408016,
+          40.73645078983201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Washington St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.008248940491,
+          40.736834944495016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 4th St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.003760024616,
+          40.73699163098998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Washington St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00820570750999,
+          40.73738938989501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 12th St (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00400904146498,
+          40.737529596265986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00200273222002,
+          40.738051153937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "5th Ave (Greenwich Village)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.993840463019,
+          40.735704232923005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 16th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.992151566806,
+          40.737103959456014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 18th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989647208522,
+          40.73759507350999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Park Ave South (Gramercy)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987799541633,
+          40.738215208484995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 20th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989026339753,
+          40.738843883246986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 20th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98904798618898,
+          40.738874077713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "5th Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.991505417587,
+          40.738918202208005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 25th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98912304964598,
+          40.743246492273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.001818688643,
+          40.737732764415995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "6th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99563361880999,
+          40.739025479376984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 16th St (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99999639134498,
+          40.740406178389016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.001833203947,
+          40.740675150523984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.001688862208,
+          40.740872775677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 19th St (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.995918576079,
+          40.740985250791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 19th St (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997798674471,
+          40.741800496846004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "7th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99721405369898,
+          40.74195419085401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.000927445893,
+          40.741956965693994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.000757837422,
+          40.74215458985602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00215429995498,
+          40.73834758566001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00222647504398,
+          40.738473843406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Greenwich Ave (West Village)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00222647504398,
+          40.738473843406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "10th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.004850496297,
+          40.746762945522995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 26th St (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.005955224,
+          40.750926696186994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00037170416299,
+          40.74268158618401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 21st St (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996889220771,
+          40.742945041819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99908334540999,
+          40.744484892006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 24th St (Chelsea)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.000808421099,
+          40.747177504204004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968948258633,
+          40.754268512125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 49th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970662429017,
+          40.75494417413199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 48th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.972773917182,
+          40.75503527161099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968337869203,
+          40.755105497113995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 68th St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95889259662398,
+          40.765678057521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 75th St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95251852516799,
+          40.76898851930501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "York Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.951676828726,
+          40.76969905997801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95751803521699,
+          40.769973101491985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95614128043898,
+          40.77185548637201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95751909699702,
+          40.773952997869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 51st St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96927591414,
+          40.755997799020996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.964402931569,
+          40.75628459061599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96082661174499,
+          40.761191054722005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "1st Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96050147296098,
+          40.761624615108985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96358423417199,
+          40.76165308230299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 60th St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968781590753,
+          40.763290489621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 61st St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.967662348156,
+          40.76364699822499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.961864623756,
+          40.763985568121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 60th St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970495974227,
+          40.764007324938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "York Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.94826513578998,
+          40.774338955264014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "York Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.94826513578998,
+          40.774338955264014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "York Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.947491621968,
+          40.77543376138198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "York Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.947491621968,
+          40.77543376138198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95401277583701,
+          40.774739391413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 81st St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95709179819198,
+          40.77590435981101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95260687884398,
+          40.77670406410899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95199971924,
+          40.77749704591099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 84th St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.956028919778,
+          40.777965268287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95048526607599,
+          40.77961535294501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95297628307299,
+          40.780217501487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Lexington Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.954933246791,
+          40.780366503147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 88th St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95398349809298,
+          40.780511598307996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Lexington Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.953581500572,
+          40.78221867313599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 91st St (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.957068332628,
+          40.784267615779015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Madison Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95580762231,
+          40.784953325549004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Hamilton Heights-Sugar Hill)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.950475789991,
+          40.82132454480799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96561443277598,
+          40.800579800343
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.963937246851,
+          40.80287938456701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Morningside Heights)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.961124830344,
+          40.806696410041006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "La Salle St (Morningside Heights)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.960361854501,
+          40.814057556570006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 25th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98996388511999,
+          40.74335910416799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "5th Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987636037808,
+          40.74422622182699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 26th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9908983996,
+          40.744588835620974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 31st St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987732913442,
+          40.747275662702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 33rd St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989320514772,
+          40.749581420927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "9th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.992062322346,
+          40.759188302860004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 46th St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989167180685,
+          40.760299693312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 47th St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988015613768,
+          40.760637184115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 47th St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.992134140048,
+          40.762358503663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "10th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99317373378,
+          40.762773028647025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 40th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.982289137444,
+          40.752377462210006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 44th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.984558382743,
+          40.75670902107301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 44th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98618975195,
+          40.75739816357002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 46th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98366651056499,
+          40.757990700134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 47th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98655740126999,
+          40.760002983368004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "7th Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983875315042,
+          40.760266134670985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 48th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985622390329,
+          40.76043379711601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 48th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985849784284,
+          40.760527147165995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 49th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.983990757676,
+          40.76055160571098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "East 41st St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980448381945,
+          40.75241010045199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Park Ave (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.975950427165,
+          40.75450075314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 44th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98083017402001,
+          40.755160414448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 46th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979985181942,
+          40.75641737006599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 48th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980396131806,
+          40.75823172684602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 54th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980726745472,
+          40.763298606810004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 58th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.975188764417,
+          40.764354274867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 56th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979892475195,
+          40.76456379692998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Central Park South (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.974870813753,
+          40.765078821657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "8th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.986784542496,
+          40.761364409897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 51st St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98458592074199,
+          40.76247027315502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 51st St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98595754696899,
+          40.763030379787004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Broadway (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98266516474798,
+          40.76366945826099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "9th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98750212226999,
+          40.765448689729965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 56th St (Midtown)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.982498583522,
+          40.76565938209901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "9th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.986314085955,
+          40.76710089791401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 58th St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98293489425,
+          40.767613714727005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "9th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988401226584,
+          40.76424658040601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 52nd St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98845525931699,
+          40.76491630665801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "10th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.990779929652,
+          40.76608029399401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "10th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.989635303786,
+          40.76761451540099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 58th St (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98298543049998,
+          40.767635680283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "9th Ave (Hell's Kitchen)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98543295358898,
+          40.76831397189399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 63rd St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98241400830298,
+          40.771486487081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 70th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98267603822198,
+          40.77732736547902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981286872189,
+          40.77399776003501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981037659502,
+          40.774310621209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980373055668,
+          40.77523000237802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979986557182,
+          40.77579261035401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97959646179,
+          40.776289342251985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 71st St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978621546726,
+          40.77644836058101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979220791054,
+          40.77682450197602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 74th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.976631472177,
+          40.77822382869399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 74th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97826329355398,
+          40.778896614003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98131073122698,
+          40.779017919773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97730625365799,
+          40.779456358561006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98098563266402,
+          40.77947349550202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 75th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977710642448,
+          40.779511332866996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98049074512399,
+          40.780189793146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97648983530898,
+          40.780534882409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 75th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980793874296,
+          40.780810158530024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978922976444,
+          40.78230846548399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978879627755,
+          40.782363352574976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Madison Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96832818887098,
+          40.76782470446901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "3rd Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.959994317765,
+          40.770566858666996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Lexington Ave (Upper East Side)",
+        "is_top_corridor": false,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96179560514199,
+          40.77100114383099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97289501848599,
+          40.785510326739995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97280470363698,
+          40.785600882202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.971334096733,
+          40.78764536456401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968978089057,
+          40.79082866351901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97197872821599,
+          40.791853227041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96695537348201,
+          40.79874395738199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 104th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968717351713,
+          40.80000429045897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977911443232,
+          40.783724567735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97771275921899,
+          40.783957833302004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977651341293,
+          40.784048398195004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977618827214,
+          40.7840923079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977365323332,
+          40.78416629265301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977091354051,
+          40.784852500266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97330331347699,
+          40.784914811178005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Broadway (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978253698288,
+          40.786137270312004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.975852138569,
+          40.78654850307701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 85th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.976202152711,
+          40.78729789339098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 85th St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97702176424599,
+          40.78767958083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "is_top_corridor": true,
+        "license_type": "Sidewalk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.974724878768,
+          40.78806061860202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "West 91st St (Upper West Side)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97394022623699,
+          40.791259771581004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_label_clean": "Broadway (Hamilton Heights-Sugar Hill)",
+        "is_top_corridor": false,
+        "license_type": "Roadway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.948757479918,
+          40.82872361390098
+        ]
+      }
+    }
+  ]
 }

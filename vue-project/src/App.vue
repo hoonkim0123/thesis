@@ -7,14 +7,25 @@ import CorridorStreetMap from './components/CorridorStreetMap.vue'
 import CorridorMap from './components/CorridorMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
 import CorridorGuideMap from './components/CorridorGuideMap.vue'
+import ModelFeatureChart from './components/ModelFeatureChart.vue'
 
 const corridorMapRef = ref(null)
+const activeLayer = ref(null)
+const hoveredCorridor = ref(null)
 
 function handleStreetSelected(street) {
   // Pass the selected street to CorridorMap
   if (corridorMapRef.value) {
     corridorMapRef.value.highlightStreet(street)
   }
+}
+
+function handlePointHover(corridor) {
+  hoveredCorridor.value = corridor
+}
+
+function handlePointLeave() {
+  hoveredCorridor.value = null
 }
 
 onMounted(() => {
@@ -87,7 +98,8 @@ DATA:
     <section id="s1b">
       <div class="w">
         <p class="body-l fade">
-          Outdoor dining was not simply accepted or rejected. It produced both public value and public friction.
+          Some saw outdoor dining as public life.
+          Others saw it as noise, obstruction, and conflict.
         </p>
 
         <div class="fade">
@@ -95,7 +107,7 @@ DATA:
         </div>
 
         <p class="body-l fade">
-          But despite this, most of it is now gone. What remains is not evenly distributed.
+          It created value and friction at the same time.
         </p>
       </div>
     </section>
@@ -110,23 +122,42 @@ DATA:
           <h1 class="hed fade">Most of it disappeared.</h1>
 
           <div class="decline-stats fade">
-            <div class="decline-main">
-              <span class="decline-from muted">4,660</span>
-              <span class="decline-arrow">→</span>
-              <span class="decline-to">318</span>
+            <div class="decline-number-row">
+              <span
+                class="stat-old"
+                @mouseenter="activeLayer = 'historic'"
+                @mouseleave="activeLayer = null"
+              >
+                4,660
+              </span>
+              <span class="stat-arrow">→</span>
+              <span
+                class="stat-current"
+                @mouseenter="activeLayer = 'current'"
+                @mouseleave="activeLayer = null"
+              >
+                318
+              </span>
             </div>
-            <div class="decline-sub">Peak → Current</div>
-            <div class="decline-loss">−93%</div>
+
+            <div class="stat-label-row">
+              <span>PEAK (2024)</span>
+              <span></span>
+              <span>CURRENT (2026)</span>
+            </div>
+
+            <div class="stat-drop">−93%</div>
           </div>
 
           <p class="body-l fade">
-            Outdoor dining declined sharply after the pandemic emergency ended. What remains is not random. It reflects a different program, with different rules, costs, and geography.
+            Outdoor dining declined sharply after the pandemic.<br>
+            What remains is shaped by new rules, costs, and geography.
           </p>
         </div>
 
         <div class="decline-map-wrap fade">
           <div class="decline-map">
-            <DeclineMap />
+            <DeclineMap :active-layer="activeLayer" />
           </div>
 
           <div class="decline-legend">
@@ -148,15 +179,17 @@ DATA:
     <!-- ======================== -->
     <section id="s3">
       <div class="w">
-        <div class="s-num fade">03</div>
+        <div class="s-num fade">NOT COMPLETELY GONE</div>
         <h1 class="hed fade">But 318 locations are still there.<br>So where are they?</h1>
         
         <p class="body-l fade">
-          The remaining locations didn't stay everywhere. They concentrated. Some streets retained visible clusters. Most streets retained little or nothing.
+          It did not stay everywhere.<br>
+          It concentrated.
         </p>
 
-        <p class="body-l fade">
-          The question isn't just how many survived. It's where.
+        <p class="body-l fade text-break">
+          Some streets kept outdoor dining visible.
+          Most streets did not.
         </p>
       </div>
     </section>
@@ -167,18 +200,21 @@ DATA:
     <section id="s4" class="section-corridor">
       <div class="corridor-grid fade">
         <div class="corridor-copy">
-          <div class="s-num">04</div>
-          <h1 class="hed">What remains clusters on just a few streets.</h1>
+          <div class="s-num fade">WHERE IT STILL APPEARS</div>
+          <h1 class="hed fade">The pattern repeats along certain streets.</h1>
           
-          <p class="body-l">
-            Most locations are scattered. What stands out is the small number of streets where outdoor dining still repeats.
+          <p class="body-l fade">
+            Outdoor dining is no longer spread evenly across the city.
+            It appears in repeated clusters along specific streets.
           </p>
 
-          <CorridorStreetMap @streetSelected="handleStreetSelected" />
+          <div class="fade">
+            <CorridorStreetMap @streetSelected="handleStreetSelected" :hovered-corridor="hoveredCorridor" />
+          </div>
         </div>
 
         <div class="corridor-map">
-          <CorridorMap ref="corridorMapRef" />
+          <CorridorMap ref="corridorMapRef" @pointHover="handlePointHover" @pointLeave="handlePointLeave" />
         </div>
       </div>
     </section>
@@ -188,20 +224,25 @@ DATA:
     <!-- ======================== -->
     <section id="s5">
       <div class="w">
-        <div class="s-num fade">05</div>
-        <h1 class="hed fade">Outdoor dining doesn't just occupy space.<br>It competes for it.</h1>
+        <div class="s-num fade">REPORTED ISSUES</div>
+        <h1 class="hed fade">Where conflict appears.</h1>
         
         <p class="body-l fade">
-          This is not just about dining. It is about how public space is used. When restaurants place tables on sidewalks or in the street, they take space that pedestrians, cyclists, and delivery vehicles also rely on.
+          Outdoor dining competes for public space.
         </p>
 
         <p class="body-l fade">
-          311 complaints show where that conflict becomes visible.
+          311 data shows where these issues appeared most:
+          blocked sidewalks, setup conditions, and access issues.
         </p>
 
         <div class="fade">
           <ComplaintTypeChart />
         </div>
+
+        <p class="body-l fade">
+          This is where conflict becomes visible.
+        </p>
       </div>
     </section>
 
@@ -210,23 +251,29 @@ DATA:
     <!-- ======================== -->
     <section id="s6">
       <div class="w">
-        <div class="s-num fade">06</div>
-        <h1 class="hed fade">Not all places can support it.</h1>
-        
-        <p class="body-l fade">
-          The remaining locations do not share the same conditions. Some cluster in more connected parts of the city, while others remain more isolated or contested.
-        </p>
+        <div class="s-num fade">CONDITIONS AROUND PRESENCE</div>
+        <h1 class="hed fade">Survival is not random.</h1>
 
         <p class="body-l fade">
-          The same system produces very different conditions depending on location. In some areas, outdoor dining feels visible and accessible. In others, it is rare or absent.
+          But does this actually shape what remains?
+        </p>
+
+        <p class="body-l fade text-break">
+          I used a simple model to compare locations that remained with those that disappeared.
         </p>
 
         <div class="fade">
-          <StatCards />
+          <ModelFeatureChart />
         </div>
 
-        <div class="fade">
-        </div>
+        <p class="body-l fade text-break">
+          No single factor determines survival.
+          What remains reflects overlapping local conditions.
+        </p>
+
+        <p class="body-l fade">
+          And this is why the pattern is uneven.
+        </p>
       </div>
     </section>
 
@@ -235,28 +282,13 @@ DATA:
     <!-- ======================== -->
     <section id="s7">
       <div class="w">
-        <div class="s-num fade">07</div>
-        <h1 class="hed fade">It didn't disappear.<br>It became uneven.</h1>
+        <div class="s-num fade">UNEVENLY DISTRIBUTED</div>
+        <h1 class="hed fade">It did not disappear.<br>It became uneven.</h1>
         
         <p class="body-l fade">
-          The change is not just how much remains, but how it is distributed. Outdoor dining no longer spreads across the city. It concentrates in specific streets where conditions allow it to persist.
+          Outdoor dining no longer feels like a normal part of most streets,
+          because most of it is no longer visible.
         </p>
-
-        <p class="body-l fade">
-          What once felt like a citywide experience is now limited to a smaller and more uneven pattern.
-        </p>
-
-        <div class="fade s-block">
-          <p class="body-l">
-            <em>Outdoor dining feels gone because most of it is no longer visible.</em>
-          </p>
-          <p class="body-l">
-            It still exists, but only in certain streets where it remains concentrated and legible.
-          </p>
-          <p class="body-l">
-            To experience it now, you have to know where to look.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -265,11 +297,16 @@ DATA:
     <!-- ======================== -->
     <section id="s8">
       <div class="w">
-        <div class="s-num fade">08</div>
+        <div class="s-num fade">FRAGMENTS ON THE STREET</div>
         <h1 class="hed fade">Where it still feels present.</h1>
 
         <p class="body-l fade">
-          Outdoor dining did not disappear everywhere. What remains is now concentrated in a few streets where it still reads as part of the street.
+          It is still there.<br>
+          But only in certain streets.
+        </p>
+
+        <p class="body-l fade text-break">
+          That is where it still feels present.
         </p>
       </div>
 
@@ -279,13 +316,12 @@ DATA:
 
       <div class="w">
         <div class="s8-closing fade">
-          <p class="body-l">
-            What remains is not random.
-            It reflects where outdoor dining can still work.
+          <p class="body-l fade">
+            So why does outdoor dining feel gone?
           </p>
-          <p class="body-l s8-last">
-            What once felt like disappearance becomes a pattern.
-            And that pattern can now be seen.
+          <p class="body-l s8-last fade">
+            Because what remains is no longer everywhere.
+            It is somewhere.
           </p>
         </div>
       </div>

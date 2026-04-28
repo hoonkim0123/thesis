@@ -1,10 +1,87 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
+const props = defineProps({
+  activeLayer: {
+    type: String,
+    default: null,
+  },
+})
+
 const mapEl = ref(null)
 let map = null
+let historicLayer = null
+let currentLayer = null
+
+function setLayerStyle(layer, style) {
+  if (!layer) return
+  layer.eachLayer((dot) => {
+    dot.setStyle(style)
+  })
+}
+
+function updateHighlight(activeLayer) {
+  if (!historicLayer || !currentLayer) return
+
+  if (activeLayer === 'historic') {
+    setLayerStyle(historicLayer, {
+      radius: 3.4,
+      fillColor: '#B44A3C',
+      color: '#B44A3C',
+      fillOpacity: 0.45,
+      weight: 0,
+    })
+
+    setLayerStyle(currentLayer, {
+      radius: 1.6,
+      fillColor: '#18140e',
+      color: '#18140e',
+      fillOpacity: 0.18,
+      weight: 0,
+    })
+  } else if (activeLayer === 'current') {
+    setLayerStyle(historicLayer, {
+      radius: 2.4,
+      fillColor: '#7f7f7f',
+      color: '#7f7f7f',
+      fillOpacity: 0.05,
+      weight: 0,
+    })
+
+    setLayerStyle(currentLayer, {
+      radius: 3.2,
+      fillColor: '#B44A3C',
+      color: '#B44A3C',
+      fillOpacity: 0.95,
+      weight: 0,
+    })
+  } else {
+    setLayerStyle(historicLayer, {
+      radius: 2.8,
+      fillColor: '#7f7f7f',
+      color: '#7f7f7f',
+      fillOpacity: 0.10,
+      weight: 0,
+    })
+
+    setLayerStyle(currentLayer, {
+      radius: 1.8,
+      fillColor: '#18140e',
+      color: '#18140e',
+      fillOpacity: 0.75,
+      weight: 0,
+    })
+  }
+}
+
+watch(
+  () => props.activeLayer,
+  (newValue) => {
+    updateHighlight(newValue)
+  }
+)
 
 onMounted(async () => {
   if (!mapEl.value) return
@@ -28,10 +105,11 @@ onMounted(async () => {
 
   try {
     const BASE = import.meta.env.BASE_URL
+
     const [historicRes, currentRes] = await Promise.all([
       fetch(`${BASE}data/historic_manhattan_clean.geojson`),
       fetch(`${BASE}data/thesis_points_final_v2.geojson`),
-      ])
+    ])
 
     if (!historicRes.ok || !currentRes.ok) {
       throw new Error('Failed to load GeoJSON files')
@@ -40,8 +118,7 @@ onMounted(async () => {
     const historic = await historicRes.json()
     const current = await currentRes.json()
 
-    // Historic = dim field
-    const historicLayer = L.geoJSON(historic, {
+    historicLayer = L.geoJSON(historic, {
       pointToLayer: (_, latlng) =>
         L.circleMarker(latlng, {
           radius: 2.8,
@@ -54,8 +131,7 @@ onMounted(async () => {
         }),
     }).addTo(map)
 
-    // Current = visible but not too dominant
-    const currentLayer = L.geoJSON(current, {
+    currentLayer = L.geoJSON(current, {
       pointToLayer: (_, latlng) =>
         L.circleMarker(latlng, {
           radius: 1.8,
@@ -68,15 +144,15 @@ onMounted(async () => {
         }),
     }).addTo(map)
 
-    // Fixed Manhattan framing
     const manhattanBounds = L.latLngBounds(
-      [40.70, -74.02], // southwest
-      [40.86, -73.93]  // northeast
+      [40.70, -74.02],
+      [40.86, -73.93]
     )
 
     map.fitBounds(manhattanBounds)
-    
-    // Log zoom level for reference
+
+    updateHighlight(props.activeLayer)
+
     console.log('S2 DeclineMap zoom:', map.getZoom())
   } catch (error) {
     console.error('Error loading S2 decline map:', error)
