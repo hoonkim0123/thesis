@@ -1,0 +1,15 @@
+{
+  "raw_total_locations": 367,
+  "analysis_total_points": 318,
+  "near_transit": 273,
+  "far_transit": 45,
+  "clustered": 36,
+  "individual": 282,
+  "high_access_low_friction": 141,
+  "low_access_high_friction": 25,
+  "mixed_conditions": 152,
+  "complaint_0": 71,
+  "complaint_1_5": 120,
+  "complaint_6_14": 74,
+  "complaint_15_plus": 53
+}
