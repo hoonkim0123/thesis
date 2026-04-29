@@ -21,7 +21,7 @@ const STREETS = [
 
 function selectStreet(street) {
   activeStreetName.value = street.corridor_label_clean
-  emit('streetSelected', street)
+  emit('streetSelected', street.name)
 
   if (!rowsEl.value) return
   rowsEl.value.querySelectorAll('.st-row').forEach(r => {
@@ -49,11 +49,6 @@ function buildRows() {
     `
 
     row.addEventListener('mouseenter', () => selectStreet(s))
-    row.addEventListener('mouseleave', () => {
-      if (!props.hoveredCorridor && activeStreetName.value === s.corridor_label_clean) {
-        selectStreet(STREETS[0])
-      }
-    })
     rowsEl.value.appendChild(row)
   })
 }

@@ -27,50 +27,50 @@ function updateHighlight(activeLayer) {
 
   if (activeLayer === 'historic') {
     setLayerStyle(historicLayer, {
-      radius: 3.4,
-      fillColor: '#B44A3C',
-      color: '#B44A3C',
-      fillOpacity: 0.45,
-      weight: 0,
-    })
-
-    setLayerStyle(currentLayer, {
-      radius: 1.6,
-      fillColor: '#18140e',
-      color: '#18140e',
-      fillOpacity: 0.18,
-      weight: 0,
-    })
-  } else if (activeLayer === 'current') {
-    setLayerStyle(historicLayer, {
-      radius: 2.4,
-      fillColor: '#7f7f7f',
-      color: '#7f7f7f',
-      fillOpacity: 0.05,
-      weight: 0,
-    })
-
-    setLayerStyle(currentLayer, {
-      radius: 3.2,
-      fillColor: '#B44A3C',
-      color: '#B44A3C',
-      fillOpacity: 0.95,
-      weight: 0,
-    })
-  } else {
-    setLayerStyle(historicLayer, {
-      radius: 2.8,
-      fillColor: '#7f7f7f',
-      color: '#7f7f7f',
-      fillOpacity: 0.10,
+      radius: 2.6,
+      fillColor: '#a6a6a6',
+      color: '#a6a6a6',
+      fillOpacity: 0.22,
       weight: 0,
     })
 
     setLayerStyle(currentLayer, {
       radius: 1.8,
-      fillColor: '#18140e',
-      color: '#18140e',
-      fillOpacity: 0.75,
+      fillColor: '#111111',
+      color: '#111111',
+      fillOpacity: 0,
+      weight: 0,
+    })
+  } else if (activeLayer === 'current') {
+    setLayerStyle(historicLayer, {
+      radius: 2.4,
+      fillColor: '#a6a6a6',
+      color: '#a6a6a6',
+      fillOpacity: 0.06,
+      weight: 0,
+    })
+
+    setLayerStyle(currentLayer, {
+      radius: 2.2,
+      fillColor: '#b44a3c',
+      color: '#b44a3c',
+      fillOpacity: 0.80,
+      weight: 0,
+    })
+  } else {
+    setLayerStyle(historicLayer, {
+      radius: 2.6,
+      fillColor: '#a6a6a6',
+      color: '#a6a6a6',
+      fillOpacity: 0.08,
+      weight: 0,
+    })
+
+    setLayerStyle(currentLayer, {
+      radius: 2.0,
+      fillColor: '#111111',
+      color: '#111111',
+      fillOpacity: 0.70,
       weight: 0,
     })
   }
@@ -121,11 +121,11 @@ onMounted(async () => {
     historicLayer = L.geoJSON(historic, {
       pointToLayer: (_, latlng) =>
         L.circleMarker(latlng, {
-          radius: 2.8,
-          fillColor: '#7f7f7f',
-          color: '#7f7f7f',
+          radius: 2.6,
+          fillColor: '#a6a6a6',
+          color: '#a6a6a6',
           weight: 0,
-          fillOpacity: 0.10,
+          fillOpacity: 0.08,
           className: 'historic-dot',
           interactive: false,
         }),
@@ -134,11 +134,11 @@ onMounted(async () => {
     currentLayer = L.geoJSON(current, {
       pointToLayer: (_, latlng) =>
         L.circleMarker(latlng, {
-          radius: 1.8,
-          fillColor: '#18140e',
-          color: '#18140e',
+          radius: 2.0,
+          fillColor: '#111111',
+          color: '#111111',
           weight: 0,
-          fillOpacity: 0.75,
+          fillOpacity: 0.70,
           className: 'current-dot',
           interactive: false,
         }),
@@ -179,7 +179,7 @@ onBeforeUnmount(() => {
 
 :deep(.leaflet-container) {
   font-family: 'IBM Plex Sans', sans-serif;
-  background: #f6f6f6;
+  background: var(--off);
 }
 
 :deep(.leaflet-tile) {

@@ -37,24 +37,24 @@ const max = Math.max(...data.map(d => d.value))
 
 .label {
   font-size: 14px;
-  color: #555;
+  color: var(--muted);
 }
 
 .bar {
   height: 6px;
-  background: #e5e5e5;
+  background: var(--rule);
   border-radius: 3px;
 }
 
 .fill {
   height: 100%;
-  background: #18140e;
+  background: var(--ink);
   border-radius: 3px;
 }
 
 .value {
   font-size: 12px;
-  color: #999;
+  color: var(--ghost);
   text-align: right;
 }
 </style>

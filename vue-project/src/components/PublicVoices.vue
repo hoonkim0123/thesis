@@ -87,7 +87,7 @@ onMounted(() => {
     <div class="voices-header">
       <div class="voices-label">Public Responses to Outdoor Dining</div>
       <div class="voices-description">
-        <p>Public comments reveal both the value outdoor dining created and the frictions it introduced.</p>
+        <p>Public comments reveal both the value outdoor dining created and the friction it introduced.</p>
       </div>
       <div class="voices-note">
         <div>Source: NYC DOT Dining Out NYC rulemaking public comments</div>
@@ -298,16 +298,21 @@ onMounted(() => {
 .bar-fill {
   height: 100%;
   border-radius: 2px;
-  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
+  background: var(--data-historic);
 }
 
 .bar-fill--support {
-  background: var(--ink);
+  background: var(--data-historic);
 }
 
 .bar-fill--oppose {
+  background: var(--data-historic);
+}
+
+.bar-row:hover .bar-fill--support,
+.bar-row:hover .bar-fill--oppose {
   background: var(--accent);
-  opacity: 1;
 }
 
 .bar-pct {
