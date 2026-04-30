@@ -23,7 +23,7 @@ const CORRIDORS = [
       'But it appears as separate setups, with gaps between them.',
       'The presence is real, but no longer continuous.'
     ],
-    image: '/images/corridor-amsterdam.jpg',
+    image: '/images/amsterdam-avenue.png',
     center: [40.7831, -73.9812],
     matchKey: 'AMSTERDAM',
     zoom: 15,
@@ -273,12 +273,14 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
       <div class="cg-image-wrap">
         <template v-if="displayed() !== null">
           <!-- Photo -->
-          <div
-            class="cg-image"
-            :style="{
-              backgroundImage: `url(${CORRIDORS[displayed()].image})`
-            }"
-          >
+          <div class="cg-image">
+            <img
+              v-if="CORRIDORS[displayed()].image"
+              :src="CORRIDORS[displayed()].image"
+              :alt="`${CORRIDORS[displayed()].name}, ${CORRIDORS[displayed()].area}`"
+              class="guide-image"
+            />
+
             <div class="cg-image-fallback">
               <span class="cg-fb-name">{{ CORRIDORS[displayed()].name }}</span>
               <span class="cg-fb-hint">Street photo coming soon</span>
@@ -437,9 +439,16 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
 .cg-image {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   background-color: #e8e6e0;
+  overflow: hidden;
+}
+
+.guide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
 }
 
 .cg-image-fallback {
@@ -454,7 +463,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   z-index: 0;
 }
 
-.cg-image[style*="url("] .cg-image-fallback {
+.guide-image + .cg-image-fallback {
   display: none;
 }
 
