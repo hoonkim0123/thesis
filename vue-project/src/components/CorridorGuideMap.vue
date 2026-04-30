@@ -7,6 +7,7 @@ const insetEl = ref(null)
 const activeIndex = ref(null)   // click-locked
 const hoverIndex = ref(null)    // hover preview
 const corridorDistributions = ref({})   // position data for strips
+const BASE_URL = import.meta.env.BASE_URL
 
 let insetMap = null
 let insetMarkers = []
@@ -126,6 +127,11 @@ function getCorridorType(character) {
   if (character.includes('Repeated')) return 'repeated'
   if (character.includes('Clustered')) return 'clustered'
   return 'default'
+}
+
+function resolvePublicAsset(path) {
+  if (!path) return ''
+  return `${BASE_URL}${String(path).replace(/^\//, '')}`
 }
 
 // ── inset map ──────────────────────────────────────────────
@@ -276,7 +282,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
           <div class="cg-image">
             <img
               v-if="CORRIDORS[displayed()].image"
-              :src="CORRIDORS[displayed()].image"
+              :src="resolvePublicAsset(CORRIDORS[displayed()].image)"
               :alt="`${CORRIDORS[displayed()].name}, ${CORRIDORS[displayed()].area}`"
               class="guide-image"
             />
