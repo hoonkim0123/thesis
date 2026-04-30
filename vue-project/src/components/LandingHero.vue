@@ -37,11 +37,10 @@ let t = 0
 let startTime = null
 
 const CLUSTERS = [
-  { nx: 0.28, ny: 0.38, r: 0.08 },
-  { nx: 0.38, ny: 0.48, r: 0.07 },
-  { nx: 0.68, ny: 0.40, r: 0.09 },
-  { nx: 0.58, ny: 0.66, r: 0.07 },
-  { nx: 0.76, ny: 0.70, r: 0.06 },
+  { nx: 0.62, ny: 0.36, r: 0.065 },
+  { nx: 0.70, ny: 0.48, r: 0.075 },
+  { nx: 0.58, ny: 0.64, r: 0.070 },
+  { nx: 0.76, ny: 0.72, r: 0.055 },
 ]
 
 function inCluster(nx, ny) {
@@ -57,29 +56,66 @@ function inCluster(nx, ny) {
   return false
 }
 
+function nearBand(nx, ny) {
+  const bands = [
+    { x: 0.58, tilt: -0.10, width: 0.055 },
+    { x: 0.68, tilt: 0.08, width: 0.060 },
+    { x: 0.76, tilt: -0.04, width: 0.050 },
+  ]
+
+  for (const b of bands) {
+    const lineX = b.x + (ny - 0.5) * b.tilt
+
+    if (Math.abs(nx - lineX) < b.width) {
+      return true
+    }
+  }
+
+  return false
+}
+
 function initDots() {
   dots = []
 
   const count = Math.floor((W * H) / 3000)
 
   for (let i = 0; i < count; i += 1) {
-    const nx = Math.random()
-    const ny = Math.random()
-
-    const isRed = inCluster(nx, ny) && Math.random() < 0.30
+    let nx = Math.random()
+    let ny = Math.random()
+    
+    if (Math.random() < 0.48) {
+        const bandSeed = Math.random()
+            if (bandSeed < 0.34) nx = 0.58 + (ny - 0.5) * -0.10 + (Math.random() - 0.5) * 0.12
+            else if (bandSeed < 0.68) nx = 0.68 + (ny - 0.5) * 0.08 + (Math.random() - 0.5) * 0.13
+            else nx = 0.76 + (ny - 0.5) * -0.04 + (Math.random() - 0.5) * 0.11
+            
+            nx = Math.max(0.02, Math.min(0.98, nx))
+        }
+        const isRed = inCluster(nx, ny) && Math.random() < 0.46
+        const isBand = nearBand(nx, ny)
 
     dots.push({
       x: nx * W,
       y: ny * H,
       nx,
       ny,
-      r: isRed ? 4.2 + Math.random() * 1.8 : 2.4 + Math.random() * 2.0,
-      isRed,
-      alpha: isRed ? 0.78 + Math.random() * 0.18 : 0.30 + Math.random() * 0.22,
+      r: isRed
+        ? 5.0 + Math.random() * 2.2
+        : isBand
+            ? 3.0 + Math.random() * 2.2
+            : 2.2 + Math.random() * 1.8,
+        isRed,
+        isBand,
+        alpha: isRed
+        ? 0.82 + Math.random() * 0.16
+        : isBand
+    ? 0.34 + Math.random() * 0.20
+    : 0.20 + Math.random() * 0.16,
       deathTime: isRed ? Infinity : 1.0 + Math.random() * 3.0,
       vx: (Math.random() - 0.5) * 0.18,
       vy: (Math.random() - 0.5) * 0.18,
       phase: Math.random() * Math.PI * 2,
+      isBand,
     })
   }
 }
