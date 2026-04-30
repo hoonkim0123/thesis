@@ -287,16 +287,6 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
             </div>
           </div>
 
-          <!-- Street name overlay (top left) -->
-          <div class="cg-overlay-title">
-            {{ CORRIDORS[displayed()].name }}
-          </div>
-
-          <!-- Floating locator map (top right) -->
-          <div class="cg-inset-overlay">
-            <div ref="insetEl" class="cg-inset"></div>
-          </div>
-
           <!-- Distribution strip label -->
           <div class="cg-strip-label">distribution along street</div>
 
@@ -372,12 +362,16 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
 
 .cg-item:hover,
 .cg-item.is-hover  { background: var(--off, #f8f7f4); }
-.cg-item.is-active { background: var(--ink, #18140e); }
+
+.cg-item.is-active {
+  background: var(--accent-pale);
+  border-left: 3px solid var(--accent);
+}
 
 .cg-item.is-active .cg-name,
 .cg-item.is-active .cg-area,
 .cg-item.is-active .cg-count,
-.cg-item.is-active .cg-char { color: #fff; }
+.cg-item.is-active .cg-char { color: var(--accent); }
 
 .cg-item-top {
   display: flex;
@@ -480,44 +474,6 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   color: var(--ghost, #bbb);
 }
 
-/* ── Floating inset map (overlay) ── */
-.cg-inset-overlay {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 140px;
-  height: 120px;
-  border: none;
-  background: rgba(248, 247, 244, 0.5);
-  border-radius: 2px;
-  z-index: 10;
-  box-shadow: none;
-  overflow: hidden;
-  opacity: 0.7;
-}
-
-.cg-inset {
-  width: 100%;
-  height: 100%;
-}
-
-:deep(.cg-inset-overlay .leaflet-tile) {
-  opacity: 0.4;
-}
-
-/* ── Street name overlay (top left) ── */
-.cg-overlay-title {
-  position: absolute;
-  top: 28px;
-  left: 28px;
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 24px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  z-index: 11;
-  letter-spacing: -0.01em;
-}
-
 /* ── Distribution strip ── */
 .cg-strip-label {
   display: none;
@@ -571,7 +527,7 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   left: 0;
   right: 0;
   padding: var(--space-4) var(--space-3) var(--space-3);
-  background: linear-gradient(to top, rgba(24, 20, 14, 0.96) 0%, rgba(24, 20, 14, 0.88) 50%, rgba(24, 20, 14, 0.0) 100%);
+  background: linear-gradient(to top, rgba(17, 17, 17, 0.62), rgba(17, 17, 17, 0.18), rgba(17, 17, 17, 0));
   z-index: 5;
 }
 
@@ -646,8 +602,6 @@ onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
   .cg-wrap { grid-template-columns: 1fr; }
   .cg-list { border-right: none; border-bottom: 1px solid var(--rule); }
   .cg-image-wrap { min-height: 340px; }
-  .cg-inset-overlay { width: 110px; height: 90px; }
-  .cg-overlay-title { font-size: 20px; top: 20px; left: 20px; }
   .cg-distribution { bottom: 128px; }
 }
 </style>
