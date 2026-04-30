@@ -39,7 +39,7 @@ const CORRIDORS = [
       'But the pattern is interrupted from block to block.',
       'It feels present in some moments, then disappears again.'
     ],
-    image: '/images/corridor-2ave.jpg',
+    image: '/images/amsterdam-avenue.png',
     center: [40.7282, -73.9855],
     matchKey: '2 AVENUE',
     zoom: 15,
@@ -54,7 +54,7 @@ const CORRIDORS = [
       'The setups are close enough to be noticed, but not continuous.',
       'What remains is visible as clusters, not a full corridor.'
     ],
-    image: '/images/corridor-columbus.jpg',
+    image: '/images/amsterdam-avenue.png',
     center: [40.7794, -73.9800],
     matchKey: 'COLUMBUS',
     zoom: 15,
@@ -69,7 +69,7 @@ const CORRIDORS = [
       'But even here, it appears in pieces.',
       'The street keeps its outdoor dining identity, but in a reduced form.'
     ],
-    image: '/images/corridor-mulberry.jpg',
+    image: '/images/amsterdam-avenue.png',
     center: [40.7195, -73.9973],
     matchKey: 'MULBERRY',
     zoom: 15,
