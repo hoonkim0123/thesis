@@ -208,7 +208,7 @@ S8: Street level ending
         <h1 class="hed fade">No single factor explains the pattern.</h1>
 
         <p class="body-l fade">
-          Corridor streets had a higher remaining rate, but the chart does not explain the whole story.
+          The four highlighted streets contain about one fifth of current Manhattan outdoor dining locations.
         </p>
 
         <div class="fade">
@@ -216,7 +216,7 @@ S8: Street level ending
         </div>
 
         <p class="body-l fade" style="margin-top: 32px;">
-          The pattern is shaped by measurable signals and contextual constraints: nearby activity, reported issues, restaurant activity, rules, costs, and decisions.
+          The pattern is shaped by measurable signals and contextual constraints: nearby activity, reported issues, restaurant activity, regulations, costs, and decisions.
         </p>
 
         <div class="fade">

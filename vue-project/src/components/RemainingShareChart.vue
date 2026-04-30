@@ -1,51 +1,44 @@
 <script setup>
-// All numbers derived from raw data pipeline
-// Historic Manhattan (coord-deduped): 4,659
-// Current licensed Manhattan: 318
-// Corridor streets (Amsterdam, Columbus, Mulberry, 2 Ave): hist=343, curr=45
-// Other streets: hist=4,316, curr=273
-
 const BARS = [
   {
-    label: 'All Manhattan locations',
-    sublabel: '318 of 4,660',
-    value: 6.8,
-    highlight: false,
-  },
-  {
-    label: 'Repeated corridor streets',
-    sublabel: '45 of 343',
-    value: 13.1,
+    label: 'Four highlighted streets',
+    sublabel: '64 of 318 current locations',
+    value: 20.1,
     highlight: true,
   },
   {
     label: 'Other streets',
-    sublabel: '273 of 4,316',
-    value: 6.3,
+    sublabel: '254 of 318 current locations',
+    value: 79.9,
     highlight: false,
   },
 ]
 
-const MAX = 20 // x-axis max %
+const MAX = 100
 </script>
 
 <template>
   <div class="rs-wrap">
-    <div class="rs-title">Remaining share by street pattern</div>
+    <div class="rs-title">Current locations by street pattern</div>
+
+    <div class="rs-baseline">
+      <span class="rs-baseline-label">Current Manhattan locations</span>
+      <span class="rs-baseline-value">318 locations</span>
+    </div>
 
     <div class="rs-chart">
       <!-- X axis labels -->
       <div class="rs-axis">
         <span>0%</span>
-        <span>5%</span>
-        <span>10%</span>
-        <span>15%</span>
-        <span>20%</span>
+        <span>25%</span>
+        <span>50%</span>
+        <span>75%</span>
+        <span>100%</span>
       </div>
 
       <!-- Grid lines -->
       <div class="rs-grid">
-        <div class="rs-gridline" v-for="n in [0,5,10,15,20]" :key="n"
+        <div class="rs-gridline" v-for="n in [0,25,50,75,100]" :key="n"
           :style="{ left: (n / MAX * 100) + '%' }" />
       </div>
 
@@ -75,7 +68,7 @@ const MAX = 20 // x-axis max %
     </div>
 
     <div class="rs-caption">
-      Repeated corridor streets retained about twice the Manhattan average share of outdoor dining.
+      The four highlighted streets contain about one fifth of current Manhattan outdoor dining locations.
     </div>
   </div>
 </template>
@@ -92,6 +85,28 @@ const MAX = 20 // x-axis max %
   letter-spacing: 0.08em;
   color: var(--ghost);
   margin-bottom: 20px;
+}
+
+.rs-baseline {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.rs-baseline-label {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.rs-baseline-value {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ghost);
 }
 
 .rs-chart {
