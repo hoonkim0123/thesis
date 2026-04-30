@@ -8,6 +8,7 @@ import CorridorGuideMap from './components/CorridorGuideMap.vue'
 import RemainingShareChart from './components/RemainingShareChart.vue'
 import ConstraintsSummary from './components/ConstraintsSummary.vue'
 import CorridorStripDiagram from './components/CorridorStripDiagram.vue'
+import LandingHero from './components/LandingHero.vue'
 
 const activeLayer = ref(null)
 const activeCorridor = ref('Amsterdam Avenue')
@@ -46,25 +47,7 @@ S8: Street level ending
 
 <template>
   <main>
-    <section id="s1">
-      <div class="s1-images fade">
-        <div class="s1-image s1-image-left">
-          <img src="/images/s1-vibrant.jpg" alt="Vibrant outdoor dining during pandemic" />
-        </div>
-
-        <div class="s1-image s1-image-right">
-          <img src="/images/s1-shed.jpg" alt="Empty or contested outdoor dining structures" />
-        </div>
-      </div>
-
-      <div class="w">
-        <h1 class="hed hed-main fade">Why does outdoor dining feel gone?</h1>
-
-        <p class="body-l fade">
-          It didn’t disappear. It became uneven.
-        </p>
-      </div>
-    </section>
+    <LandingHero />
 
     <section id="s1b">
       <div class="w">
