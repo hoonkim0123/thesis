@@ -50,12 +50,10 @@ S8: Street level ending
       <div class="s1-images fade">
         <div class="s1-image s1-image-left">
           <img src="/images/s1-vibrant.jpg" alt="Vibrant outdoor dining during pandemic" />
-          <div class="s1-caption">Vibrant</div>
         </div>
 
         <div class="s1-image s1-image-right">
           <img src="/images/s1-shed.jpg" alt="Empty or contested outdoor dining structures" />
-          <div class="s1-caption">Contested</div>
         </div>
       </div>
 
@@ -164,10 +162,10 @@ S8: Street level ending
         <div class="corridor-copy">
           <div class="s-num fade">WHERE IT STILL APPEARS</div>
 
-          <h1 class="hed">What remains repeats along a few streets.</h1>
+          <h1 class="hed">A few streets stand out.</h1>
 
           <p class="body-l">
-            Most locations are scattered. What stands out is the small number of streets where outdoor dining still repeats along the same corridor.
+            Most locations are scattered. A smaller set repeats along the same corridors.
           </p>
 
           <CorridorStreetMap @streetSelected="handleStreetSelected" />
@@ -183,20 +181,18 @@ S8: Street level ending
       <div class="w">
         <div class="s-num fade">REPORTED ISSUES</div>
 
-        <h1 class="hed fade">Outdoor dining doesn't just occupy space.<br>It competes for it.</h1>
+        <h1 class="hed fade">Outdoor dining creates friction in street space.</h1>
 
         <p class="body-l fade">
-          This is not just about dining. It is about how public space is used.
-          When restaurants place tables on sidewalks or in the street, they take space that pedestrians, cyclists, and delivery vehicles also rely on.
+          The same program does not fit every street in the same way. Some locations remain in the roadway. Others remain on the sidewalk.
         </p>
 
         <p class="body-l fade">
-          311 complaints add another layer to the story.
+          311 complaints show where that friction became visible, especially around blocked sidewalks, street access, and setup conditions.
         </p>
 
         <p class="body-l fade">
-          These records do not show where outdoor dining remains.
-          They show where people reported problems around outdoor dining.
+          The chart does not explain every disappearance. It shows where outdoor dining became contested.
         </p>
 
         <div class="fade">
@@ -209,10 +205,10 @@ S8: Street level ending
       <div class="w">
         <div class="s-num fade">LOCAL CONDITIONS</div>
 
-        <h1 class="hed fade">What remains is not random.</h1>
+        <h1 class="hed fade">No single factor explains the pattern.</h1>
 
         <p class="body-l fade">
-          Outdoor dining did not disappear evenly. It remained at a higher rate along repeated corridor streets.
+          Corridor streets had a higher remaining rate, but the chart does not explain the whole story.
         </p>
 
         <div class="fade">
@@ -220,7 +216,7 @@ S8: Street level ending
         </div>
 
         <p class="body-l fade" style="margin-top: 32px;">
-          But this chart does not explain the whole pattern. It only shows that the decline was uneven.
+          The pattern is shaped by measurable signals and contextual constraints: nearby activity, reported issues, restaurant activity, rules, costs, and decisions.
         </p>
 
         <div class="fade">
@@ -283,20 +279,3 @@ S8: Street level ending
     </section>
   </main>
 </template>
-
-<style scoped>
-.s8-wide {
-  width: min(1280px, calc(100vw - 120px));
-  margin: 40px auto 0;
-}
-
-.s8-closing {
-  margin-top: 48px;
-}
-
-.s8-last {
-  font-weight: 500;
-  color: var(--ink);
-  margin-top: 8px;
-}
-</style>

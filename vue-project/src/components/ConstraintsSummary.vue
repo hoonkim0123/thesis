@@ -7,7 +7,7 @@ const MEASURED = [
 ]
 
 const NOT_CAPTURED = [
-  'Rules',
+  'Regulations',
   'Operations',
   'Restaurant decisions'
 ]
