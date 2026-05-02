@@ -83,10 +83,6 @@ section {
   position: relative;
   padding: 112px var(--page-pad);
   background: var(--white);
-  border-bottom: 1px solid var(--rule);
-}
-
-section:last-child {
   border-bottom: none;
 }
 
@@ -485,7 +481,7 @@ section:last-child {
   padding-top: 112px;
   padding-bottom: 128px;
   border-top: none;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: none;
 }
 
 .corridor-grid {
