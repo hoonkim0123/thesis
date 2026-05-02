@@ -36,12 +36,33 @@ let dots = []
 let t = 0
 let startTime = null
 
+const COLORS = {
+  bg: '#fafaf8',
+  gray: '110, 106, 100',
+  bandGray: '72, 68, 62',
+  red: '210, 82, 62',
+}
+
 const CLUSTERS = [
-  { nx: 0.62, ny: 0.36, r: 0.065 },
-  { nx: 0.70, ny: 0.48, r: 0.075 },
-  { nx: 0.58, ny: 0.64, r: 0.070 },
-  { nx: 0.76, ny: 0.72, r: 0.055 },
+  { nx: 0.64, ny: 0.42, r: 0.048 },
+  { nx: 0.71, ny: 0.54, r: 0.055 },
+  { nx: 0.61, ny: 0.69, r: 0.052 },
+  { nx: 0.78, ny: 0.77, r: 0.044 },
 ]
+
+const BANDS = [
+  { x: 0.58, tilt: -0.08, width: 0.046 },
+  { x: 0.68, tilt: 0.07, width: 0.052 },
+  { x: 0.76, tilt: -0.035, width: 0.044 },
+]
+
+function random(min, max) {
+  return min + Math.random() * (max - min)
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value))
+}
 
 function inCluster(nx, ny) {
   for (const c of CLUSTERS) {
@@ -57,13 +78,7 @@ function inCluster(nx, ny) {
 }
 
 function nearBand(nx, ny) {
-  const bands = [
-    { x: 0.58, tilt: -0.10, width: 0.055 },
-    { x: 0.68, tilt: 0.08, width: 0.060 },
-    { x: 0.76, tilt: -0.04, width: 0.050 },
-  ]
-
-  for (const b of bands) {
+  for (const b of BANDS) {
     const lineX = b.x + (ny - 0.5) * b.tilt
 
     if (Math.abs(nx - lineX) < b.width) {
@@ -74,48 +89,71 @@ function nearBand(nx, ny) {
   return false
 }
 
+function sampleBandPoint() {
+  const band = BANDS[Math.floor(Math.random() * BANDS.length)]
+  const ny = random(0.08, 0.94)
+  const nx = band.x + (ny - 0.5) * band.tilt + random(-band.width, band.width)
+
+  return {
+    nx: clamp(nx, 0.02, 0.98),
+    ny,
+  }
+}
+
+function sampleFreePoint() {
+  let nx = Math.random()
+  let ny = Math.random()
+
+  const inTextZone = nx < 0.52 && ny > 0.14 && ny < 0.86
+
+  if (inTextZone && Math.random() < 0.82) {
+    nx = random(0.52, 0.98)
+  }
+
+  return { nx, ny }
+}
+
 function initDots() {
   dots = []
 
-  const count = Math.floor((W * H) / 3000)
+  const count = Math.floor((W * H) / 2850)
 
   for (let i = 0; i < count; i += 1) {
-    let nx = Math.random()
-    let ny = Math.random()
-    
-    if (Math.random() < 0.48) {
-        const bandSeed = Math.random()
-            if (bandSeed < 0.34) nx = 0.58 + (ny - 0.5) * -0.10 + (Math.random() - 0.5) * 0.12
-            else if (bandSeed < 0.68) nx = 0.68 + (ny - 0.5) * 0.08 + (Math.random() - 0.5) * 0.13
-            else nx = 0.76 + (ny - 0.5) * -0.04 + (Math.random() - 0.5) * 0.11
-            
-            nx = Math.max(0.02, Math.min(0.98, nx))
-        }
-        const isRed = inCluster(nx, ny) && Math.random() < 0.46
-        const isBand = nearBand(nx, ny)
+    let point
+
+    if (Math.random() < 0.43) {
+      point = sampleBandPoint()
+    } else {
+      point = sampleFreePoint()
+    }
+
+    const nx = point.nx
+    const ny = point.ny
+
+    const isBand = nearBand(nx, ny)
+    const isRed = inCluster(nx, ny) && Math.random() < 0.26
 
     dots.push({
       x: nx * W,
       y: ny * H,
       nx,
       ny,
-      r: isRed
-        ? 5.0 + Math.random() * 2.2
-        : isBand
-            ? 3.0 + Math.random() * 2.2
-            : 2.2 + Math.random() * 1.8,
-        isRed,
-        isBand,
-        alpha: isRed
-        ? 0.82 + Math.random() * 0.16
-        : isBand
-    ? 0.34 + Math.random() * 0.20
-    : 0.20 + Math.random() * 0.16,
-      deathTime: isRed ? Infinity : 1.0 + Math.random() * 3.0,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
-      phase: Math.random() * Math.PI * 2,
+      isRed,
       isBand,
+      r: isRed
+        ? random(5.0, 7.0)
+        : isBand
+          ? random(2.8, 4.8)
+          : random(1.8, 3.4),
+      alpha: isRed
+        ? random(0.78, 0.94)
+        : isBand
+          ? random(0.22, 0.36)
+          : random(0.09, 0.21),
+      deathTime: isRed ? Infinity : random(1.2, 4.2),
+      vx: random(-0.075, 0.075),
+      vy: random(-0.075, 0.075),
+      phase: random(0, Math.PI * 2),
     })
   }
 }
@@ -137,6 +175,51 @@ function resize() {
   initDots()
 }
 
+function drawRedDot(d) {
+  const emergeStart = 0.8
+  const emergeEnd = 2.2
+  const baseOpacity = 0.08
+
+  let opacity
+
+  if (t < emergeStart) {
+    opacity = baseOpacity
+  } else if (t < emergeEnd) {
+    const p = (t - emergeStart) / (emergeEnd - emergeStart)
+    opacity = baseOpacity + (d.alpha - baseOpacity) * p
+  } else {
+    const pulse = Math.sin(t * 1.05 + d.phase) * 0.10 + 0.90
+    opacity = d.alpha * pulse
+  }
+
+  ctx.beginPath()
+  ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2)
+  ctx.fillStyle = `rgba(${COLORS.red}, ${opacity})`
+  ctx.fill()
+}
+
+function drawGrayDot(d) {
+  const fadeStart = d.deathTime
+  const fadeDur = 2.4
+  const restingOpacity = d.isBand ? 0.16 : 0.09
+
+  let opacity = d.alpha
+
+  if (t >= fadeStart && t < fadeStart + fadeDur) {
+    const p = (t - fadeStart) / fadeDur
+    opacity = d.alpha * (1 - p) + restingOpacity * p
+  } else if (t >= fadeStart + fadeDur) {
+    opacity = restingOpacity
+  }
+
+  ctx.beginPath()
+  ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2)
+  ctx.fillStyle = d.isBand
+    ? `rgba(${COLORS.bandGray}, ${opacity})`
+    : `rgba(${COLORS.gray}, ${opacity})`
+  ctx.fill()
+}
+
 function draw(ts) {
   if (!ctx) return
 
@@ -147,55 +230,22 @@ function draw(ts) {
   t = (ts - startTime) / 1000
 
   ctx.clearRect(0, 0, W, H)
-  ctx.fillStyle = '#fafaf8'
+  ctx.fillStyle = COLORS.bg
   ctx.fillRect(0, 0, W, H)
 
   for (const d of dots) {
     d.x += d.vx
     d.y += d.vy
 
-    if (d.x < -20) d.x = W + 20
-    if (d.x > W + 20) d.x = -20
-    if (d.y < -20) d.y = H + 20
-    if (d.y > H + 20) d.y = -20
+    if (d.x < -30) d.x = W + 30
+    if (d.x > W + 30) d.x = -30
+    if (d.y < -30) d.y = H + 30
+    if (d.y > H + 30) d.y = -30
 
     if (d.isRed) {
-      const emergeStart = 1.0
-      const emergeEnd = 2.4
-
-      let opacity = 0
-
-      if (t < emergeStart) {
-        opacity = 0.10
-      } else if (t < emergeEnd) {
-        const p = (t - emergeStart) / (emergeEnd - emergeStart)
-        opacity = d.alpha * p
-      } else {
-        const pulse = Math.sin(t * 1.15 + d.phase) * 0.18 + 0.90
-        opacity = d.alpha * pulse
-      }
-
-      ctx.beginPath()
-      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(210, 82, 62, ${opacity})`
-      ctx.fill()
+      drawRedDot(d)
     } else {
-      const fadeStart = d.deathTime
-      const fadeDur = 1.2
-
-      let opacity = d.alpha
-
-      if (t >= fadeStart && t < fadeStart + fadeDur) {
-        const p = (t - fadeStart) / fadeDur
-        opacity = d.alpha * (1 - p) + 0.035 * p
-      } else if (t >= fadeStart + fadeDur) {
-        opacity = 0.13
-      }
-
-      ctx.beginPath()
-      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(95, 91, 85, ${opacity})`
-      ctx.fill()
+      drawGrayDot(d)
     }
   }
 
@@ -243,10 +293,10 @@ onBeforeUnmount(() => {
   pointer-events: none;
   background:
     radial-gradient(
-      circle at 32% 55%,
-      rgba(250, 250, 248, 0.68) 0%,
-      rgba(250, 250, 248, 0.50) 28%,
-      rgba(250, 250, 248, 0.24) 58%,
+      circle at 30% 54%,
+      rgba(250, 250, 248, 0.80) 0%,
+      rgba(250, 250, 248, 0.66) 24%,
+      rgba(250, 250, 248, 0.30) 52%,
       rgba(250, 250, 248, 0.06) 100%
     );
 }
@@ -266,7 +316,7 @@ onBeforeUnmount(() => {
 .heroInner {
   width: min(1080px, calc(100% - 120px));
   margin: 0 auto;
-  transform: translateY(-4vh);
+  transform: translateY(-2vh);
 }
 
 .kicker {
@@ -277,7 +327,7 @@ onBeforeUnmount(() => {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #9d968e;
-  margin-bottom: 34px;
+  margin-bottom: 36px;
   opacity: 0;
   animation: fadeUp 0.6s ease forwards;
   animation-delay: 0.2s;
@@ -323,7 +373,7 @@ onBeforeUnmount(() => {
 .dek {
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: clamp(18px, 1.7vw, 24px);
-  line-height: 1.45;
+  line-height: 1.42;
   margin: 0;
   opacity: 0;
 }
@@ -336,9 +386,9 @@ onBeforeUnmount(() => {
 }
 
 .dek2 {
-  color: #878078;
+  color: #746f69;
   font-weight: 400;
-  margin-top: 8px;
+  margin-top: 7px;
   animation: fadeUp 0.6s ease forwards;
   animation-delay: 1.08s;
 }
@@ -362,7 +412,7 @@ onBeforeUnmount(() => {
 
   .heroInner {
     width: calc(100% - 56px);
-    transform: translateY(-2vh);
+    transform: translateY(-1vh);
   }
 
   .kicker {
