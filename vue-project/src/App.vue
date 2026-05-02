@@ -50,17 +50,25 @@ S8: Street level ending
     <LandingHero />
 
     <section id="s1b">
-      <div class="w">
-        <p class="body-l fade">
-          Outdoor dining was not simply accepted or rejected. It produced both public value and public conflict.
-        </p>
+      <div class="public-wrap">
+        <div class="public-intro fade">
+          <div class="s-num">PUBLIC COMMENTS</div>
+
+          <h1 class="public-hed">
+            Outdoor dining drew support and pushback.
+          </h1>
+
+          <p class="public-dek">
+            Some saw public value. Others saw inconvenience.
+          </p>
+        </div>
 
         <div class="fade">
           <PublicVoices />
         </div>
 
-        <p class="body-l fade">
-          But despite this, most of it is now gone. What remains is not evenly distributed.
+        <p class="public-bridge fade">
+          But most of that presence is now gone.
         </p>
       </div>
     </section>

@@ -274,8 +274,23 @@ onBeforeUnmount(() => {
   width: 100%;
   min-height: 100svh;
   background: #fafaf8;
-  border-bottom: 1px solid #e6e3de;
   overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 250, 248, 0),
+    #ffffff
+  );
 }
 
 .heroCanvas {

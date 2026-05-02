@@ -15,7 +15,7 @@ const SUPPORT = [
   {
     label: 'Public life',
     count: 143,
-    quote: '"It has given NYC a much more welcoming air — people laughing and talking where cars used to park."',
+    quote: '"It has given NYC a much more welcoming air. People laughing and talking where cars used to park."',
   },
   {
     label: 'Outdoor access',
@@ -38,17 +38,17 @@ const OPPOSITION = [
   {
     label: 'Sidewalk obstruction',
     count: 208,
-    quote: '"Sidewalk blocked, bike lane conflicts, ADA compliance issues — the clearpath is simply not enough."',
+    quote: '"Sidewalk blocked, bike lane conflicts, ADA compliance issues. The clear path is simply not enough."',
   },
   {
     label: 'Noise',
     count: 167,
-    quote: '"Constant noise, crowds, and less livable streets for residents — a beer garden outside my window until midnight."',
+    quote: '"Constant noise, crowds, and less livable streets for residents. A beer garden outside my window until midnight."',
   },
   {
     label: 'Traffic safety',
     count: 150,
-    quote: '"Emergency vehicles cant navigate streets blocked by sidewalk dining structures this puts lives at risk."',
+    quote: '"Emergency vehicles cannot navigate streets blocked by dining structures. This puts lives at risk."',
   },
   {
     label: 'Fees and fairness',
@@ -58,50 +58,48 @@ const OPPOSITION = [
 ]
 
 const MAX_COUNT = 260
-const activeQuote = ref('Hover a category to read a representative comment.')
-const activeType = ref(null)
-const activeCategory = ref(null)
 
-function hover(item, type) {
+const activeQuote = ref(null)
+const activeCategory = ref(null)
+const activeLabel = ref(null)
+
+function hover(item) {
   activeQuote.value = item.quote
-  activeType.value = type
   activeCategory.value = item.label.toUpperCase()
+  activeLabel.value = item.label
 }
 
 function leave() {
-  activeQuote.value = 'Hover a category to read a representative comment.'
-  activeType.value = null
+  activeQuote.value = null
   activeCategory.value = null
+  activeLabel.value = null
 }
 
-// animate bars on mount
 const mounted = ref(false)
+
 onMounted(() => {
-  setTimeout(() => { mounted.value = true }, 100)
+  setTimeout(() => {
+    mounted.value = true
+  }, 100)
 })
 </script>
 
 <template>
   <div class="voices-wrap">
-
-    <div class="voices-header">
-      <div class="voices-label">Public Responses to Outdoor Dining</div>
-      <div class="voices-description">
-        <p>Public comments reveal both the value outdoor dining created and the friction it introduced.</p>
+    <div class="quote-panel" :class="{ 'quote-panel--active': activeQuote }">
+      <div class="quote-label">
+        {{ activeCategory || 'REPRESENTATIVE COMMENT' }}
       </div>
-      <div class="voices-note">
-        <div>Source: NYC DOT Dining Out NYC rulemaking public comments</div>
-        <div>Categories based on keyword-assisted coding of 445 readable comments.</div>
-        <div>Counts reflect coded theme mentions; one comment may include more than one theme.</div>
+
+      <div class="quote-text" :class="{ 'quote-text--idle': !activeQuote }">
+        {{ activeQuote || 'Comments reveal two different ideas of public space.' }}
       </div>
     </div>
 
     <div class="voices-grid">
-
-      <!-- Support -->
       <div class="voices-col">
-        <div class="col-header col-header--support">
-          <span class="col-title">Why outdoor dining should stay</span>
+        <div class="col-header">
+          <span class="col-title">What people wanted to keep</span>
         </div>
 
         <div class="bar-list">
@@ -109,30 +107,27 @@ onMounted(() => {
             v-for="item in SUPPORT"
             :key="item.label"
             class="bar-row"
-            @mouseenter="hover(item, 'support')"
+            :class="{ 'is-active': activeLabel === item.label }"
+            @mouseenter="hover(item)"
             @mouseleave="leave"
           >
             <div class="bar-label">{{ item.label }}</div>
+
             <div class="bar-track">
               <div
-                class="bar-fill bar-fill--support"
+                class="bar-fill"
                 :style="{ width: mounted ? (item.count / MAX_COUNT * 100) + '%' : '0%' }"
               ></div>
             </div>
+
             <div class="bar-count">{{ item.count }}</div>
           </div>
         </div>
       </div>
 
-      <!-- Divider -->
-      <div class="voices-divider">
-        <div class="divider-line"></div>
-      </div>
-
-      <!-- Opposition -->
       <div class="voices-col">
-        <div class="col-header col-header--oppose">
-          <span class="col-title">Why outdoor dining created friction</span>
+        <div class="col-header">
+          <span class="col-title">What people pushed back against</span>
         </div>
 
         <div class="bar-list">
@@ -140,97 +135,86 @@ onMounted(() => {
             v-for="item in OPPOSITION"
             :key="item.label"
             class="bar-row"
-            @mouseenter="hover(item, 'oppose')"
+            :class="{ 'is-active': activeLabel === item.label }"
+            @mouseenter="hover(item)"
             @mouseleave="leave"
           >
             <div class="bar-label">{{ item.label }}</div>
+
             <div class="bar-track">
               <div
-                class="bar-fill bar-fill--oppose"
+                class="bar-fill"
                 :style="{ width: mounted ? (item.count / MAX_COUNT * 100) + '%' : '0%' }"
               ></div>
             </div>
+
             <div class="bar-count">{{ item.count }}</div>
           </div>
         </div>
       </div>
-
     </div>
-
-    <!-- Quote panel -->
-    <div class="quote-panel" :class="{ 'quote-panel--oppose': activeType === 'oppose' }">
-      <div class="quote-category" v-if="activeType">{{ activeCategory }}</div>
-      <div class="quote-mark" v-if="activeType">"</div>
-      <div class="quote-text" :class="{ 'quote-text--placeholder': !activeType }">
-        {{ activeQuote }}
-      </div>
-    </div>
-
   </div>
 </template>
 
 <style scoped>
 .voices-wrap {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
-.voices-header {
-  margin-bottom: 28px;
+.quote-panel {
+  margin: 0 0 28px;
+  padding: 22px 26px;
+  min-height: 92px;
+  background: var(--off);
+  border: 1px solid var(--rule);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
-.voices-label {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
+.quote-panel--active {
+  background: var(--accent-pale);
+  border-color: var(--accent-soft);
 }
 
-.voices-description {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 14px;
-  color: var(--ink);
-  line-height: 1.6;
-  margin-bottom: 16px;
-  max-width: 600px;
-}
-
-.voices-description p {
-  margin: 0;
-}
-
-.voices-note {
+.quote-label {
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
   color: var(--ghost);
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+  margin-bottom: 9px;
+  line-height: 1;
 }
 
-/* grid */
+.quote-panel--active .quote-label {
+  color: var(--accent);
+}
+
+.quote-text {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  font-style: italic;
+  max-width: 860px;
+}
+
+.quote-text--idle {
+  font-style: normal;
+  color: var(--muted);
+}
+
 .voices-grid {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 0 48px;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
   align-items: start;
 }
 
-.voices-divider {
-  display: flex;
-  justify-content: center;
-}
-
-.divider-line {
-  display: none;
-}
-
-/* column headers */
 .col-header {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
   padding-bottom: 12px;
   border-bottom: 2px solid var(--ink);
   margin-bottom: 4px;
@@ -238,25 +222,12 @@ onMounted(() => {
 
 .col-title {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.01em;
 }
 
-.col-header--oppose .col-title {
-  color: var(--ink);
-}
-
-.col-desc {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  color: var(--ghost);
-  letter-spacing: 0.02em;
-  display: none;
-}
-
-/* bar rows */
 .bar-list {
   display: flex;
   flex-direction: column;
@@ -264,133 +235,83 @@ onMounted(() => {
 
 .bar-row {
   display: grid;
-  grid-template-columns: 140px 1fr 36px;
+  grid-template-columns: 150px 1fr 38px;
   align-items: center;
-  gap: 10px;
-  padding: 11px 6px;
+  gap: 12px;
+  padding: 12px 8px;
   border-bottom: 1px solid var(--rule);
   cursor: default;
-  transition: background 0.1s;
+  transition: background 0.12s ease;
 }
 
-.bar-row:hover {
-  background: var(--off);
+.bar-row:hover,
+.bar-row.is-active {
+  background: var(--accent-pale);
 }
 
 .bar-label {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.3;
+  transition: color 0.12s ease;
 }
 
-.bar-row:hover .bar-label {
-  color: var(--ink);
+.bar-count {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
+  transition: color 0.12s ease;
 }
 
 .bar-track {
   height: 4px;
-  background: var(--rule);
+  background: var(--accent-soft);
   border-radius: 2px;
   overflow: hidden;
+  transition: background 0.12s ease;
 }
 
 .bar-fill {
   height: 100%;
   border-radius: 2px;
-  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
-  background: var(--data-historic);
-}
-
-.bar-fill--support {
-  background: var(--data-historic);
-}
-
-.bar-fill--oppose {
-  background: var(--data-historic);
-}
-
-.bar-row:hover .bar-fill--support,
-.bar-row:hover .bar-fill--oppose {
   background: var(--accent);
+  transition:
+    width 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.12s ease;
 }
 
-.bar-pct {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  color: var(--ghost);
-  text-align: right;
+.bar-row:hover .bar-label,
+.bar-row:hover .bar-count,
+.bar-row.is-active .bar-label,
+.bar-row.is-active .bar-count {
+  color: var(--accent-dark);
 }
 
-.bar-count {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  color: var(--ghost);
-  text-align: right;
+.bar-row:hover .bar-track,
+.bar-row.is-active .bar-track {
+  background: #ead0ca;
 }
 
-/* quote panel */
-.quote-panel {
-  margin-top: 28px;
-  padding: 18px 20px;
-  background: var(--off);
-  border: 1px solid var(--rule);
-  min-height: 88px;
-}
-
-.quote-category {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ghost);
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
-.quote-mark {
-  font-family: "EB Garamond", serif;
-  font-size: 32px;
-  color: var(--ghost);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.quote-text {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 14px;
-  color: var(--ink);
-  line-height: 1.6;
-  margin-bottom: 8px;
-  font-style: italic;
-}
-
-.quote-text--placeholder {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 13px;
-  color: var(--muted);
-  font-style: normal;
-  letter-spacing: 0.03em;
-  padding-top: 16px;
-  text-align: left;
-}
-
-.quote-src {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  color: var(--ghost);
-  letter-spacing: 0.04em;
+.bar-row:hover .bar-fill,
+.bar-row.is-active .bar-fill {
+  background: var(--accent-dark);
 }
 
 @media (max-width: 760px) {
   .voices-grid {
     grid-template-columns: 1fr;
-    gap: 32px 0;
+    gap: 40px;
   }
-  .voices-divider { display: none; }
+
   .bar-row {
-    grid-template-columns: 120px 1fr 32px;
+    grid-template-columns: 132px 1fr 34px;
+  }
+
+  .quote-panel {
+    padding: 18px 20px;
+    margin: 0 0 26px;
   }
 }
 </style>
