@@ -68,7 +68,7 @@ S8: Street level ending
         </div>
 
         <p class="public-bridge fade">
-          But most of that presence is now gone.
+          But most of that presence has faded from view.
         </p>
       </div>
     </section>
@@ -107,7 +107,7 @@ S8: Street level ending
 
           <p class="body-l fade">
             Outdoor dining declined sharply after the pandemic emergency ended.
-            What remains is part of a smaller permanent program with different rules, costs, and geography.
+            The decline explains why outdoor dining feels less visible. But it does not explain why some places still have it.
           </p>
         </div>
 
@@ -135,15 +135,14 @@ S8: Street level ending
       <div class="w">
         <div class="s-num fade">NOT COMPLETELY GONE</div>
 
-        <h1 class="hed fade">But 318 locations are still there.<br>So where are they?</h1>
+        <h1 class="hed fade">318 locations still remain.<br>But they are not evenly visible.</h1>
 
         <p class="body-l fade">
-          The remaining locations did not stay everywhere. They concentrated.
-          Some streets retained visible clusters. Most streets retained little or nothing.
+          The remaining locations did not stay everywhere. Some streets still carry visible clusters. Most streets carry little or nothing.
         </p>
 
         <p class="body-l fade">
-          The question is not only how many remain. It is where they remain.
+          To understand why outdoor dining faded from view, I looked at where the remaining locations repeat.
         </p>
       </div>
     </section>
@@ -151,15 +150,17 @@ S8: Street level ending
     <section id="s4" class="section-corridor">
       <div class="corridor-grid fade">
         <div class="corridor-copy">
-          <div class="s-num fade">WHERE IT STILL APPEARS</div>
+          <div class="s-num fade">WHERE REMAINING LOCATIONS REPEAT</div>
 
-          <h1 class="hed">A few streets stand out.</h1>
+          <h1 class="hed">A few streets carry what remains.</h1>
 
           <p class="body-l">
-            Most locations are scattered. A smaller set repeats along the same corridors.
+            Most remaining locations are scattered, but some streets still hold visible clusters.
           </p>
 
-          <CorridorStreetMap @streetSelected="handleStreetSelected" />
+          <div class="corridor-street-list-wrap">
+            <CorridorStreetMap @streetSelected="handleStreetSelected" />
+          </div>
         </div>
 
         <div class="corridor-map">
@@ -224,14 +225,14 @@ S8: Street level ending
       <div class="w">
         <div class="s-num fade">UNEVENLY DISTRIBUTED</div>
 
-        <h1 class="hed fade">It did not disappear.<br>It became uneven.</h1>
+        <h1 class="hed fade">It disappeared unevenly.</h1>
 
         <p class="body-l fade">
-          Outdoor dining no longer feels like a normal part of most streets, because most of it is no longer visible.
+          Outdoor dining did not vanish from New York. But it disappeared from many everyday streets and remained concentrated in a smaller set of corridors.
         </p>
 
         <p class="body-l fade">
-          A smaller set of streets and neighborhoods now carry most of what remains. Elsewhere, it becomes sparse or disappears entirely.
+          What remains is no longer everywhere. It is concentrated in a few corridors.
         </p>
       </div>
     </section>
@@ -258,7 +259,7 @@ S8: Street level ending
           </p>
 
           <p class="body-l">
-            It disappeared from the everyday map of the city.
+            It disappeared from most streets and remained concentrated in a smaller set of corridors.
           </p>
 
           <p class="body-l s8-last">

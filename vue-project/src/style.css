@@ -477,6 +477,21 @@ section {
 /* ======================== */
 /* S4: CORRIDOR SECTION     */
 /* ======================== */
+
+.section-corridor .hed {
+  font-size: clamp(44px, 4.6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin-bottom: 28px;
+  max-width: 580px;
+}
+
+.section-corridor .body-l {
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
 .section-corridor {
   padding-top: 112px;
   padding-bottom: 128px;
@@ -486,13 +501,17 @@ section {
 
 .corridor-grid {
   display: grid;
-  grid-template-columns: minmax(360px, 0.95fr) minmax(560px, 1.25fr);
-  gap: clamp(56px, 6vw, 96px);
+  grid-template-columns: minmax(340px, 0.85fr) minmax(600px, 1.35fr);
+  gap: clamp(64px, 7vw, 112px);
   align-items: start;
 }
 
 .corridor-copy {
   width: 100%;
+}
+
+.corridor-street-list-wrap {
+  margin-top: 16px;
 }
 
 .corridor-map {
@@ -501,6 +520,7 @@ section {
   background: transparent;
   padding: 0;
   min-width: 0;
+  margin-top: 56px;
 }
 
 .corridor-map > * {
@@ -739,6 +759,10 @@ section {
 @media (max-width: 900px) {
   :root {
     --page-pad: 28px;
+  }
+
+  .corridor-map {
+    margin-top: 0;
   }
 
   section {

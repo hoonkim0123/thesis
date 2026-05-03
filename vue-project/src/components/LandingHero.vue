@@ -9,14 +9,14 @@
         <span class="kicker">New York Outdoor Dining</span>
 
         <h1 class="headline">
-          <span class="line line1">Why does</span>
+          <span class="line line1">Why did</span>
           <span class="line line2">outdoor dining</span>
-          <span class="line line3">feel gone?</span>
+          <span class="line line3">fade from view?</span>
         </h1>
 
         <div class="dekBlock">
           <p class="dek dek1">What remains is harder to see.</p>
-          <p class="dek dek2">It did not disappear. It became uneven.</p>
+          <p class="dek dek2">Most of it disappeared. What stayed became uneven.</p>
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@ function initDots() {
     const ny = point.ny
 
     const isBand = nearBand(nx, ny)
-    const isRed = inCluster(nx, ny) && Math.random() < 0.26
+    const isRed = inCluster(nx, ny) && Math.random() < 0.38
 
     dots.push({
       x: nx * W,
@@ -141,12 +141,12 @@ function initDots() {
       isRed,
       isBand,
       r: isRed
-        ? random(5.0, 7.0)
+        ? random(5.8, 8.2)
         : isBand
           ? random(2.8, 4.8)
           : random(1.8, 3.4),
       alpha: isRed
-        ? random(0.78, 0.94)
+        ? random(0.86, 1.0)
         : isBand
           ? random(0.22, 0.36)
           : random(0.09, 0.21),

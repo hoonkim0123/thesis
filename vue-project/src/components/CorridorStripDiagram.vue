@@ -12,23 +12,31 @@ const rawFeatures = ref([])
 const isLoading = ref(true)
 const loadError = ref(false)
 
-// ── Fixed: taller viewBox for a more substantial diagram ──
 const SVG_W = 620
-const SVG_H = 560
+const SVG_H = 600
 
-const CHART_LEFT = 72
-const CHART_RIGHT = 580
-const CHART_TOP = 60
-const CHART_BOTTOM = 490
+const CHART_LEFT = 58
+const CHART_RIGHT = 608
+const CHART_TOP = 95
+const CHART_BOTTOM = 525
 const CHART_H = CHART_BOTTOM - CHART_TOP
 
 const CENTER_X = (CHART_LEFT + CHART_RIGHT) / 2
-const ROADWAY_W = 132
-const ROADWAY_X = CENTER_X - ROADWAY_W / 2
 
-const SIDEWALK_W = 144
-const LEFT_SIDEWALK_X = ROADWAY_X - SIDEWALK_W
-const RIGHT_SIDEWALK_X = ROADWAY_X + ROADWAY_W
+const STREET_W = 240
+const STREET_X = CENTER_X - STREET_W / 2
+
+// narrower sidewalks, wider parking, slimmer travel lanes
+const SIDEWALK_W = 92
+const PARKING_W = 56
+const TRAVEL_W = 64
+
+const LEFT_SIDEWALK_X = STREET_X - SIDEWALK_W
+const LEFT_PARKING_X = STREET_X
+const LEFT_TRAVEL_X = LEFT_PARKING_X + PARKING_W
+const RIGHT_TRAVEL_X = LEFT_TRAVEL_X + TRAVEL_W
+const RIGHT_PARKING_X = RIGHT_TRAVEL_X + TRAVEL_W
+const RIGHT_SIDEWALK_X = RIGHT_PARKING_X + PARKING_W
 
 const CORRIDORS = [
   {
@@ -105,24 +113,30 @@ function getLicenseType(feature) {
 
 function getDiningZone(type) {
   const value = String(type || '').toLowerCase()
+
   if (value.includes('sidewalk')) return 'sidewalk'
   if (value.includes('roadway')) return 'roadway'
+
   return 'unknown'
 }
 
 function getDotClass(type) {
   const zone = getDiningZone(type)
+
   if (zone === 'sidewalk') return 'cm-dot cm-dot-sidewalk'
   if (zone === 'roadway') return 'cm-dot cm-dot-roadway'
+
   return 'cm-dot cm-dot-unknown'
 }
 
 const activeMeta = computed(() => {
   const target = canonicalize(props.activeCorridor)
+
   return (
     CORRIDORS.find((corridor) => {
       const nameMatch = canonicalize(corridor.name) === target
       const keyMatch = corridor.keys.some((key) => target.includes(canonicalize(key)))
+
       return nameMatch || keyMatch
     }) || CORRIDORS[0]
   )
@@ -133,7 +147,11 @@ onMounted(async () => {
     const BASE = import.meta.env.BASE_URL
     const url = `${BASE}data/corridor_points_typed.geojson`
     const res = await fetch(url)
-    if (!res.ok) throw new Error(`Could not load corridor_points_typed.geojson: ${res.status}`)
+
+    if (!res.ok) {
+      throw new Error(`Could not load corridor_points_typed.geojson: ${res.status}`)
+    }
+
     const geojson = await res.json()
     rawFeatures.value = geojson.features || []
   } catch (error) {
@@ -146,21 +164,30 @@ onMounted(async () => {
 
 const selectedFeatures = computed(() => {
   const meta = activeMeta.value
+
   const filtered = rawFeatures.value.filter((feature) => {
     const label = getFeatureLabel(feature)
     const street = getStreetFromLabel(label)
     const p = feature.properties || {}
+
     const candidates = [
-      label, street,
-      p.corridor_label_clean, p.corridor_label,
-      p.street_name, p.street_clean,
-      p.full_street_name, p.corridor_name,
+      label,
+      street,
+      p.corridor_label_clean,
+      p.corridor_label,
+      p.street_name,
+      p.street_clean,
+      p.full_street_name,
+      p.corridor_name,
     ].filter(Boolean)
+
     return candidates.some((candidate) => {
       const candidateText = canonicalize(candidate)
+
       return meta.keys.some((key) => candidateText.includes(canonicalize(key)))
     })
   })
+
   return filtered.slice(0, meta.count)
 })
 
@@ -171,9 +198,13 @@ const stripDots = computed(() => {
     .map((feature, index) => {
       const { lat, lng } = getLngLat(feature)
       const licenseType = getLicenseType(feature)
+
       return {
-        id: index,
-        lat, lng, feature, licenseType,
+        id: `${activeMeta.value.name}-${index}`,
+        lat,
+        lng,
+        feature,
+        licenseType,
         zone: getDiningZone(licenseType),
       }
     })
@@ -198,7 +229,12 @@ const stripDots = computed(() => {
     .map((point) => {
       const t = (maxLat - point.lat) / latRange
       const side = point.lng < medianLng ? -1 : 1
-      return { ...point, side, y: CHART_TOP + t * CHART_H }
+
+      return {
+        ...point,
+        side,
+        y: CHART_TOP + t * CHART_H,
+      }
     })
     .sort((a, b) => a.y - b.y)
 
@@ -207,6 +243,7 @@ const stripDots = computed(() => {
 
   mapped.forEach((point) => {
     const last = rows[rows.length - 1]
+
     if (last && Math.abs(last.y - point.y) < threshold) {
       last.items.push(point)
       last.y = (last.y * (last.items.length - 1) + point.y) / last.items.length
@@ -219,8 +256,10 @@ const stripDots = computed(() => {
 
   rows.forEach((row) => {
     const laneCount = {
-      sidewalkLeft: 0, sidewalkRight: 0,
-      roadwayLeft: 0, roadwayRight: 0,
+      sidewalkLeft: 0,
+      sidewalkRight: 0,
+      roadwayLeft: 0,
+      roadwayRight: 0,
       unknown: 0,
     }
 
@@ -231,18 +270,20 @@ const stripDots = computed(() => {
       if (item.zone === 'sidewalk') {
         if (item.side < 0) {
           lane = laneCount.sidewalkLeft++
-          baseOffset = -128 - lane * 13
+          baseOffset = -146 - lane * 10
         } else {
           lane = laneCount.sidewalkRight++
-          baseOffset = 128 + lane * 13
+          baseOffset = 146 + lane * 10
         }
       } else if (item.zone === 'roadway') {
+        // Roadway dining is shown as curbside / parking-lane space,
+        // not as occupying the middle travel lanes.
         if (item.side < 0) {
           lane = laneCount.roadwayLeft++
-          baseOffset = -38 - lane * 11
+          baseOffset = -78 - lane * 9
         } else {
           lane = laneCount.roadwayRight++
-          baseOffset = 38 + lane * 11
+          baseOffset = 78 + lane * 9
         }
       } else {
         lane = laneCount.unknown++
@@ -264,6 +305,7 @@ const stripDots = computed(() => {
 const guideLines = computed(() => {
   const labels = activeMeta.value.guideLabels
   const positions = [0.1, 0.36, 0.64, 0.9]
+
   return labels.map((label, index) => ({
     label,
     y: CHART_TOP + positions[index] * CHART_H,
@@ -277,15 +319,11 @@ const guideLines = computed(() => {
     <div v-else-if="loadError" class="cm-state">Could not load corridor data.</div>
 
     <div v-else class="cm-inner">
-      <!-- Corridor name header -->
-      <div class="cm-header">
-      </div>
-
       <svg
         class="cm-svg"
         :viewBox="`0 0 ${SVG_W} ${SVG_H}`"
         role="img"
-        aria-label="Street section diagram showing roadway and sidewalk outdoor dining locations"
+        aria-label="Street section diagram showing sidewalk, parking lane, travel lane, and outdoor dining locations"
       >
         <!-- Guide lines -->
         <g>
@@ -298,12 +336,13 @@ const guideLines = computed(() => {
             :y2="guide.y"
             class="cm-guide"
           />
+
           <text
             v-for="guide in guideLines"
             :key="'label-' + guide.label"
-            :x="CHART_LEFT - 10"
+            :x="CHART_LEFT - 8"
             :y="guide.y + 4"
-            text-anchor="end"
+            text-anchor="start"
             class="cm-guide-label"
           >
             {{ guide.label }}
@@ -312,30 +351,147 @@ const guideLines = computed(() => {
 
         <!-- Street cross-section -->
         <g>
+          <!-- Full street allocation -->
           <rect
-            :x="ROADWAY_X"
-            :y="CHART_TOP - 18"
-            :width="ROADWAY_W"
-            :height="CHART_H + 36"
-            rx="0"
-            class="cm-roadway"
+            :x="STREET_X"
+            :y="CHART_TOP - 12"
+            :width="STREET_W"
+            :height="CHART_H + 24"
+            class="cm-street-base"
           />
-          <line :x1="ROADWAY_X" :x2="ROADWAY_X"
-            :y1="CHART_TOP - 10" :y2="CHART_BOTTOM + 10" class="cm-curb" />
-          <line :x1="ROADWAY_X + ROADWAY_W" :x2="ROADWAY_X + ROADWAY_W"
-            :y1="CHART_TOP - 10" :y2="CHART_BOTTOM + 10" class="cm-curb" />
-          <line :x1="CENTER_X" :x2="CENTER_X"
-            :y1="CHART_TOP - 10" :y2="CHART_BOTTOM + 10" class="cm-centerline" />
+
+          <!-- Parking lanes -->
+          <rect
+            :x="LEFT_PARKING_X"
+            :y="CHART_TOP - 12"
+            :width="PARKING_W"
+            :height="CHART_H + 24"
+            class="cm-parking"
+          />
+
+          <rect
+            :x="RIGHT_PARKING_X"
+            :y="CHART_TOP - 12"
+            :width="PARKING_W"
+            :height="CHART_H + 24"
+            class="cm-parking"
+          />
+
+          <!-- Travel lanes -->
+          <rect
+            :x="LEFT_TRAVEL_X"
+            :y="CHART_TOP - 12"
+            :width="TRAVEL_W"
+            :height="CHART_H + 24"
+            class="cm-travel"
+          />
+
+          <rect
+            :x="RIGHT_TRAVEL_X"
+            :y="CHART_TOP - 12"
+            :width="TRAVEL_W"
+            :height="CHART_H + 24"
+            class="cm-travel"
+          />
+
+          <!-- Curbs -->
+          <line
+            :x1="STREET_X"
+            :x2="STREET_X"
+            :y1="CHART_TOP - 10"
+            :y2="CHART_BOTTOM + 10"
+            class="cm-curb"
+          />
+
+          <line
+            :x1="STREET_X + STREET_W"
+            :x2="STREET_X + STREET_W"
+            :y1="CHART_TOP - 10"
+            :y2="CHART_BOTTOM + 10"
+            class="cm-curb"
+          />
+
+          <!-- Parking / travel separators -->
+          <line
+            :x1="LEFT_TRAVEL_X"
+            :x2="LEFT_TRAVEL_X"
+            :y1="CHART_TOP - 10"
+            :y2="CHART_BOTTOM + 10"
+            class="cm-lane-line"
+          />
+
+          <line
+            :x1="RIGHT_TRAVEL_X"
+            :x2="RIGHT_TRAVEL_X"
+            :y1="CHART_TOP - 10"
+            :y2="CHART_BOTTOM + 10"
+            class="cm-lane-line"
+          />
+
+          <line
+            :x1="RIGHT_PARKING_X"
+            :x2="RIGHT_PARKING_X"
+            :y1="CHART_TOP - 10"
+            :y2="CHART_BOTTOM + 10"
+            class="cm-lane-line"
+          />
+
+          <!-- Centerline between travel lanes -->
+          <line
+            :x1="CENTER_X"
+            :x2="CENTER_X"
+            :y1="CHART_TOP - 10"
+            :y2="CHART_BOTTOM + 10"
+            class="cm-centerline"
+          />
         </g>
 
         <!-- Zone labels -->
         <g>
-          <text :x="LEFT_SIDEWALK_X + SIDEWALK_W / 2" :y="CHART_TOP - 30"
-            text-anchor="middle" class="cm-zone-label">SIDEWALK</text>
-          <text :x="CENTER_X" :y="CHART_TOP - 30"
-            text-anchor="middle" class="cm-zone-label">ROADWAY</text>
-          <text :x="RIGHT_SIDEWALK_X + SIDEWALK_W / 2" :y="CHART_TOP - 30"
-            text-anchor="middle" class="cm-zone-label">SIDEWALK</text>
+          <text
+            :x="LEFT_SIDEWALK_X + SIDEWALK_W / 2"
+            :y="CHART_TOP - 22"
+            text-anchor="middle"
+            class="cm-zone-label"
+          >
+            SIDEWALK
+          </text>
+
+          <text
+            :x="LEFT_PARKING_X + PARKING_W / 2"
+            :y="CHART_TOP - 22"
+            text-anchor="middle"
+            class="cm-zone-label cm-zone-label-small"
+          >
+            PARKING
+          </text>
+
+          <text
+            :x="CENTER_X"
+            :y="CHART_TOP - 22"
+            text-anchor="middle"
+            class="cm-zone-label"
+          >
+            TRAVEL LANES
+          </text>
+
+          <text
+            :x="RIGHT_PARKING_X + PARKING_W / 2"
+            :y="CHART_TOP - 22"
+            text-anchor="middle"
+            class="cm-zone-label cm-zone-label-small"
+          >
+            PARKING
+          </text>
+
+          <text
+            :x="RIGHT_SIDEWALK_X + SIDEWALK_W / 2"
+            :y="CHART_TOP - 22"
+            text-anchor="middle"
+            class="cm-zone-label"
+          >
+            SIDEWALK
+          </text>
         </g>
 
         <!-- Dots -->
@@ -364,37 +520,6 @@ const guideLines = computed(() => {
   width: 100%;
 }
 
-/* Header above diagram */
-.cm-header {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.cm-corridor-name {
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--ink, #111);
-}
-
-.cm-corridor-area {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 11px;
-  color: var(--ghost, #aaa);
-}
-
-.cm-corridor-count {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--ink, #111);
-  margin-left: auto;
-}
-
-/* SVG fills its container — height determined by viewBox ratio */
 .cm-svg {
   width: 100%;
   height: auto;
@@ -414,31 +539,37 @@ const guideLines = computed(() => {
   fill: var(--ghost, #aaa);
 }
 
-.cm-roadway {
-  fill: #f0ede9;
-  opacity: 0.9;
+.cm-street-base {
+  fill: #f3f1ee;
+  opacity: 0.95;
+}
+
+.cm-parking {
+  fill: #ded8d1;
+  opacity: 0.92;
+}
+
+.cm-travel {
+  fill: #faf9f7;
+  opacity: 0.98;
 }
 
 .cm-curb {
-  stroke: #d1cbc4;
+  stroke: #cfc8c0;
   stroke-width: 1.2;
+}
+
+.cm-lane-line {
+  stroke: #ddd7d1;
+  stroke-width: 1;
+  stroke-dasharray: 4 7;
 }
 
 .cm-centerline {
-  stroke: #beb7af;
+  stroke: #bdb5ac;
   stroke-width: 1.2;
   stroke-dasharray: 6 7;
 }
-
-.cm-dot {
-  opacity: 0.94;
-  stroke: var(--white, #fff);
-  stroke-width: 1.4;
-}
-
-.cm-dot-roadway  { fill: var(--ink, #111111); }
-.cm-dot-sidewalk { fill: #6b665f; }
-.cm-dot-unknown  { fill: var(--ghost, #aaa); opacity: 0.7; }
 
 .cm-zone-label {
   font-family: var(--mono, "IBM Plex Mono", monospace);
@@ -447,21 +578,43 @@ const guideLines = computed(() => {
   fill: var(--ghost, #aaa);
 }
 
-/* Legend */
-.cm-legend {
-  display: flex;
-  gap: 20px;
-  margin-top: 12px;
-  flex-wrap: wrap;
+.cm-zone-label-small {
+  font-size: 8px;
+  letter-spacing: 0.06em;
 }
 
-.cm-leg-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  color: var(--muted, #666);
+.cm-dot {
+  opacity: 0.94;
+  stroke: var(--white, #fff);
+  stroke-width: 1.4;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dotIn 0.32s ease both;
+}
+
+@keyframes dotIn {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+
+  to {
+    opacity: 0.94;
+    transform: scale(1);
+  }
+}
+
+.cm-dot-roadway {
+  fill: var(--ink, #111111);
+}
+
+.cm-dot-sidewalk {
+  fill: #6b665f;
+}
+
+.cm-dot-unknown {
+  fill: var(--ghost, #aaa);
+  opacity: 0.7;
 }
 
 .cm-state {
