@@ -487,9 +487,10 @@ section {
 }
 
 .section-corridor .body-l {
-  max-width: 560px;
+  max-width: 520px;
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.62;
+  margin-bottom: 28px;
 }
 
 .section-corridor {
@@ -511,7 +512,7 @@ section {
 }
 
 .corridor-street-list-wrap {
-  margin-top: 16px;
+  margin-top: 0px;
 }
 
 .corridor-map {
@@ -520,11 +521,50 @@ section {
   background: transparent;
   padding: 0;
   min-width: 0;
-  margin-top: 56px;
+  margin-top: 40px;
 }
 
 .corridor-map > * {
   width: 100%;
+}
+
+/* ======================== */
+/* S5: CONTESTED SPACE      */
+/* ======================== */
+.section-conflict {
+  padding-top: 112px;
+  padding-bottom: 128px;
+  background: var(--white);
+}
+
+.conflict-wrap {
+  width: 100%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.conflict-intro {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+.conflict-intro .hed {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.conflict-intro .body-l {
+  max-width: 680px;
+}
+
+.conflict-note {
+  margin-top: 28px;
+  max-width: 680px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ghost);
 }
 
 /* ======================== */
@@ -818,6 +858,14 @@ section {
   .corridor-map > * {
     width: 100%;
     height: 100%;
+  }
+  .conflict-wrap {
+    width: 100%;
+  }
+
+  .section-conflict {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
   }
 
   .s8-locations {

@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import DeclineMap from './components/DeclineMap.vue'
-import ComplaintTypeChart from './components/ComplaintTypeChart.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
 import CorridorGuideMap from './components/CorridorGuideMap.vue'
@@ -9,6 +8,8 @@ import RemainingShareChart from './components/RemainingShareChart.vue'
 import ConstraintsSummary from './components/ConstraintsSummary.vue'
 import CorridorStripDiagram from './components/CorridorStripDiagram.vue'
 import LandingHero from './components/LandingHero.vue'
+import StreetConflictDiagram from './components/StreetConflictDiagram.vue'
+import ReportedConflictChart from './components/ReportedConflictChart.vue'
 
 const activeLayer = ref(null)
 const activeCorridor = ref('Amsterdam Avenue')
@@ -34,17 +35,6 @@ onMounted(() => {
 })
 </script>
 
-<!--
-S1: Questioning disappearance
-S2: Measuring the decline
-S3: Loss of citywide coverage
-S4: Street level repetition
-S5: Reported issues
-S6: Measurable local conditions
-S7: Rethinking urban presence
-S8: Street level ending
--->
-
 <template>
   <main>
     <LandingHero />
@@ -68,7 +58,7 @@ S8: Street level ending
         </div>
 
         <p class="public-bridge fade">
-          But most of that presence has faded from view.
+          But that presence did not last.
         </p>
       </div>
     </section>
@@ -107,7 +97,7 @@ S8: Street level ending
 
           <p class="body-l fade">
             Outdoor dining declined sharply after the pandemic emergency ended.
-            The decline explains why outdoor dining feels less visible. But it does not explain why some places still have it.
+            What remains is part of a smaller permanent program with different rules, costs, and geography.
           </p>
         </div>
 
@@ -135,10 +125,13 @@ S8: Street level ending
       <div class="w">
         <div class="s-num fade">NOT COMPLETELY GONE</div>
 
-        <h1 class="hed fade">318 locations still remain.<br>But they are not evenly visible.</h1>
+        <h1 class="hed fade">
+          318 locations still remain.<br>
+          But they are not evenly visible.
+        </h1>
 
         <p class="body-l fade">
-          The remaining locations did not stay everywhere. Some streets still carry visible clusters. Most streets carry little or nothing.
+          The decline was citywide, but the remainder is uneven. Some streets still carry visible clusters. Most streets carry little or nothing.
         </p>
 
         <p class="body-l fade">
@@ -155,7 +148,7 @@ S8: Street level ending
           <h1 class="hed">A few streets carry what remains.</h1>
 
           <p class="body-l">
-            Most remaining locations are scattered, but some streets still hold visible clusters.
+            Most remaining locations are scattered. But on some streets, they repeat enough to still feel present.
           </p>
 
           <div class="corridor-street-list-wrap">
@@ -169,27 +162,35 @@ S8: Street level ending
       </div>
     </section>
 
-    <section id="s5">
-      <div class="w">
-        <div class="s-num fade">REPORTED ISSUES</div>
+    <section id="s5" class="section-conflict">
+      <div class="conflict-wrap">
+        <div class="conflict-intro fade">
+          <div class="s-num">CONTESTED SPACE</div>
 
-        <h1 class="hed fade">Outdoor dining creates friction in street space.</h1>
+          <h1 class="hed">
+            The same street space became contested.
+          </h1>
 
-        <p class="body-l fade">
-          The same program does not fit every street in the same way. Some locations remain in the roadway. Others remain on the sidewalk.
-        </p>
+          <p class="body-l">
+            Outdoor dining changed how sidewalks, curbside parking lanes, and street edges were used.
+          </p>
 
-        <p class="body-l fade">
-          311 complaints show where that friction became visible, especially around blocked sidewalks, street access, and setup conditions.
-        </p>
-
-        <p class="body-l fade">
-          The chart does not explain every disappearance. It shows where outdoor dining became contested.
-        </p>
+          <p class="body-l">
+            In 311 complaints, that change appears as blocked movement, physical setup problems, and permit or status conflicts.
+          </p>
+        </div>
 
         <div class="fade">
-          <ComplaintTypeChart />
+          <StreetConflictDiagram />
         </div>
+
+        <div class="fade">
+          <ReportedConflictChart />
+        </div>
+
+        <p class="conflict-note fade">
+          These records show reported conflicts, not every cause of disappearance.
+        </p>
       </div>
     </section>
 
@@ -232,7 +233,7 @@ S8: Street level ending
         </p>
 
         <p class="body-l fade">
-          What remains is no longer everywhere. It is concentrated in a few corridors.
+          A smaller set of streets and neighborhoods now carry most of what remains. Elsewhere, it becomes sparse or disappears entirely.
         </p>
       </div>
     </section>
@@ -255,11 +256,11 @@ S8: Street level ending
       <div class="w">
         <div class="s8-closing fade">
           <p class="body-l">
-            Outdoor dining did not disappear from New York.
+            Outdoor dining disappeared from many everyday streets.
           </p>
 
           <p class="body-l">
-            It disappeared from most streets and remained concentrated in a smaller set of corridors.
+            But it still appears in specific places.
           </p>
 
           <p class="body-l s8-last">
