@@ -4,8 +4,6 @@ import DeclineMap from './components/DeclineMap.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
 import CorridorGuideMap from './components/CorridorGuideMap.vue'
-import RemainingShareChart from './components/RemainingShareChart.vue'
-import ConstraintsSummary from './components/ConstraintsSummary.vue'
 import CorridorStripDiagram from './components/CorridorStripDiagram.vue'
 import LandingHero from './components/LandingHero.vue'
 import StreetConflictDiagram from './components/StreetConflictDiagram.vue'
@@ -168,56 +166,61 @@ onMounted(() => {
           <div class="s-num">CONTESTED SPACE</div>
 
           <h1 class="hed">
-            The same street space became contested.
+            Outdoor dining turned street space into contested space.
           </h1>
 
           <p class="body-l">
-            Outdoor dining changed how sidewalks, curbside parking lanes, and street edges were used.
-          </p>
-
-          <p class="body-l">
-            In 311 complaints, that change appears as blocked movement, physical setup problems, and permit or status conflicts.
+            In 311 complaints, outdoor dining appears as conflict over shared street space: blocked movement, physical setup problems, and permit or status issues.
           </p>
         </div>
 
-        <div class="fade">
+        <div class="conflict-diagram-block fade">
           <StreetConflictDiagram />
         </div>
 
-        <div class="fade">
+        <div class="conflict-chart-block fade">
           <ReportedConflictChart />
         </div>
 
-        <p class="conflict-note fade">
-          These records show reported conflicts, not every cause of disappearance.
-        </p>
       </div>
     </section>
 
-    <section id="s6">
-      <div class="w">
-        <div class="s-num fade">LOCAL CONDITIONS</div>
+    <section id="s6" class="section-data-boundary">
+      <div class="w s6-inner">
+        <div class="s-num fade">WHAT THE DATA CAN SHOW</div>
 
-        <h1 class="hed fade">No single factor explains the pattern.</h1>
+        <h1 class="hed fade">
+          A pattern, not a <br>full explanation.
+        </h1>
 
-        <p class="body-l fade">
-          The four highlighted streets contain about one fifth of current Manhattan outdoor dining locations.
-        </p>
+        <div class="s6-body">
+          <p class="body-l fade">
+            This project can measure the decline, map current locations, and show where remaining outdoor dining repeats.
+          </p>
 
-        <div class="fade">
-          <RemainingShareChart />
+          <p class="body-l fade">
+            It can also show where public comments and 311 complaints made street conflict visible.
+          </p>
+
+          <p class="body-l fade">
+            But it cannot fully explain each restaurant decision, permit cost, seasonal choice, or block level constraint.
+          </p>
         </div>
 
-        <p class="body-l fade" style="margin-top: 32px;">
-          The pattern is shaped by measurable signals and contextual constraints: nearby activity, reported issues, restaurant activity, regulations, costs, and decisions.
-        </p>
+        <div class="s6-boundary fade">
+          <div class="s6-boundary-item">
+            <span class="s6-boundary-label">This project shows</span>
+            <p>decline, remaining locations, repeated streets, public responses, and reported conflicts</p>
+          </div>
 
-        <div class="fade">
-          <ConstraintsSummary />
+          <div class="s6-boundary-item">
+            <span class="s6-boundary-label">This project cannot prove</span>
+            <p>the full reason each restaurant stayed, removed, or did not renew outdoor dining</p>
+          </div>
         </div>
 
-        <p class="body-l fade s6-note">
-          The model only tests measurable signals. It does not capture every constraint.
+        <p class="s6-closing fade">
+          So the project focuses on the pattern left behind.
         </p>
       </div>
     </section>
@@ -238,36 +241,19 @@ onMounted(() => {
       </div>
     </section>
 
-    <section id="s8">
-      <div class="w">
-        <div class="s-num fade">FRAGMENTS ON THE STREET</div>
+    <section id="s8" class="section-street-level">
+      <div class="w s8-head">
+        <div class="s-num fade">STREET LEVEL</div>
 
-        <h1 class="hed fade">Where it still feels present.</h1>
+        <h1 class="hed fade">What remains appears street by street.</h1>
 
         <p class="body-l fade">
-          Outdoor dining did not disappear everywhere. It became concentrated in a few corridors where it still feels visible, active, and part of the street.
+          Outdoor dining is still visible, but not everywhere.
         </p>
       </div>
 
-      <div class="s8-wide fade">
+      <div class="w-wide fade">
         <CorridorGuideMap />
-      </div>
-
-      <div class="w">
-        <div class="s8-closing fade">
-          <p class="body-l">
-            Outdoor dining disappeared from many everyday streets.
-          </p>
-
-          <p class="body-l">
-            But it still appears in specific places.
-          </p>
-
-          <p class="body-l s8-last">
-            What remains is no longer everywhere.<br>
-            It is somewhere.
-          </p>
-        </div>
       </div>
     </section>
   </main>

@@ -46,24 +46,7 @@ onMounted(() => {
 
 <template>
   <div class="rcc-wrap">
-    <div class="rcc-header">
-      <div class="rcc-kicker">311 complaint themes</div>
-
-      <h2 class="rcc-title">
-        The largest reported issue was blocked sidewalk access.
-      </h2>
-    </div>
-
-    <div class="rcc-lead">
-      <div class="rcc-lead-number">2,754</div>
-
-      <div class="rcc-lead-copy">
-        <div class="rcc-lead-label">Sidewalk blocked reports</div>
-        <p>
-          Complaints most often described outdoor dining as a problem for movement through shared space.
-        </p>
-      </div>
-    </div>
+    <div class="rcc-kicker">311 complaint themes</div>
 
     <div class="rcc-grid">
       <article
@@ -111,67 +94,13 @@ onMounted(() => {
   margin: 44px 0 0;
 }
 
-.rcc-header {
-  margin-bottom: 22px;
-}
-
 .rcc-kicker {
   font-family: var(--mono, "IBM Plex Mono", monospace);
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ghost, #a0a0a0);
-  margin-bottom: 8px;
-}
-
-.rcc-title {
-  max-width: 680px;
-  margin: 0;
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: clamp(24px, 2.5vw, 34px);
-  line-height: 1.16;
-  letter-spacing: -0.03em;
-  font-weight: 650;
-  color: var(--ink, #111111);
-}
-
-.rcc-lead {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 26px;
-  align-items: center;
-  padding: 24px 28px;
-  background: var(--accent-pale, #faefed);
-  border: 1px solid var(--accent-soft, #f0d8d3);
-  margin-bottom: 22px;
-}
-
-.rcc-lead-number {
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: clamp(52px, 6.5vw, 78px);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  font-weight: 750;
-  color: var(--accent, #b44a3c);
-}
-
-.rcc-lead-label {
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 21px;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  font-weight: 650;
-  color: var(--ink, #111111);
-  margin-bottom: 7px;
-}
-
-.rcc-lead-copy p {
-  max-width: 560px;
-  margin: 0;
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--muted, #555555);
+  margin-bottom: 18px;
 }
 
 .rcc-grid {
@@ -276,17 +205,6 @@ onMounted(() => {
 @media (max-width: 760px) {
   .rcc-lead {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 22px;
-  }
-
-  .rcc-card {
-    grid-template-columns: 1fr;
-  }
-
-  .rcc-card-top {
-    border-right: none;
-    border-bottom: 1px solid var(--rule, #e6e6e6);
   }
 }
 </style>

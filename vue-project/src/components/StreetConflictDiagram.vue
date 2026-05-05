@@ -19,188 +19,92 @@ const zones = [
 </script>
 
 <template>
-  <div class="scd-wrap">
-    <div class="scd-title">Where the conflict appears</div>
-
-    <div class="scd-street">
-      <div class="scd-zone scd-sidewalk">
-        <span>Sidewalk</span>
-      </div>
-
-      <div class="scd-zone scd-parking">
-        <span>Parking lane</span>
-      </div>
-
-      <div class="scd-zone scd-travel">
-        <span>Travel lanes</span>
-      </div>
-
-      <div class="scd-zone scd-parking">
-        <span>Parking lane</span>
-      </div>
-
-      <div class="scd-zone scd-sidewalk">
-        <span>Sidewalk</span>
-      </div>
+  <div class="street-conflict-diagram">
+    <div class="street-conflict-kicker">
+      Where the conflict appears
     </div>
 
-    <div class="scd-grid">
+    <div class="conflict-cards">
       <article
         v-for="zone in zones"
         :key="zone.label"
-        class="scd-card"
+        class="conflict-card"
       >
-        <div class="scd-card-area">{{ zone.area }}</div>
-        <div class="scd-card-title">{{ zone.label }}</div>
-
-        <div class="scd-issues">
-          <span
-            v-for="issue in zone.issues"
-            :key="issue"
-            class="scd-pill"
-          >
-            {{ issue }}
-          </span>
-        </div>
+        <div class="conflict-card-label">{{ zone.area }}</div>
+        <h3>{{ zone.label }}</h3>
       </article>
     </div>
   </div>
 </template>
 
 <style scoped>
-.scd-wrap {
+.street-conflict-diagram {
   width: 100%;
-  margin: 40px 0 40px;
 }
 
-.scd-title {
+.street-conflict-kicker {
+  margin-bottom: 18px;
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ghost, #a0a0a0);
-  margin-bottom: 14px;
 }
 
-.scd-street {
+.conflict-cards {
   display: grid;
-  grid-template-columns: 1fr 0.85fr 1.3fr 0.85fr 1fr;
-  min-height: 56px;
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--rule, #e6e6e6);
   background: var(--white, #ffffff);
 }
 
-.scd-zone {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.conflict-card {
+  min-height: 150px;
+  padding: 28px 30px 30px;
   border-right: 1px solid var(--rule, #e6e6e6);
 }
 
-.scd-zone:last-child {
+.conflict-card:last-child {
   border-right: none;
 }
 
-.scd-zone span {
+.conflict-card-label {
+  margin-bottom: 14px;
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ghost, #a0a0a0);
 }
 
-.scd-sidewalk {
-  background: #f7f7f5;
-}
-
-.scd-parking {
-  background: #ded8d1;
-}
-
-.scd-travel {
-  background: #fbfaf8;
-}
-
-.scd-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-left: 1px solid var(--rule, #e6e6e6);
-  border-right: 1px solid var(--rule, #e6e6e6);
-  border-bottom: 1px solid var(--rule, #e6e6e6);
-}
-
-.scd-card {
-  padding: 18px 20px 20px;
-  border-right: 1px solid var(--rule, #e6e6e6);
-  background: var(--white, #ffffff);
-}
-
-.scd-card:last-child {
-  border-right: none;
-}
-
-.scd-card-area {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ghost, #a0a0a0);
-  margin-bottom: 8px;
-}
-
-.scd-card-title {
+.conflict-card h3 {
+  margin: 0;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.2;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.035em;
   font-weight: 650;
   color: var(--ink, #111111);
-  margin-bottom: 14px;
 }
 
-.scd-issues {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.scd-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 8px;
-  background: var(--accent-pale, #faefed);
-  color: var(--accent-dark, #7c2d24);
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  letter-spacing: 0.02em;
-}
-
-@media (max-width: 760px) {
-  .scd-street {
+@media (max-width: 900px) {
+  .conflict-cards {
     grid-template-columns: 1fr;
   }
 
-  .scd-zone {
-    min-height: 38px;
+  .conflict-card {
     border-right: none;
     border-bottom: 1px solid var(--rule, #e6e6e6);
   }
 
-  .scd-zone:last-child {
+  .conflict-card:last-child {
     border-bottom: none;
   }
 
-  .scd-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .scd-card {
-    border-right: none;
-    border-bottom: 1px solid var(--rule, #e6e6e6);
-  }
-
-  .scd-card:last-child {
-    border-bottom: none;
+  .conflict-card h3 {
+    font-size: 22px;
   }
 }
 </style>

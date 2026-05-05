@@ -1,613 +1,546 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref, watch } from 'vue'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+import { computed, ref } from 'vue'
 
-const insetEl = ref(null)
-const activeIndex = ref(null)   // click-locked
-const hoverIndex = ref(null)    // hover preview
-const corridorDistributions = ref({})   // position data for strips
 const BASE_URL = import.meta.env.BASE_URL
 
-let insetMap = null
-let insetMarkers = []
-let highlightLayer = null
-
-const CORRIDORS = [
+const streets = [
   {
     name: 'Amsterdam Avenue',
+    shortName: 'Amsterdam',
     area: 'Upper West Side',
-    count: 19,
-    character: 'Fragmented presence',
-    lines: [
-      'Outdoor dining is still visible along this street.',
-      'But it appears as separate setups, with gaps between them.',
-      'The presence is real, but no longer continuous.'
+    line: 'Repeated setups remain close enough to feel visible.',
+    images: [
+      {
+        id: 'amsterdam-corridor',
+        type: 'Street view',
+        restaurant: 'The Wolfe · Momoya',
+        caption: 'Repeated setups remain visible along the avenue.',
+        base: '/images/s8/amsterdam/amsterdam_corridor_the-wolfe-momoya_angle_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'amsterdam-salumeria',
+        type: 'Specific setup',
+        restaurant: 'Salumeria Rosi',
+        caption: 'A single setup becomes part of the street edge.',
+        base: '/images/s8/amsterdam/amsterdam_283_salumeria-rosi_detail_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'amsterdam-celeste',
+        type: 'Detail',
+        restaurant: 'Celeste',
+        caption: 'The structure is visible as its own object in the roadway.',
+        base: '/images/s8/amsterdam/amsterdam_502_celeste_detail_visible_001.png',
+        mask: '',
+      },
     ],
-    image: '/images/amsterdam-avenue.png',
-    center: [40.7831, -73.9812],
-    matchKey: 'AMSTERDAM',
-    zoom: 15,
-  },
-  {
-    name: '2nd Avenue',
-    area: 'East Village · Midtown East',
-    count: 19,
-    character: 'Repeated but interrupted',
-    lines: [
-      'Outdoor dining repeats along this avenue.',
-      'But the pattern is interrupted from block to block.',
-      'It feels present in some moments, then disappears again.'
-    ],
-    image: '/images/amsterdam-avenue.png',
-    center: [40.7282, -73.9855],
-    matchKey: '2 AVENUE',
-    zoom: 15,
   },
   {
     name: 'Columbus Avenue',
+    shortName: 'Columbus',
     area: 'Upper West Side',
-    count: 13,
-    character: 'Clustered fragments',
-    lines: [
-      'Here, outdoor dining appears in small groups.',
-      'The setups are close enough to be noticed, but not continuous.',
-      'What remains is visible as clusters, not a full corridor.'
+    line: 'Outdoor dining appears in separated pockets.',
+    images: [
+      {
+        id: 'columbus-felice',
+        type: 'Street view',
+        restaurant: 'Felice',
+        caption: 'A visible setup remains at the corner.',
+        base: '/images/s8/columbus/columbus_240_felice_wide_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'columbus-la-pecora',
+        type: 'Specific setup',
+        restaurant: 'La Pecora Bianca',
+        caption: 'The remaining structure is large, but the corridor still feels spaced out.',
+        base: '/images/s8/columbus/columbus_359_la-pecora-bianca_detail_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'columbus-pocket',
+        type: 'Pocket',
+        restaurant: 'Columbus Avenue',
+        caption: 'Outdoor dining appears as pockets rather than a continuous line.',
+        base: '/images/s8/columbus/columbus_unknown_turquoise-shed_angle_visible_001.png',
+        mask: '',
+      },
     ],
-    image: '/images/amsterdam-avenue.png',
-    center: [40.7794, -73.9800],
-    matchKey: 'COLUMBUS',
-    zoom: 15,
+  },
+  {
+    name: '2nd Avenue',
+    shortName: '2nd Ave',
+    area: 'Upper East Side',
+    line: 'Outdoor dining appears block by block.',
+    images: [
+      {
+        id: 'second-la-pecora',
+        type: 'Street view',
+        restaurant: 'La Pecora Bianca',
+        caption: 'Visible, but not continuous.',
+        base: '/images/s8/second-ave/2nd-ave_1562_la-pecora-bianca_wide_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'second-cafe-maud',
+        type: 'Corner',
+        restaurant: 'Cafe Maud',
+        caption: 'A corner setup marks one block, then the pattern breaks.',
+        base: '/images/s8/second-ave/2nd-ave_132_cafe-maud_wide_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'second-boqueria',
+        type: 'Detail',
+        restaurant: 'Boqueria',
+        caption: 'Smaller sidewalk setups make the pattern feel more scattered.',
+        base: '/images/s8/second-ave/2nd-ave_boqueria_detail_visible_001.png',
+        mask: '',
+      },
+    ],
   },
   {
     name: 'Mulberry Street',
+    shortName: 'Mulberry',
     area: 'Little Italy',
-    count: 13,
-    character: 'Fragmented visibility',
-    lines: [
-      'On a destination street like this, outdoor dining still stands out.',
-      'But even here, it appears in pieces.',
-      'The street keeps its outdoor dining identity, but in a reduced form.'
+    line: 'Outdoor dining still reads as part of the street.',
+    images: [
+      {
+        id: 'mulberry-corridor',
+        type: 'Street view',
+        restaurant: 'Da Gennaro · La Mela',
+        caption: 'Here, outdoor dining still feels like part of the street itself.',
+        base: '/images/s8/mulberry/mulberry_corridor_da-gennaro-la-mela_wide_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'mulberry-repeat',
+        type: 'Repeated presence',
+        restaurant: 'La Mela · Amici',
+        caption: 'The setups repeat closely enough to become a street identity.',
+        base: '/images/s8/mulberry/mulberry_167_la-mela_detail_visible_001.png',
+        mask: '',
+      },
+      {
+        id: 'mulberry-grotta',
+        type: 'Specific setup',
+        restaurant: 'Grotta Azzurra',
+        caption: 'A named restaurant makes the remaining pattern specific.',
+        base: '/images/s8/mulberry/mulberry_177_grotta-azzurra_detail_visible_001.png',
+        mask: '',
+      },
     ],
-    image: '/images/amsterdam-avenue.png',
-    center: [40.7195, -73.9973],
-    matchKey: 'MULBERRY',
-    zoom: 15,
   },
 ]
 
-// Which corridor is currently displayed (hover overrides click for preview)
-const displayed = () => hoverIndex.value !== null ? hoverIndex.value : activeIndex.value
+const activeStreetIndex = ref(0)
+const activeImageIndex = ref(0)
 
-function selectCorridor(i) {
-  activeIndex.value = activeIndex.value === i ? null : i
-  updateInset()
-}
+const activeStreet = computed(() => streets[activeStreetIndex.value])
+const activeImage = computed(() => activeStreet.value.images[activeImageIndex.value])
 
-function onHover(i) {
-  hoverIndex.value = i
-  updateInset()
-}
-
-function onUnhover() {
-  hoverIndex.value = null
-  updateInset()
-}
-
-// ── Calculate actual distribution positions ──
-function calculateDistributions() {
-  if (!allPoints) return
-  
-  const distributions = {}
-  CORRIDORS.forEach((c, idx) => {
-    const matching = allPoints.features.filter(f =>
-      (f.properties?.street_name || '').toUpperCase() === c.matchKey
-    )
-    
-    if (matching.length === 0) {
-      distributions[idx] = []
-      return
-    }
-    
-    // Extract longitudes and normalize to 0-100%
-    const lngs = matching.map(f => f.geometry.coordinates[0]).sort((a, b) => a - b)
-    const minLng = Math.min(...lngs)
-    const maxLng = Math.max(...lngs)
-    const range = maxLng - minLng || 1
-    
-    distributions[idx] = lngs.map(lng => ((lng - minLng) / range * 100))
-  })
-  
-  corridorDistributions.value = distributions
-}
-
-// ── Get corridor type for CSS ──
-function getCorridorType(character) {
-  if (character.includes('Fragmented')) return 'fragmented'
-  if (character.includes('Repeated')) return 'repeated'
-  if (character.includes('Clustered')) return 'clustered'
-  return 'default'
-}
-
-function resolvePublicAsset(path) {
+function resolveAsset(path) {
   if (!path) return ''
   return `${BASE_URL}${String(path).replace(/^\//, '')}`
 }
 
-// ── inset map ──────────────────────────────────────────────
-let allPoints = null   // cache geo
-
-async function initInset() {
-  if (!insetEl.value) return
-
-  insetMap = L.map(insetEl.value, {
-    center: [40.748, -73.984],
-    zoom: 11,
-    zoomControl: false,
-    attributionControl: false,
-    scrollWheelZoom: false,
-    dragging: false,
-    doubleClickZoom: false,
-    boxZoom: false,
-    keyboard: false,
-    tap: false,
-  })
-
-  L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
-    { subdomains: 'abcd', maxZoom: 19, opacity: 0.3, crossOrigin: true }
-  ).addTo(insetMap)
-
-  // Load background points
-  try {
-    const BASE = import.meta.env.BASE_URL
-    const res = await fetch(`${BASE}data/thesis_points_final_v2.geojson`)
-    if (res.ok) {
-      allPoints = await res.json()
-      calculateDistributions()  // ← calculate after load
-      L.geoJSON(allPoints, {
-        pointToLayer: (_, latlng) =>
-          L.circleMarker(latlng, {
-            radius: 2.5,
-            fillColor: '#18140e',
-            fillOpacity: 0.08,
-            color: 'transparent',
-            weight: 0,
-            interactive: false,
-          }),
-      }).addTo(insetMap)
-    }
-  } catch (e) { /* silent */ }
-
-  // Corridor dots (always visible, dim)
-  CORRIDORS.forEach((c, i) => {
-    const m = L.circleMarker(c.center, {
-      radius: 6,
-      fillColor: '#18140e',
-      fillOpacity: 0.25,
-      color: '#ffffff',
-      weight: 1.5,
-      interactive: false,
-    }).addTo(insetMap)
-    insetMarkers.push(m)
-  })
-
-  setTimeout(() => insetMap.invalidateSize(), 100)
+function selectStreet(index) {
+  activeStreetIndex.value = index
+  activeImageIndex.value = 0
 }
 
-function updateInset() {
-  if (!insetMap) return
-  const d = displayed()
-
-  // Reset all markers
-  insetMarkers.forEach((m, i) => {
-    m.setStyle({
-      fillOpacity: d === null || d === i ? (d === i ? 1 : 0.15) : 0.1,
-      radius: d === i ? 8 : 5,
-      fillColor: d === i ? '#18140e' : '#18140e',
-    })
-  })
-
-  // Highlight layer
-  if (highlightLayer) { insetMap.removeLayer(highlightLayer); highlightLayer = null }
-
-  if (d !== null && allPoints) {
-    const c = CORRIDORS[d]
-    const matching = allPoints.features.filter(f =>
-      (f.properties?.street_name || '').toUpperCase().includes(c.matchKey)
-    )
-    highlightLayer = L.geoJSON(
-      { type: 'FeatureCollection', features: matching },
-      {
-        pointToLayer: (_, latlng) =>
-          L.circleMarker(latlng, {
-            radius: 5,
-            fillColor: '#18140e',
-            fillOpacity: 1,
-            color: '#ffffff',
-            weight: 1.5,
-            interactive: false,
-          }),
-      }
-    ).addTo(insetMap)
-
-    // Pan inset to corridor center
-    insetMap.setView(CORRIDORS[d].center, CORRIDORS[d].zoom, { animate: true, duration: 0.4 })
-  } else {
-    insetMap.setView([40.748, -73.984], 11, { animate: true, duration: 0.4 })
-  }
+function selectImage(index) {
+  activeImageIndex.value = index
 }
-
-onMounted(() => initInset())
-onBeforeUnmount(() => { if (insetMap) { insetMap.remove(); insetMap = null } })
 </script>
 
 <template>
-  <div class="cg-wrap">
-
-    <!-- LEFT: corridor list -->
-    <div class="cg-list">
+  <div class="s8-photo-essay">
+    <div class="s8-picker" aria-label="Street selector">
       <button
-        v-for="(c, i) in CORRIDORS"
-        :key="i"
-        class="cg-item"
-        :class="{
-          'is-active': activeIndex === i,
-          'is-hover':  hoverIndex === i && activeIndex === null,
-        }"
-        @click="selectCorridor(i)"
-        @mouseenter="onHover(i)"
-        @mouseleave="onUnhover()"
+        v-for="(street, index) in streets"
+        :key="street.name"
+        class="s8-street"
+        :class="{ 'is-active': activeStreetIndex === index }"
+        type="button"
+        @click="selectStreet(index)"
       >
-        <div class="cg-item-top">
-          <span class="cg-name">{{ c.name }}</span>
-          <span class="cg-count">{{ c.count }}</span>
-        </div>
-        <div class="cg-area">{{ c.area }}</div>
-        <div class="cg-char">{{ c.character }}</div>
+        <span>{{ street.shortName }}</span>
+        <small>{{ street.area }}</small>
       </button>
-
-      <div class="cg-hint">
-        {{ activeIndex !== null ? 'Click again to deselect' : 'Select a corridor' }}
-      </div>
     </div>
 
-    <!-- RIGHT: image panel with overlays -->
-    <div class="cg-right">
+    <div class="s8-stage">
+      <div class="s8-photo-wrap">
+        <img
+          class="s8-photo"
+          :src="resolveAsset(activeImage.base)"
+          :alt="`${activeStreet.name}, ${activeImage.restaurant}`"
+        />
 
-      <!-- Image area (with floating map + info layers) -->
-      <div class="cg-image-wrap">
-        <template v-if="displayed() !== null">
-          <!-- Photo -->
-          <div class="cg-image">
-            <img
-              v-if="CORRIDORS[displayed()].image"
-              :src="resolvePublicAsset(CORRIDORS[displayed()].image)"
-              :alt="`${CORRIDORS[displayed()].name}, ${CORRIDORS[displayed()].area}`"
-              class="guide-image"
-            />
+        <img
+          v-if="activeImage.mask"
+          class="s8-mask"
+          :src="resolveAsset(activeImage.mask)"
+          alt=""
+          aria-hidden="true"
+        />
 
-            <div class="cg-image-fallback">
-              <span class="cg-fb-name">{{ CORRIDORS[displayed()].name }}</span>
-              <span class="cg-fb-hint">Street photo coming soon</span>
-            </div>
+        <div class="s8-photo-text">
+          <div class="s8-meta">
+            <span>{{ activeImage.type }}</span>
+            <span>{{ activeImage.restaurant }}</span>
           </div>
 
-          <!-- Distribution strip label -->
-          <div class="cg-strip-label">distribution along street</div>
-
-          <!-- Distribution strip -->
-          <div 
-            class="cg-distribution"
-            :class="`is-${getCorridorType(CORRIDORS[displayed()].character)}`"
-          >
-            <div 
-              v-for="(pos, i) in corridorDistributions[displayed()]" 
-              :key="i"
-              class="cg-dist-dot"
-              :style="{ left: pos + '%' }"
-            ></div>
-          </div>
-
-          <!-- Main info overlay at bottom -->
-          <div class="cg-caption">
-            <div class="cg-caption-meta">
-              <span class="cg-caption-type">{{ CORRIDORS[displayed()].character.toUpperCase() }}</span>
-              <span class="cg-caption-count">{{ CORRIDORS[displayed()].count }} current locations</span>
-            </div>
-
-            <div class="cg-caption-lines">
-              <p v-for="(line, i) in CORRIDORS[displayed()].lines" :key="i" :class="{ 'is-contrast': i === 2 }">
-                {{ line }}
-              </p>
-            </div>
-          </div>
-        </template>
-
-        <!-- Placeholder when nothing selected/hovered -->
-        <template v-else>
-          <div class="cg-placeholder">
-            <span>Hover or select a corridor to see its street-level character.</span>
-          </div>
-        </template>
+          <p>{{ activeImage.caption }}</p>
+        </div>
       </div>
 
+      <div class="s8-lower">
+        <div class="s8-caption">
+          <div class="s8-caption-kicker">Street level</div>
+          <h2>{{ activeStreet.name }}</h2>
+          <p>{{ activeStreet.line }}</p>
+        </div>
+
+        <div class="s8-thumbs" aria-label="Photo selector">
+          <button
+            v-for="(image, index) in activeStreet.images"
+            :key="image.id"
+            class="s8-thumb"
+            :class="{ 'is-active': activeImageIndex === index }"
+            type="button"
+            @click="selectImage(index)"
+          >
+            <span class="s8-thumb-img">
+              <img
+                :src="resolveAsset(image.base)"
+                :alt="`${image.type}, ${image.restaurant}`"
+              />
+            </span>
+
+            <span class="s8-thumb-copy">
+              <span>{{ image.type }}</span>
+              <small>{{ image.restaurant }}</small>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <p class="s8-note">
+        Photos were taken after the March 2026 dataset snapshot and are used as field observations.
+      </p>
     </div>
   </div>
 </template>
 
 <style scoped>
-.cg-wrap {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  border: 1px solid var(--rule);
-  margin-top: var(--space-5);
-  min-height: 480px;
-}
-
-/* ── Left list ── */
-.cg-list {
-  border-right: 1px solid var(--rule);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.cg-item {
-  display: block;
+.s8-photo-essay {
   width: 100%;
-  text-align: left;
-  padding: 16px 20px;
-  border: none;
-  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.s8-picker {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 2px;
+  padding-top: 6px;
+}
+
+.s8-street {
+  width: 100%;
+  border: 0;
+  border-left: 3px solid transparent;
   background: transparent;
+  padding: 14px 0 14px 16px;
+  text-align: left;
   cursor: pointer;
-  transition: background 0.15s;
-  flex-shrink: 0;
+  color: var(--muted, #555);
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background 0.15s ease;
 }
 
-.cg-item:hover,
-.cg-item.is-hover  { background: var(--off, #f8f7f4); }
-
-.cg-item.is-active {
-  background: var(--accent-pale);
-  border-left: 3px solid var(--accent);
+.s8-street:hover {
+  background: rgba(0, 0, 0, 0.025);
+  color: var(--ink, #111);
 }
 
-.cg-item.is-active .cg-name,
-.cg-item.is-active .cg-area,
-.cg-item.is-active .cg-count,
-.cg-item.is-active .cg-char { color: var(--accent); }
-
-.cg-item-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 3px;
+.s8-street.is-active {
+  border-left-color: var(--accent, #b44a3c);
+  color: var(--ink, #111);
+  background: rgba(180, 74, 60, 0.055);
 }
 
-.cg-name {
+.s8-street span {
+  display: block;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink, #18140e);
-}
-
-.cg-count {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 12px;
+  font-size: 17px;
+  line-height: 1.15;
   font-weight: 700;
-  color: var(--ink, #18140e);
+  letter-spacing: -0.02em;
 }
 
-.cg-area {
+.s8-street small {
+  display: block;
+  margin-top: 5px;
   font-family: var(--mono, "IBM Plex Mono", monospace);
   font-size: 10px;
-  color: var(--muted, #888);
-  margin-bottom: 4px;
+  line-height: 1.3;
+  color: var(--ghost, #999);
 }
 
-.cg-char {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ghost, #bbb);
+.s8-stage {
+  min-width: 0;
 }
 
-.cg-hint {
-  display: none;
-}
-
-/* ── Right panel ── */
-.cg-right {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-/* Image area (unified with all overlays) */
-.cg-image-wrap {
+.s8-photo-wrap {
   position: relative;
-  flex: 1;
-  min-height: 480px;
-  background: var(--off, #f8f7f4);
-  display: flex;
-  align-items: stretch;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e9e6df;
 }
 
-.cg-image {
+.s8-photo {
   position: absolute;
   inset: 0;
-  background-color: #e8e6e0;
-  overflow: hidden;
-}
-
-.guide-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
-.cg-image-fallback {
+.s8-mask {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #edecea;
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
 }
 
-.guide-image + .cg-image-fallback {
-  display: none;
-}
-
-.cg-fb-name {
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--ink, #18140e);
-}
-
-.cg-fb-hint {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  color: var(--ghost, #bbb);
-}
-
-/* ── Distribution strip ── */
-.cg-strip-label {
-  display: none;
-}
-
-.cg-distribution {
+.s8-photo-text {
   position: absolute;
-  bottom: 148px;
   left: 0;
   right: 0;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  z-index: 9;
-  padding: 0 24px;
-  gap: 0;
-}
-
-.cg-dist-dot {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  flex-shrink: 0;
-}
-
-/* Type-specific distribution styles */
-.cg-distribution.is-fragmented .cg-dist-dot {
-  width: 3px;
-  height: 3px;
-  opacity: 0.9;
-}
-
-.cg-distribution.is-repeated .cg-dist-dot {
-  width: 2px;
-  height: 2px;
-  opacity: 0.6;
-}
-
-.cg-distribution.is-clustered .cg-dist-dot {
-  width: 4px;
-  height: 4px;
-  opacity: 1;
-}
-
-/* ── Caption (main info overlay) ── */
-.cg-caption {
-  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-4) var(--space-3) var(--space-3);
-  background: linear-gradient(to top, rgba(17, 17, 17, 0.62), rgba(17, 17, 17, 0.18), rgba(17, 17, 17, 0));
-  z-index: 5;
+  padding: 88px 32px 28px;
+  background: linear-gradient(
+    to top,
+    rgba(17, 17, 17, 0.72),
+    rgba(17, 17, 17, 0.26),
+    rgba(17, 17, 17, 0)
+  );
+  color: #fff;
 }
 
-.cg-caption-meta {
+.s8-meta {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 10px;
-}
-
-.cg-caption-type {
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  gap: 24px;
+  margin-bottom: 12px;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.72);
 }
 
-.cg-caption-count {
+.s8-photo-text p {
+  max-width: 720px;
+  margin: 0;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(24px, 2.4vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.96);
 }
 
-.cg-caption-lines {
+.s8-lower {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.s8-caption-kicker {
+  margin-bottom: 10px;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ghost, #999);
+}
+
+.s8-caption h2 {
+  margin: 0 0 10px;
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 750;
+  color: var(--ink, #111);
+}
+
+.s8-caption p {
+  max-width: 330px;
+  margin: 0;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 16px;
-  line-height: 1.5;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.cg-caption-lines p {
-  margin: 0 0 5px;
-}
-
-.cg-caption-lines p.is-contrast {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.62);
-  font-weight: 400;
   line-height: 1.45;
+  color: var(--muted, #555);
 }
 
-/* ── Placeholder ── */
-.cg-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 11px;
-  color: var(--ghost, #bbb);
-  text-align: center;
-  padding: 32px;
+.s8-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
-/* ── Leaflet ── */
-:deep(.leaflet-container) {
-  background: var(--off, #f8f7f4);
+.s8-thumb {
+  display: grid;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.58;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.s8-thumb:hover {
+  opacity: 0.9;
+}
+
+.s8-thumb.is-active {
+  opacity: 1;
+}
+
+.s8-thumb-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e9e6df;
+}
+
+.s8-thumb-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.s8-thumb.is-active .s8-thumb-img {
+  outline: 3px solid var(--accent, #b44a3c);
+  outline-offset: 0;
+}
+
+.s8-thumb-copy span {
+  display: block;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink, #111);
 }
 
-:deep(.cg-inset-overlay .leaflet-tile) {
-  opacity: 0.3 !important;
+.s8-thumb-copy small {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  line-height: 1.3;
+  color: var(--ghost, #999);
 }
 
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  .cg-wrap { grid-template-columns: 1fr; }
-  .cg-list { border-right: none; border-bottom: 1px solid var(--rule); }
-  .cg-image-wrap { min-height: 340px; }
-  .cg-distribution { bottom: 128px; }
+.s8-note {
+  margin: 26px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule, #e6e6e6);
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--ghost, #999);
+}
+
+@media (max-width: 1000px) {
+  .s8-photo-essay {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .s8-picker {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 0 0 4px;
+  }
+
+  .s8-street {
+    min-width: 160px;
+    border-left: 0;
+    border-bottom: 3px solid transparent;
+    padding: 12px 12px 14px;
+  }
+
+  .s8-street.is-active {
+    border-bottom-color: var(--accent, #b44a3c);
+    border-left-color: transparent;
+  }
+
+  .s8-lower {
+    grid-template-columns: 1fr;
+  }
+
+  .s8-caption p {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 680px) {
+  .s8-photo-wrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .s8-photo-text {
+    padding: 82px 20px 22px;
+  }
+
+  .s8-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .s8-thumbs {
+    grid-template-columns: 1fr;
+  }
+
+  .s8-thumb {
+    grid-template-columns: 96px 1fr;
+    align-items: center;
+  }
+
+  .s8-thumb-img {
+    aspect-ratio: 4 / 3;
+  }
 }
 </style>

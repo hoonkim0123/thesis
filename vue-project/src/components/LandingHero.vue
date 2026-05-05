@@ -134,8 +134,8 @@ function initDots() {
     const isRed = inCluster(nx, ny) && Math.random() < 0.38
 
     dots.push({
-      x: nx * W,
-      y: ny * H,
+    baseX: nx * W,
+    baseY: ny * H,
       nx,
       ny,
       isRed,
@@ -151,8 +151,6 @@ function initDots() {
           ? random(0.22, 0.36)
           : random(0.09, 0.21),
       deathTime: isRed ? Infinity : random(1.2, 4.2),
-      vx: random(-0.075, 0.075),
-      vy: random(-0.075, 0.075),
       phase: random(0, Math.PI * 2),
     })
   }
@@ -234,13 +232,8 @@ function draw(ts) {
   ctx.fillRect(0, 0, W, H)
 
   for (const d of dots) {
-    d.x += d.vx
-    d.y += d.vy
-
-    if (d.x < -30) d.x = W + 30
-    if (d.x > W + 30) d.x = -30
-    if (d.y < -30) d.y = H + 30
-    if (d.y > H + 30) d.y = -30
+    d.x = d.baseX
+    d.y = d.baseY
 
     if (d.isRed) {
       drawRedDot(d)
