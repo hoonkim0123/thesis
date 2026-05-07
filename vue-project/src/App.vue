@@ -4,6 +4,7 @@ import DeclineMap from './components/DeclineMap.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
 import PublicVoices from './components/PublicVoices.vue'
 import CorridorGuideMap from './components/CorridorGuideMap.vue'
+import RepetitionProfile from './components/RepetitionProfile.vue'
 import CorridorStripDiagram from './components/CorridorStripDiagram.vue'
 import LandingHero from './components/LandingHero.vue'
 import StreetConflictDiagram from './components/StreetConflictDiagram.vue'
@@ -37,36 +38,17 @@ onMounted(() => {
   <main>
     <LandingHero />
 
-    <section id="s1b">
-      <div class="public-wrap">
-        <div class="public-intro fade">
-          <div class="s-num">PUBLIC COMMENTS</div>
-
-          <h1 class="public-hed">
-            Outdoor dining drew support and pushback.
-          </h1>
-
-          <p class="public-dek">
-            Some saw public value. Others saw inconvenience.
-          </p>
-        </div>
-
-        <div class="fade">
-          <PublicVoices />
-        </div>
-
-        <p class="public-bridge fade">
-          But that presence did not last.
-        </p>
-      </div>
-    </section>
-
+    <!-- ======================== -->
+    <!-- S2: DECLINE -->
+    <!-- ======================== -->
     <section id="s2" class="section-decline">
       <div class="decline-grid">
         <div class="decline-copy">
           <div class="s-num fade">NEW YORK OUTDOOR DINING</div>
 
-          <h1 class="hed fade">Most of it disappeared.</h1>
+          <h1 class="hed fade">
+            Most of it disappeared.
+          </h1>
 
           <div class="decline-stats fade">
             <div class="decline-main">
@@ -94,8 +76,16 @@ onMounted(() => {
           </div>
 
           <p class="body-l fade">
-            Outdoor dining declined sharply after the pandemic emergency ended.
-            What remains is part of a smaller permanent program with different rules, costs, and geography.
+            At its peak, outdoor dining spread across Manhattan streets.
+            Today, only a small fraction remains.
+          </p>
+
+          <p class="body-l fade">
+            The loss was not only numerical. It changed where outdoor dining can still be seen.
+          </p>
+
+          <p class="body-l fade decline-note">
+            Use the map to compare the former footprint with the smaller set of locations that remain.
           </p>
         </div>
 
@@ -107,46 +97,89 @@ onMounted(() => {
           <div class="decline-legend">
             <div class="legend-row">
               <span class="legend-dot legend-dot-historic"></span>
-              <span>Peak (2024)</span>
+              <span>Peak program footprint</span>
             </div>
 
             <div class="legend-row">
-              <span class="legend-dot legend-dot-current"></span>
-              <span>Current (2026)</span>
+              <span class="legend-square legend-square-current"></span>
+              <span>Current outdoor dining locations</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="s3">
-      <div class="w">
-        <div class="s-num fade">NOT COMPLETELY GONE</div>
+    <!-- ======================== -->
+    <!-- S3: VISIBILITY -->
+    <!-- ======================== -->
+    <section id="s3" class="section-visibility">
+      <div class="visibility-wrap">
+        <div class="visibility-head fade">
+          <div class="s-num">NOT COMPLETELY GONE</div>
 
-        <h1 class="hed fade">
-          318 locations still remain.<br>
-          But they are not evenly visible.
-        </h1>
+          <h1 class="visibility-title">
+            318 remain.<br>
+            But remaining does not mean visible.
+          </h1>
 
-        <p class="body-l fade">
-          The decline was citywide, but the remainder is uneven. Some streets still carry visible clusters. Most streets carry little or nothing.
-        </p>
+          <p class="visibility-dek">
+            Outdoor dining is still present, but it occupies a much smaller part of Manhattan’s street network.
+          </p>
+        </div>
 
-        <p class="body-l fade">
-          To understand why outdoor dining faded from view, I looked at where the remaining locations repeat.
+        <div class="visibility-support fade">
+          <div class="support-label">Street coverage</div>
+
+          <div class="support-row">
+            <div class="support-copy">
+              <span class="support-name">Former footprint</span>
+              <span class="support-value">100%</span>
+            </div>
+
+            <div class="support-bar former" aria-hidden="true">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="support-row">
+            <div class="support-copy">
+              <span class="support-name">Current footprint</span>
+              <span class="support-value">9.5%</span>
+            </div>
+
+            <div class="support-bar current" aria-hidden="true">
+              <span></span>
+            </div>
+          </div>
+          <p class="support-note">
+            Current outdoor dining covers about one tenth of the former mapped footprint.
+          </p>
+        </div>
+
+        <p class="visibility-closing fade">
+          What remains becomes visible where locations repeat along the same street.
         </p>
       </div>
     </section>
 
+    <!-- ======================== -->
+    <!-- S4: CORRIDORS -->
+    <!-- ======================== -->
     <section id="s4" class="section-corridor">
       <div class="corridor-grid fade">
         <div class="corridor-copy">
           <div class="s-num fade">WHERE REMAINING LOCATIONS REPEAT</div>
 
-          <h1 class="hed">A few streets carry what remains.</h1>
+          <h1 class="hed">
+            A few streets carry what remains.
+          </h1>
 
           <p class="body-l">
-            Most remaining locations are scattered. But on some streets, they repeat enough to still feel present.
+            Most remaining locations are scattered. But on some streets, outdoor dining repeats enough to still feel present.
+          </p>
+
+          <p class="body-l">
+            These repeated streets turn survival into visibility.
           </p>
 
           <div class="corridor-street-list-wrap">
@@ -160,6 +193,9 @@ onMounted(() => {
       </div>
     </section>
 
+    <!-- ======================== -->
+    <!-- S5: CONTESTED SPACE -->
+    <!-- ======================== -->
     <section id="s5" class="section-conflict">
       <div class="conflict-wrap">
         <div class="conflict-intro fade">
@@ -170,8 +206,28 @@ onMounted(() => {
           </h1>
 
           <p class="body-l">
-            In 311 complaints, outdoor dining appears as conflict over shared street space: blocked movement, physical setup problems, and permit or status issues.
+            Outdoor dining was not experienced in one way. Some people saw public value. Others saw blocked movement, street clutter, and conflicts over shared space.
           </p>
+
+          <p class="body-l">
+            What remained was not only a restaurant feature. It became a negotiation over how the street should be used.
+          </p>
+        </div>
+
+        <div class="public-wrap conflict-public-block fade">
+          <div class="public-intro">
+            <div class="s-num">PUBLIC COMMENTS</div>
+
+            <h1 class="public-hed">
+              The same structure could mean relief or obstruction.
+            </h1>
+
+            <p class="public-dek">
+              Public comments show outdoor dining as both support for restaurants and a source of neighborhood conflict.
+            </p>
+          </div>
+
+          <PublicVoices />
         </div>
 
         <div class="conflict-diagram-block fade">
@@ -182,73 +238,82 @@ onMounted(() => {
           <ReportedConflictChart />
         </div>
 
+        <p class="body-l fade conflict-note">
+          In 311 complaints, outdoor dining appears as a conflict over shared street space: blocked movement, physical setup problems, and permit or status issues.
+        </p>
       </div>
     </section>
 
-    <section id="s6" class="section-data-boundary">
-      <div class="w s6-inner">
-        <div class="s-num fade">WHAT THE DATA CAN SHOW</div>
+    <!-- ======================== -->
+    <!-- S6: MODEL READING -->
+    <!-- ======================== -->
+    <section id="s6">
+      <div class="w">
+        <div class="s-num fade">MODEL READING</div>
 
         <h1 class="hed fade">
-          A pattern, not a <br>full explanation.
+          The model reads survival as a pattern of repetition.
         </h1>
 
-        <div class="s6-body">
-          <p class="body-l fade">
-            This project can measure the decline, map current locations, and show where remaining outdoor dining repeats.
-          </p>
+        <p class="body-l fade">
+          I used a classification model to compare locations that remained with locations that disappeared.
+        </p>
 
-          <p class="body-l fade">
-            It can also show where public comments and 311 complaints made street conflict visible.
-          </p>
+        <p class="body-l fade">
+          The clearest signal was not one single cause. It was nearby repetition, especially where outdoor dining repeats along the same street.
+        </p>
 
-          <p class="body-l fade">
-            But it cannot fully explain each restaurant decision, permit cost, seasonal choice, or block level constraint.
-          </p>
-        </div>
+        <RepetitionProfile class="fade" />
 
-        <div class="s6-boundary fade">
-          <div class="s6-boundary-item">
-            <span class="s6-boundary-label">This project shows</span>
-            <p>decline, remaining locations, repeated streets, public responses, and reported conflicts</p>
-          </div>
-
-          <div class="s6-boundary-item">
-            <span class="s6-boundary-label">This project cannot prove</span>
-            <p>the full reason each restaurant stayed, removed, or did not renew outdoor dining</p>
-          </div>
-        </div>
-
-        <p class="s6-closing fade">
-          So the project focuses on the pattern left behind.
+        <p class="body-l fade s6-note">
+          This does not explain why each restaurant stayed. It shows that the remaining pattern becomes more visible where outdoor dining repeats locally.
         </p>
       </div>
     </section>
 
+    <!-- ======================== -->
+    <!-- S7: CONCLUSION -->
+    <!-- ======================== -->
     <section id="s7">
       <div class="w">
-        <div class="s-num fade">UNEVENLY DISTRIBUTED</div>
+        <div class="s-num fade">WHAT CHANGED</div>
 
-        <h1 class="hed fade">It disappeared unevenly.</h1>
+        <h1 class="hed fade">
+          Outdoor dining did not simply disappear.
+          It was reduced, concentrated, and contested.
+        </h1>
 
         <p class="body-l fade">
-          Outdoor dining did not vanish from New York. But it disappeared from many everyday streets and remained concentrated in a smaller set of corridors.
+          Outdoor dining still exists in Manhattan, but it no longer works as a broad street level condition.
         </p>
 
         <p class="body-l fade">
-          A smaller set of streets and neighborhoods now carry most of what remains. Elsewhere, it becomes sparse or disappears entirely.
+          What remains is carried by fewer corridors, shaped by new rules, and negotiated through public conflict.
+        </p>
+
+        <p class="body-l fade">
+          This is why outdoor dining can still be present in the city, while feeling absent from everyday streets.
         </p>
       </div>
     </section>
 
+    <!-- ======================== -->
+    <!-- S8: STREET LEVEL -->
+    <!-- ======================== -->
     <section id="s8" class="section-street-level">
       <div class="w s8-head">
         <div class="s-num fade">STREET LEVEL</div>
 
-        <h1 class="hed fade">What remains appears street by street.</h1>
+        <h1 class="hed fade">
+          What remains appears street by street.
+        </h1>
 
         <p class="body-l fade">
           Outdoor dining is still visible, but not everywhere.
+        </p>
+
+        <p class="body-l fade">
+          The remaining pattern is easiest to see from the street, where repeated locations make some corridors feel active while others feel empty.
         </p>
       </div>
 
