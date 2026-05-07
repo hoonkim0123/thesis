@@ -206,20 +206,8 @@ onMounted(() => {
           </h1>
 
           <p class="conflict-dek">
-            Public comments show what people argued. 311 complaints show how those conflicts appeared as everyday street problems.
+            Public comments show what people argued. 311 complaints show how that conflict appeared in everyday street problems.
           </p>
-        </div>
-
-        <div class="conflict-sources fade">
-          <div>
-            <span>Public comments</span>
-            <p>What people argued</p>
-          </div>
-
-          <div>
-            <span>311 complaints</span>
-            <p>What people reported</p>
-          </div>
         </div>
 
         <div class="quote-stage fade">
@@ -248,16 +236,6 @@ onMounted(() => {
           </div>
         </div>
 
-        <div class="conflict-turn fade">
-          <p>
-            The argument was not abstract. In 311 complaints, outdoor dining appears through specific problems people reported to the city.
-          </p>
-        </div>
-
-        <div class="conflict-diagram-block fade">
-          <StreetConflictDiagram />
-        </div>
-
         <div class="conflict-chart-block fade">
           <div class="chart-intro">
             <div class="s-num">REPORTED CONFLICTS</div>
@@ -267,42 +245,11 @@ onMounted(() => {
             </h2>
 
             <p>
-              311 records show outdoor dining not only as a policy debate, but as a recurring set of reported problems in public space.
+              311 records show outdoor dining as a recurring set of reported problems in public space.
             </p>
           </div>
 
           <ReportedConflictChart />
-        </div>
-
-        <div class="regulation-bridge fade">
-          <div class="regulation-copy">
-            <div class="s-num">REGULATION</div>
-
-            <h2>
-              The permanent program made outdoor dining more conditional.
-            </h2>
-
-            <p>
-              What remained was shaped by new limits on where outdoor dining could be placed, how much space it could take, when roadway seating could operate, and how setups had to be maintained.
-            </p>
-          </div>
-
-          <div class="regulation-rules">
-            <div class="rule-card">
-              <span>01</span>
-              <p>Sidewalk and roadway seating must fit siting rules and preserve required clearance.</p>
-            </div>
-
-            <div class="rule-card">
-              <span>02</span>
-              <p>Roadway cafes became seasonal, changing permanent sheds into removable setups.</p>
-            </div>
-
-            <div class="rule-card">
-              <span>03</span>
-              <p>Restaurants face added applications, costs, storage, design rules, and compliance burdens.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
