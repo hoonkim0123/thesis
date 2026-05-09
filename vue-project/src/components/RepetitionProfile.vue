@@ -33,10 +33,6 @@
 
         <h3>Same street repetition</h3>
 
-        <div class="signal-badge">
-          Strongest signal tested
-        </div>
-
         <div class="model-signal-stack" aria-hidden="true">
           <div class="signal-rank signal-rank-main">
             <span>01</span>
@@ -48,12 +44,12 @@
           </div>
           <div class="signal-rank">
             <span>03</span>
-            <strong>Street context</strong>
+            <strong>Street width</strong>
           </div>
         </div>
 
         <p>
-          The model read this as the strongest signal among the features tested.
+          Among the features tested, the model read same street repetition as the strongest signal.
         </p>
       </div>
     </div>
@@ -120,36 +116,28 @@
   color: #9b948d;
 }
 
-.model-panel .panel-kicker {
-  color: rgba(255, 255, 255, 0.52);
-}
-
-.signal-panel h3 {
-  max-width: 440px;
+.model-panel h3 {
+  max-width: 420px;
   margin: 0;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: clamp(32px, 3.4vw, 52px);
   line-height: 1.02;
   letter-spacing: -0.055em;
   font-weight: 720;
-  color: #111111;
-}
-
-.model-panel h3 {
   color: #ffffff;
 }
 
-.signal-panel p {
+.model-panel p {
   margin: auto 0 0;
   max-width: 440px;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 17px;
   line-height: 1.5;
-  color: #6e6862;
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.model-panel p {
-  color: rgba(255, 255, 255, 0.72);
+.model-panel .panel-kicker {
+  color: rgba(255, 255, 255, 0.48);
 }
 
 .signal-connector {
@@ -252,62 +240,46 @@
   opacity: 0.42;
 }
 
-.signal-badge {
-  width: fit-content;
-  margin-top: 30px;
-  padding: 10px 13px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.86);
-}
-
 .model-signal-stack {
-  margin-top: 34px;
+  margin-top: 38px;
   display: grid;
-  gap: 8px;
+  gap: 9px;
 }
 
 .signal-rank {
   display: grid;
-  grid-template-columns: 34px 1fr;
+  grid-template-columns: 30px 1fr;
   align-items: center;
-  gap: 12px;
-  padding: 11px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.52);
-}
-
-.signal-rank:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  gap: 14px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .signal-rank span {
-  width: 34px;
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.46);
 }
 
 .signal-rank strong {
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
+  letter-spacing: -0.018em;
   font-weight: 600;
 }
 
-.signal-rank-main strong {
-  font-size: 16px;
+.signal-rank-main {
+  border-color: rgba(180, 74, 60, 0.55);
+  background: rgba(180, 74, 60, 0.16);
+  color: #ffffff;
 }
 
-.signal-rank-main {
-  border-color: rgba(180, 74, 60, 0.65);
-  background: rgba(180, 74, 60, 0.18);
-  color: #ffffff;
+.signal-rank-main span {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .supporting-signals {
@@ -371,7 +343,7 @@
   }
 
   .model-signal-stack {
-    margin-top: 34px;
+    margin-top: 36px;
     gap: 8px;
   }
 

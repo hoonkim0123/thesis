@@ -330,8 +330,8 @@ const guideLines = computed(() => {
           <line
             v-for="guide in guideLines"
             :key="guide.label"
-            :x1="CHART_LEFT"
-            :x2="CHART_RIGHT"
+            :x1="CHART_LEFT + 82"
+            :x2="RIGHT_SIDEWALK_X + SIDEWALK_W + 18"
             :y1="guide.y"
             :y2="guide.y"
             class="cm-guide"
@@ -494,17 +494,19 @@ const guideLines = computed(() => {
           </text>
         </g>
 
-        <!-- Dots -->
-        <circle
+        <!-- Markers -->
+        <rect
           v-for="dot in stripDots"
           :key="dot.id"
-          :cx="dot.x"
-          :cy="dot.y"
-          r="6"
+          :x="dot.x - 6.5"
+          :y="dot.y - 6.5"
+          width="13"
+          height="13"
+          rx="2.5"
           :class="getDotClass(dot.licenseType)"
         >
           <title>{{ dot.licenseType }}</title>
-        </circle>
+        </rect>
       </svg>
     </div>
   </div>
@@ -528,54 +530,55 @@ const guideLines = computed(() => {
 }
 
 .cm-guide {
-  stroke: var(--rule, #e6e6e6);
+  stroke: rgba(17, 17, 17, 0.08);
   stroke-width: 1;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .cm-guide-label {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 11px;
-  fill: var(--ghost, #aaa);
+  fill: rgba(17, 17, 17, 0.34);
 }
 
 .cm-street-base {
-  fill: #f3f1ee;
-  opacity: 0.95;
+  fill: #f8f6f3;
+  opacity: 1;
 }
 
 .cm-parking {
-  fill: #ded8d1;
-  opacity: 0.92;
+  fill: #e7e1da;
+  opacity: 0.72;
 }
 
 .cm-travel {
-  fill: #faf9f7;
-  opacity: 0.98;
+  fill: #fbfaf8;
+  opacity: 1;
 }
 
 .cm-curb {
-  stroke: #cfc8c0;
-  stroke-width: 1.2;
+  stroke: rgba(17, 17, 17, 0.12);
+  stroke-width: 1;
 }
 
 .cm-lane-line {
-  stroke: #ddd7d1;
+  stroke: rgba(17, 17, 17, 0.10);
   stroke-width: 1;
   stroke-dasharray: 4 7;
 }
 
 .cm-centerline {
-  stroke: #bdb5ac;
-  stroke-width: 1.2;
+  stroke: rgba(17, 17, 17, 0.18);
+  stroke-width: 1.1;
   stroke-dasharray: 6 7;
 }
 
 .cm-zone-label {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  fill: var(--ghost, #aaa);
+  fill: rgba(17, 17, 17, 0.38);
 }
 
 .cm-zone-label-small {
@@ -584,22 +587,22 @@ const guideLines = computed(() => {
 }
 
 .cm-dot {
-  opacity: 0.94;
+  opacity: 0.95;
   stroke: var(--white, #fff);
-  stroke-width: 1.4;
+  stroke-width: 1.3;
   transform-box: fill-box;
   transform-origin: center;
-  animation: dotIn 0.32s ease both;
+  animation: markerIn 0.32s ease both;
 }
 
-@keyframes dotIn {
+@keyframes markerIn {
   from {
     opacity: 0;
     transform: scale(0.72);
   }
 
   to {
-    opacity: 0.94;
+    opacity: 0.95;
     transform: scale(1);
   }
 }

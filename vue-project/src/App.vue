@@ -66,11 +66,11 @@ onMounted(() => {
           </div>
 
           <p class="body-l fade">
-            At its peak, outdoor dining spread across Manhattan streets. Today, only 318 locations remain, a 93 percent drop.
+            At its peak, outdoor dining spread across Manhattan streets. Today, only a small fraction remains.
           </p>
 
           <p class="body-l fade decline-note">
-            Use the map to compare the former footprint with the smaller set of locations that remain.
+            The map compares the emergency program footprint with the smaller set of locations that remain today.
           </p>
         </div>
 
@@ -104,46 +104,45 @@ onMounted(() => {
 
           <h1 class="visibility-title">
             318 remain.<br>
-            But remaining does not mean visible.
+            But scattered locations are easy to miss.
           </h1>
 
           <p class="visibility-dek">
-            Outdoor dining is still present, but it occupies a much smaller part of Manhattan’s street network.
+            A single setup can disappear into the street. Outdoor dining becomes visible when locations repeat along the same street.
           </p>
         </div>
 
-        <div class="visibility-support fade">
-          <div class="support-label">Street coverage</div>
+        <div class="visibility-pattern fade">
+          <div class="pattern-label">Street visibility</div>
 
-          <div class="support-row">
-            <div class="support-copy">
-              <span class="support-name">Former footprint</span>
-              <span class="support-value">100%</span>
+          <div class="pattern-row">
+            <div class="pattern-copy">
+              <span class="pattern-name">Isolated</span>
             </div>
 
-            <div class="support-bar former" aria-hidden="true">
-              <span></span>
+            <div class="dot-field isolated-field" aria-hidden="true">
+              <span class="dot dot-current dot-a"></span>
+            </div>
+          </div>
+
+          <div class="pattern-row">
+            <div class="pattern-copy">
+              <span class="pattern-name">Repeated</span>
+            </div>
+
+            <div class="dot-field repeated-field" aria-hidden="true">
+              <span class="dot dot-current dot-a"></span>
+              <span class="dot dot-current dot-b"></span>
+              <span class="dot dot-current dot-c"></span>
+              <span class="dot dot-current dot-d"></span>
+              <span class="dot dot-current dot-e"></span>
             </div>
           </div>
 
-          <div class="support-row">
-            <div class="support-copy">
-              <span class="support-name">Current footprint</span>
-              <span class="support-value">9.5%</span>
-            </div>
-
-            <div class="support-bar current" aria-hidden="true">
-              <span></span>
-            </div>
-          </div>
-          <p class="support-note">
-            Current outdoor dining covers about one tenth of the former mapped footprint.
+          <p class="pattern-note">
+            Visibility depends on repetition, not just presence.
           </p>
         </div>
-
-        <p class="visibility-closing fade">
-          What remains becomes visible where locations repeat along the same street.
-        </p>
       </div>
     </section>
 
@@ -156,15 +155,15 @@ onMounted(() => {
           <div class="s-num fade">WHERE REMAINING LOCATIONS REPEAT</div>
 
           <h1 class="hed">
-            A few streets carry what remains.
+            A few streets make it visible.
           </h1>
 
           <p class="body-l">
-            Most remaining locations are scattered. But on some streets, outdoor dining repeats enough to still feel present.
+            A few streets still show repeated setups.
           </p>
 
           <p class="body-l">
-            These repeated streets turn survival into visibility.
+            Here, visibility comes from repetition along the same corridor.
           </p>
 
           <div class="corridor-street-list-wrap">
@@ -190,18 +189,15 @@ onMounted(() => {
         </h1>
 
         <p class="body-l fade">
-          After seeing this pattern in the map, I wanted to see whether the model would read it too.
+          I tested whether the model would read the same pattern.
         </p>
 
         <p class="body-l fade">
-          The model does not prove why each restaurant stayed or left. It shows that the strongest signal was nearby repetition on the same street.
+          The model does not prove why each restaurant stayed or left. But among the features tested, same street repetition was the strongest signal.
         </p>
 
         <RepetitionProfile class="fade" />
 
-        <p class="body-l fade s6-note">
-          Random Forest feature importance. Exploratory, not causal.
-        </p>
       </div>
     </section>
 
@@ -217,8 +213,7 @@ onMounted(() => {
         </h1>
 
         <p class="body-l fade contested-intro">
-          Spatial repetition explains where outdoor dining remains visible.
-          But it does not explain the full public debate around it.
+          Spatial repetition explains where outdoor dining remains visible. But it does not explain the public debate around it.
         </p>
 
         <p class="body-l fade contested-intro">
@@ -246,7 +241,7 @@ onMounted(() => {
           </div>
 
           <p class="editorial-note">
-            Public comments show the argument around outdoor dining: for some, street life and recovery; for others, obstruction and loss of public space.
+            Public comments show two readings of outdoor dining: street life and recovery for some, obstruction and loss of public space for others.
           </p>
         </div>
 
@@ -274,20 +269,19 @@ onMounted(() => {
         <div class="s-num fade">WHAT CHANGED</div>
 
         <h1 class="hed fade">
-          Outdoor dining did not simply disappear.
-          It was reduced, concentrated, and contested.
+          Outdoor dining did not simply disappear. It was reduced, concentrated, and contested.
         </h1>
 
         <p class="body-l fade">
-          Outdoor dining still exists in Manhattan, but it no longer works as a broad street level condition.
+          Outdoor dining still exists in Manhattan, but it no longer appears as a broad street level condition.
         </p>
 
         <p class="body-l fade">
-          What remains is carried by fewer corridors, shaped by new rules, and negotiated through public conflict.
+          What remains is concentrated on fewer streets, shaped by new rules, and negotiated through public conflict.
         </p>
 
         <p class="body-l fade">
-          This is why outdoor dining can still be present in the city, while feeling absent from everyday streets.
+          This is why outdoor dining can still be present in the city, but feel absent from everyday streets.
         </p>
       </div>
     </section>
