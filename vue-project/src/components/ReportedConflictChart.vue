@@ -91,7 +91,7 @@ onMounted(() => {
 <style scoped>
 .rcc-wrap {
   width: 100%;
-  margin: 44px 0 0;
+  margin: 32px 0 0;
 }
 
 .rcc-kicker {
@@ -100,7 +100,7 @@ onMounted(() => {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ghost, #a0a0a0);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .rcc-grid {

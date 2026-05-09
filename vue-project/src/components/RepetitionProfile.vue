@@ -1,404 +1,403 @@
 <template>
-  <div class="repetition-profile">
-    <div class="profile-axis">
-      <span>More isolated</span>
-      <div class="axis-line"></div>
-      <span>More repeated</span>
-    </div>
+  <div class="model-signal">
+    <div class="signal-frame">
+      <div class="signal-panel map-panel">
+        <div class="panel-kicker">Map pattern</div>
 
-    <div class="profile-grid">
-      <article
-        v-for="profile in profiles"
-        :key="profile.key"
-        class="profile-card"
-        :class="`profile-${profile.key}`"
-      >
-        <div class="card-top">
-          <p class="card-kicker">{{ profile.label }}</p>
-          <h3>{{ titleFor(profile.key) }}</h3>
+        <h3>Remaining locations repeat on fewer streets.</h3>
+
+        <div class="mini-map" aria-hidden="true">
+          <div class="street-line street-line-main"></div>
+          <div class="street-line street-line-side street-line-a"></div>
+          <div class="street-line street-line-side street-line-b"></div>
+
+          <span class="map-point point-a"></span>
+          <span class="map-point point-b"></span>
+          <span class="map-point point-c"></span>
+          <span class="map-point point-d"></span>
+          <span class="map-point point-e"></span>
+          <span class="map-point point-f"></span>
         </div>
 
-        <div class="street-scene">
-          <div class="street-line"></div>
+        <p>
+          They are not evenly spread across Manhattan. They appear again and again along a smaller set of streets.
+        </p>
+      </div>
 
-          <div
-            v-for="block in setupBlocks(profile.key)"
-            :key="block.id"
-            class="setup-block"
-            :class="{ active: profile.key !== 'isolated' }"
-            :style="{
-              left: `${block.left}%`,
-              width: `${block.width}px`,
-              opacity: blockOpacity(profile)
-            }"
-          ></div>
+      <div class="signal-connector" aria-hidden="true">
+        <span></span>
+      </div>
 
-          <div
-            v-for="dot in nearbyDots(profile.key)"
-            :key="dot.id"
-            class="nearby-dot"
-            :style="{
-              left: `${dot.left}%`,
-              top: `${dot.top}%`,
-              opacity: dotOpacity(profile)
-            }"
-          ></div>
+      <div class="signal-panel model-panel">
+        <div class="panel-kicker">Model signal</div>
+
+        <h3>Same street repetition</h3>
+
+        <div class="signal-badge">
+          Strongest signal tested
         </div>
 
-        <p class="card-caption">{{ profile.caption }}</p>
-
-        <div class="signal-read">
-          <span>model signal</span>
-          <div class="signal-track">
-            <div
-              class="signal-fill"
-              :style="{ width: `${signalWidth(profile)}%` }"
-            ></div>
+        <div class="model-signal-stack" aria-hidden="true">
+          <div class="signal-rank signal-rank-main">
+            <span>01</span>
+            <strong>Same street repetition</strong>
+          </div>
+          <div class="signal-rank">
+            <span>02</span>
+            <strong>Nearby outdoor dining</strong>
+          </div>
+          <div class="signal-rank">
+            <span>03</span>
+            <strong>Street context</strong>
           </div>
         </div>
-      </article>
+
+        <p>
+          The model read this as the strongest signal among the features tested.
+        </p>
+      </div>
     </div>
 
-    <div class="profile-note">
-      <span>Main signal</span>
-      <strong>nearby same street repetition</strong>
-      <strong>nearby outdoor dining</strong>
+    <div class="supporting-signals">
+      <div class="supporting-head">
+        <span>Supporting signals tested</span>
+      </div>
+
+      <div class="signal-list">
+        <span>Nearby outdoor dining</span>
+        <span>Subway distance</span>
+        <span>Street width</span>
+        <span>Corridor presence</span>
+        <span>Transit proximity</span>
+      </div>
     </div>
+
+    <p class="signal-note">
+      Random Forest feature importance. Exploratory, not causal.
+    </p>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-
-const profiles = ref([
-  {
-    key: 'isolated',
-    label: 'Isolated',
-    caption: 'Little or no nearby same street repetition.',
-    visual_strength: 0.18
-  },
-  {
-    key: 'nearby',
-    label: 'Nearby',
-    caption: 'Some nearby same street repetition.',
-    visual_strength: 0.48
-  },
-  {
-    key: 'repeated',
-    label: 'Repeated',
-    caption: 'Several nearby setups repeat along the same street.',
-    visual_strength: 1
-  }
-])
-
-onMounted(async () => {
-  const base = import.meta.env.BASE_URL || '/'
-
-  try {
-    const res = await fetch(`${base}data/s6_repetition_profile.json`)
-
-    if (!res.ok) return
-
-    const data = await res.json()
-
-    profiles.value = data.map((item) => ({
-      ...item,
-      visual_strength: Math.max(0.16, item.visual_strength || 0)
-    }))
-  } catch (err) {
-    console.warn('Using fallback S6 repetition profile:', err)
-  }
-})
-
-function titleFor(key) {
-  if (key === 'isolated') return 'Single point'
-  if (key === 'nearby') return 'Nearby presence'
-  return 'Repeated street presence'
-}
-
-function setupBlocks(key) {
-  if (key === 'isolated') {
-    return [
-      { id: 'a', left: 50, width: 58 }
-    ]
-  }
-
-  if (key === 'nearby') {
-    return [
-      { id: 'a', left: 38, width: 54 },
-      { id: 'b', left: 62, width: 54 }
-    ]
-  }
-
-  return [
-    { id: 'a', left: 24, width: 50 },
-    { id: 'b', left: 43, width: 50 },
-    { id: 'c', left: 62, width: 50 },
-    { id: 'd', left: 81, width: 50 }
-  ]
-}
-
-function nearbyDots(key) {
-  if (key === 'isolated') {
-    return [
-      { id: 'a', left: 20, top: 30 },
-      { id: 'b', left: 76, top: 34 },
-      { id: 'c', left: 30, top: 72 },
-      { id: 'd', left: 84, top: 68 }
-    ]
-  }
-
-  if (key === 'nearby') {
-    return [
-      { id: 'a', left: 26, top: 34 },
-      { id: 'b', left: 40, top: 70 },
-      { id: 'c', left: 60, top: 30 },
-      { id: 'd', left: 74, top: 68 },
-      { id: 'e', left: 50, top: 22 }
-    ]
-  }
-
-  return [
-    { id: 'a', left: 16, top: 32 },
-    { id: 'b', left: 25, top: 70 },
-    { id: 'c', left: 34, top: 26 },
-    { id: 'd', left: 45, top: 72 },
-    { id: 'e', left: 56, top: 28 },
-    { id: 'f', left: 66, top: 70 },
-    { id: 'g', left: 76, top: 30 },
-    { id: 'h', left: 86, top: 66 }
-  ]
-}
-
-function signalWidth(profile) {
-  return Math.max(12, Math.min(100, profile.visual_strength * 100))
-}
-
-function blockOpacity(profile) {
-  return 0.28 + profile.visual_strength * 0.62
-}
-
-function dotOpacity(profile) {
-  return 0.18 + profile.visual_strength * 0.5
-}
 </script>
 
 <style scoped>
-.repetition-profile {
-  margin-top: 46px;
-  padding: 30px 0 28px;
-  border-top: 1px solid var(--rule, rgba(0, 0, 0, 0.14));
-  border-bottom: 1px solid var(--rule, rgba(0, 0, 0, 0.14));
+.model-signal {
+  margin: 38px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.10);
+  border-bottom: none;
 }
 
-.profile-axis {
+.signal-frame {
   display: grid;
-  grid-template-columns: 150px 1fr 150px;
-  gap: 18px;
-  align-items: center;
-  margin-bottom: 26px;
+  grid-template-columns: 1fr 72px 1fr;
+  align-items: stretch;
 }
 
-.profile-axis span {
-  font-family: var(--mono, monospace);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ghost, #999);
-}
-
-.profile-axis span:last-child {
-  text-align: right;
-}
-
-.axis-line {
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.08),
-    rgba(180, 74, 60, 0.18),
-    rgba(180, 74, 60, 0.48)
-  );
-}
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.profile-card {
-  min-height: 430px;
+.signal-panel {
+  min-height: 320px;
+  padding: 28px 30px 30px;
+  background: #fafaf8;
+  border: 1px solid rgba(17, 17, 17, 0.10);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 24px;
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.5);
 }
 
-.profile-repeated {
-  background: rgba(180, 74, 60, 0.045);
-  border-color: rgba(180, 74, 60, 0.16);
+.model-panel {
+  background: #2f2b27;
+  border-color: #2f2b27;
+  color: #ffffff;
 }
 
-.card-top {
-  min-height: 116px;
-}
-
-.card-kicker {
-  margin: 0 0 12px;
-  font-family: var(--mono, monospace);
-  font-size: 0.76rem;
-  letter-spacing: 0.14em;
+.panel-kicker {
+  margin-bottom: 24px;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ghost, #999);
+  color: #9b948d;
 }
 
-.card-top h3 {
+.model-panel .panel-kicker {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.signal-panel h3 {
+  max-width: 440px;
   margin: 0;
-  font-size: clamp(1.5rem, 2.1vw, 2.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--ink, #111);
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: clamp(32px, 3.4vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  font-weight: 720;
+  color: #111111;
 }
 
-.street-scene {
+.model-panel h3 {
+  color: #ffffff;
+}
+
+.signal-panel p {
+  margin: auto 0 0;
+  max-width: 440px;
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 17px;
+  line-height: 1.5;
+  color: #6e6862;
+}
+
+.model-panel p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.signal-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signal-connector span {
+  width: 42px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.26);
   position: relative;
-  height: 190px;
-  margin: 6px 0 18px;
-  border-radius: 20px;
+}
+
+.signal-connector span::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid rgba(17, 17, 17, 0.38);
+  border-right: 1px solid rgba(17, 17, 17, 0.38);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.mini-map {
+  position: relative;
+  height: 132px;
+  margin: 34px 0 34px;
   overflow: hidden;
-  background: #f8f6f3;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f2efea;
+  border: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .street-line {
   position: absolute;
-  left: 9%;
-  right: 9%;
+  background: rgba(17, 17, 17, 0.12);
+}
+
+.street-line-main {
+  left: 8%;
+  right: 8%;
   top: 50%;
-  height: 18px;
-  transform: translateY(-50%);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.055);
+  height: 1px;
 }
 
-.setup-block {
+.street-line-side {
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+}
+
+.street-line-a {
+  left: 32%;
+}
+
+.street-line-b {
+  left: 68%;
+}
+
+.map-point {
   position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  background: var(--accent, #b44a3c);
+  transform: translate(-50%, -50%);
+}
+
+.point-a {
+  left: 24%;
   top: 50%;
-  height: 48px;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-  background: #b44a3c;
-  box-shadow: 0 0 0 7px rgba(180, 74, 60, 0.12);
 }
 
-.profile-isolated .setup-block {
-  background: #aaa39c;
-  box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.07);
+.point-b {
+  left: 36%;
+  top: 50%;
 }
 
-.nearby-dot {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  transform: translate(-50%, -50%);
-  border-radius: 999px;
-  background: #b44a3c;
+.point-c {
+  left: 48%;
+  top: 50%;
 }
 
-.profile-isolated .nearby-dot {
-  background: #aaa39c;
+.point-d {
+  left: 62%;
+  top: 50%;
 }
 
-.card-caption {
-  min-height: 58px;
-  margin: 0 0 18px;
-  font-size: 1rem;
-  line-height: 1.42;
-  color: var(--muted, #666);
+.point-e {
+  left: 75%;
+  top: 50%;
 }
 
-.signal-read {
-  margin-top: auto;
+.point-f {
+  left: 68%;
+  top: 32%;
+  opacity: 0.42;
 }
 
-.signal-read span {
-  display: block;
-  margin-bottom: 9px;
-  font-family: var(--mono, monospace);
-  font-size: 0.72rem;
+.signal-badge {
+  width: fit-content;
+  margin-top: 30px;
+  padding: 10px 13px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.model-signal-stack {
+  margin-top: 34px;
+  display: grid;
+  gap: 8px;
+}
+
+.signal-rank {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.signal-rank:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.signal-rank span {
+  width: 34px;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.signal-rank strong {
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.signal-rank-main strong {
+  font-size: 16px;
+}
+
+.signal-rank-main {
+  border-color: rgba(180, 74, 60, 0.65);
+  background: rgba(180, 74, 60, 0.18);
+  color: #ffffff;
+}
+
+.supporting-signals {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(17, 17, 17, 0.10);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.supporting-head span {
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ghost, #999);
+  color: #9b948d;
 }
 
-.signal-track {
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.07);
-  overflow: hidden;
-}
-
-.signal-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: #b44a3c;
-}
-
-.profile-note {
+.signal-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 22px;
-  align-items: center;
 }
 
-.profile-note span,
-.profile-note strong {
+.signal-list span {
+  min-height: 34px;
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 500;
+  padding: 0 13px;
+  border: 1px solid rgba(17, 17, 17, 0.11);
+  background: #ffffff;
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 14px;
+  line-height: 1;
+  color: #5f5a55;
 }
 
-.profile-note span {
-  color: var(--ghost, #8a8a8a);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.profile-note strong {
-  color: #8e3329;
-  background: rgba(180, 74, 60, 0.08);
-  border: 1px solid rgba(180, 74, 60, 0.14);
+.signal-note {
+  margin: 18px 0 0;
+  font-family: var(--mono, "IBM Plex Mono", monospace);
+  font-size: 11px;
+  line-height: 1.55;
+  color: #9b948d;
 }
 
 @media (max-width: 980px) {
-  .profile-grid {
+  .signal-frame {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .profile-card {
-    min-height: 0;
+  .signal-connector {
+    display: none;
   }
 
-  .card-top,
-  .card-caption {
-    min-height: 0;
+  .signal-panel {
+    min-height: 300px;
+  }
+
+  .model-signal-stack {
+    margin-top: 34px;
+    gap: 8px;
+  }
+
+  .supporting-signals {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
-@media (max-width: 720px) {
-  .profile-axis {
-    grid-template-columns: 110px 1fr 110px;
+@media (max-width: 640px) {
+  .model-signal {
+    margin-top: 34px;
+    padding: 24px 0 26px;
   }
 
-  .street-scene {
-    height: 170px;
+  .signal-panel {
+    min-height: 0;
+    padding: 26px 24px 28px;
+  }
+
+  .signal-panel h3 {
+    font-size: clamp(30px, 10vw, 44px);
+  }
+
+  .mini-map {
+    height: 116px;
   }
 }
 </style>

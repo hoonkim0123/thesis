@@ -192,90 +192,95 @@ onMounted(() => {
     </section>
 
     <!-- ======================== -->
-    <!-- S5: CONTESTED SPACE -->
+    <!-- S5: MODEL READING -->
     <!-- ======================== -->
-    <section id="s5" class="section-conflict">
-      <div class="conflict-wrap">
-        <div class="conflict-hero fade">
-          <div class="s-num">CONTESTED SPACE</div>
-
-          <h1 class="conflict-title">
-            Outdoor dining became a fight over shared street space.
-          </h1>
-
-          <p class="conflict-dek">
-            Public comments show what people argued. 311 complaints show how that conflict appeared in everyday street problems.
-          </p>
-        </div>
-
-        <div class="quote-stage fade">
-          <div class="quote-card">
-            <div class="quote-label">Public value</div>
-
-            <p class="quote-text">
-              Outdoor dining kept restaurants alive and made streets feel active.
-            </p>
-
-            <p class="quote-note">
-              Supportive comments framed outdoor dining as recovery, access, street life, and a better use of curb space than parking.
-            </p>
-          </div>
-
-          <div class="quote-card quote-card-dark">
-            <div class="quote-label">Street conflict</div>
-
-            <p class="quote-text">
-              Outdoor dining blocked movement, created noise, and turned public space into restaurant space.
-            </p>
-
-            <p class="quote-note">
-              Critical comments framed outdoor dining as obstruction, sanitation risk, parking loss, noise, and privatized public space.
-            </p>
-          </div>
-        </div>
-
-        <div class="conflict-chart-block fade">
-          <div class="chart-intro">
-            <div class="s-num">REPORTED CONFLICTS</div>
-
-            <h2>
-              The complaints make the conflict measurable.
-            </h2>
-
-            <p>
-              311 records show outdoor dining as a recurring set of reported problems in public space.
-            </p>
-          </div>
-
-          <ReportedConflictChart />
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================== -->
-    <!-- S6: MODEL READING -->
-    <!-- ======================== -->
-    <section id="s6">
+    <section id="s5" class="section-model">
       <div class="w">
         <div class="s-num fade">MODEL READING</div>
 
         <h1 class="hed fade">
-          The model reads survival as a pattern of repetition.
+          The model reads where repetition remains.
         </h1>
 
         <p class="body-l fade">
-          I used a classification model to compare locations that remained with locations that disappeared.
+          After seeing this pattern in the map, I wanted to see whether the model would read it too.
         </p>
 
         <p class="body-l fade">
-          The clearest signal was not one single cause. It was nearby repetition, especially where outdoor dining repeats along the same street.
+          The model does not prove why each restaurant stayed or left. It shows that the strongest signal was nearby repetition on the same street.
         </p>
 
         <RepetitionProfile class="fade" />
 
         <p class="body-l fade s6-note">
-          This does not explain why each restaurant stayed. It shows that the remaining pattern becomes more visible where outdoor dining repeats locally.
+          Random Forest feature importance. Exploratory, not causal.
         </p>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- S6: CONTESTED SPACE -->
+    <!-- ======================== -->
+    <section id="s6" class="section-contested">
+      <div class="w contested-wrap">
+        <div class="s-num fade">CONTESTED SPACE</div>
+
+        <h1 class="hed fade">
+          Outdoor dining has also become a conflict over shared street space.
+        </h1>
+
+        <p class="body-l fade contested-intro">
+          Spatial repetition explains where outdoor dining remains visible.
+          But it does not explain the full public debate around it.
+        </p>
+
+        <p class="body-l fade contested-intro">
+          Public comments show what people argued. 311 complaints show what people reported.
+        </p>
+
+        <!-- Editorial public comments block -->
+        <div class="comment-editorial fade">
+          <div class="editorial-kicker">PUBLIC COMMENTS</div>
+          <div class="editorial-subhead">Two readings of the same street</div>
+
+          <div class="editorial-quotes">
+            <div class="editorial-quote editorial-quote-left">
+              <div class="quote-type">SUPPORTIVE</div>
+              <blockquote>
+                “They have brought both life and creativity to our streets.”
+              </blockquote>
+            </div>
+
+            <div class="editorial-divider"></div>
+
+            <div class="editorial-quote editorial-quote-right">
+              <div class="quote-type">CRITICAL</div>
+              <blockquote>
+                “The sidewalks are for the movement of pedestrians, not seating for restaurants.”
+              </blockquote>
+            </div>
+          </div>
+
+          <p class="editorial-note">
+            The same outdoor dining setup was read in very different ways:
+            as street life and recovery for some, and as obstruction or loss of public space for others.
+          </p>
+        </div>
+
+        <!-- 311 complaints section -->
+        <div class="complaints-block fade">
+          <div class="s-num">REPORTED CONFLICTS</div>
+
+          <h2 class="subhed">
+            The complaints make the conflict measurable.
+          </h2>
+
+          <p class="body-l complaints-intro">
+            311 records show outdoor dining as a recurring set of reported problems in public space.
+          </p>
+
+          <ReportedConflictChart />
+        </div>
       </div>
     </section>
 

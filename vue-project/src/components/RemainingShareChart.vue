@@ -75,7 +75,7 @@ const MAX = 100
 
 <style scoped>
 .rs-wrap {
-  margin: 36px 0 28px;
+  margin: 30px 0 24px;
 }
 
 .rs-title {
