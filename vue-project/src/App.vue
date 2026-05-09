@@ -50,36 +50,23 @@ onMounted(() => {
 
           <div class="decline-stats fade">
             <div class="decline-main">
-              <span
-                class="decline-from"
-                @mouseenter="activeLayer = 'historic'"
-                @mouseleave="activeLayer = null"
-              >
+              <span class="decline-from">
                 4,660
               </span>
 
               <span class="decline-arrow">→</span>
 
-              <span
-                class="decline-to"
-                @mouseenter="activeLayer = 'current'"
-                @mouseleave="activeLayer = null"
-              >
+              <span class="decline-to">
                 318
               </span>
             </div>
 
             <div class="decline-sub">Manhattan outdoor dining locations</div>
-            <div class="decline-loss">−93%</div>
+            <div class="decline-loss">−93% drop</div>
           </div>
 
           <p class="body-l fade">
-            At its peak, outdoor dining spread across Manhattan streets.
-            Today, only a small fraction remains.
-          </p>
-
-          <p class="body-l fade">
-            The loss was not only numerical. It changed where outdoor dining can still be seen.
+            At its peak, outdoor dining spread across Manhattan streets. Today, only 318 locations remain, a 93 percent drop.
           </p>
 
           <p class="body-l fade decline-note">
@@ -240,21 +227,18 @@ onMounted(() => {
 
         <!-- Editorial public comments block -->
         <div class="comment-editorial fade">
-          <div class="editorial-kicker">PUBLIC COMMENTS</div>
           <div class="editorial-subhead">Two readings of the same street</div>
 
-          <div class="editorial-quotes">
-            <div class="editorial-quote editorial-quote-left">
+          <div class="editorial-stagger">
+            <div class="stagger-quote stagger-quote-left">
               <div class="quote-type">SUPPORTIVE</div>
               <blockquote>
                 “They have brought both life and creativity to our streets.”
               </blockquote>
             </div>
 
-            <div class="editorial-divider"></div>
-
-            <div class="editorial-quote editorial-quote-right">
-              <div class="quote-type">CRITICAL</div>
+            <div class="stagger-quote stagger-quote-right">
+              <div class="quote-type">OPPOSED</div>
               <blockquote>
                 “The sidewalks are for the movement of pedestrians, not seating for restaurants.”
               </blockquote>
@@ -262,21 +246,19 @@ onMounted(() => {
           </div>
 
           <p class="editorial-note">
-            The same outdoor dining setup was read in very different ways:
-            as street life and recovery for some, and as obstruction or loss of public space for others.
+            Public comments show the argument around outdoor dining: for some, street life and recovery; for others, obstruction and loss of public space.
           </p>
         </div>
 
         <!-- 311 complaints section -->
         <div class="complaints-block fade">
-          <div class="s-num">REPORTED CONFLICTS</div>
 
           <h2 class="subhed">
             The complaints make the conflict measurable.
           </h2>
 
           <p class="body-l complaints-intro">
-            311 records show outdoor dining as a recurring set of reported problems in public space.
+            311 records show how those arguments appeared as recurring street-level problems.
           </p>
 
           <ReportedConflictChart />

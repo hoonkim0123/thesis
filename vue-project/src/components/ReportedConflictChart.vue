@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const groups = [
   {
@@ -31,26 +31,56 @@ const groups = [
   },
 ]
 
-const mounted = ref(false)
+const chartEl = ref(null)
+const isVisible = ref(false)
+let observer = null
 
 const maxItemValue = computed(() => {
   return Math.max(...groups.flatMap((group) => group.items.map((item) => item.value)))
 })
 
+function getBarWidth(item) {
+  if (!isVisible.value) return '0%'
+  return `${(item.value / maxItemValue.value) * 100}%`
+}
+
+function getDelay(groupIndex, itemIndex) {
+  if (!isVisible.value) return '0ms'
+  return `${120 + groupIndex * 160 + itemIndex * 80}ms`
+}
+
 onMounted(() => {
-  setTimeout(() => {
-    mounted.value = true
-  }, 120)
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        isVisible.value = true
+      } else {
+        isVisible.value = false
+      }
+    },
+    {
+      threshold: 0.25,
+      rootMargin: '0px 0px -10% 0px',
+    }
+  )
+
+  if (chartEl.value) {
+    observer.observe(chartEl.value)
+  }
+})
+
+onBeforeUnmount(() => {
+  observer?.disconnect()
 })
 </script>
 
 <template>
-  <div class="rcc-wrap">
+  <div ref="chartEl" class="rcc-wrap">
     <div class="rcc-kicker">311 complaint themes</div>
 
     <div class="rcc-grid">
       <article
-        v-for="group in groups"
+        v-for="(group, groupIndex) in groups"
         :key="group.id"
         class="rcc-card"
       >
@@ -61,7 +91,7 @@ onMounted(() => {
 
         <div class="rcc-rows">
           <div
-            v-for="item in group.items"
+            v-for="(item, itemIndex) in group.items"
             :key="item.label"
             class="rcc-row"
           >
@@ -74,7 +104,10 @@ onMounted(() => {
               <div
                 class="rcc-fill"
                 :class="{ 'rcc-fill-primary': item.label === 'Sidewalk blocked' }"
-                :style="{ width: mounted ? (item.value / maxItemValue * 100) + '%' : '0%' }"
+                :style="{
+                  width: getBarWidth(item),
+                  transitionDelay: getDelay(groupIndex, itemIndex),
+                }"
               ></div>
             </div>
           </div>
@@ -96,24 +129,28 @@ onMounted(() => {
 
 .rcc-kicker {
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ghost, #a0a0a0);
-  margin-bottom: 14px;
+  color: #aaa39c;
+  margin-bottom: 18px;
 }
 
 .rcc-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border: 1px solid var(--rule, #e6e6e6);
-  background: var(--white, #ffffff);
+  border-top: 1px solid rgba(17, 17, 17, 0.10);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+  background: transparent;
 }
 
 .rcc-card {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  border-bottom: 1px solid var(--rule, #e6e6e6);
+  grid-template-columns: 230px 1fr;
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .rcc-card:last-child {
@@ -121,40 +158,38 @@ onMounted(() => {
 }
 
 .rcc-card-top {
-  padding: 22px 24px;
-  background: var(--off, #f7f7f5);
-  border-right: 1px solid var(--rule, #e6e6e6);
+  padding: 0;
+  background: transparent;
+  border-right: none;
 }
 
 .rcc-card-title {
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.18;
   letter-spacing: -0.025em;
-  font-weight: 650;
+  font-weight: 700;
   color: var(--ink, #111111);
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .rcc-card-desc {
   margin: 0;
-  max-width: 220px;
+  max-width: 190px;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 13px;
-  line-height: 1.55;
-  color: var(--muted, #555555);
+  line-height: 1.5;
+  color: #6e6862;
 }
 
 .rcc-rows {
-  padding: 16px 22px;
+  padding: 0;
+  display: grid;
+  gap: 16px;
 }
 
 .rcc-row {
-  padding: 11px 0 13px;
-  border-bottom: 1px solid var(--rule, #e6e6e6);
-}
-
-.rcc-row:last-child {
+  padding: 0;
   border-bottom: none;
 }
 
@@ -162,31 +197,33 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 9px;
+  margin-bottom: 7px;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 14px;
   line-height: 1.35;
-  color: var(--muted, #555555);
+  color: #5f5a55;
 }
 
 .rcc-row-head strong {
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink, #111111);
+  font-size: 11px;
+  font-weight: 700;
+  color: #3e3a36;
 }
 
 .rcc-track {
   width: 100%;
-  height: 6px;
-  background: var(--accent-soft, #f0d8d3);
+  height: 5px;
+  background: rgba(180, 74, 60, 0.16);
   overflow: hidden;
 }
 
 .rcc-fill {
   height: 100%;
-  background: rgba(180, 74, 60, 0.5);
-  transition: width 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(180, 74, 60, 0.52);
+  transition-property: width;
+  transition-duration: 900ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .rcc-fill-primary {
@@ -194,17 +231,32 @@ onMounted(() => {
 }
 
 .rcc-note {
-  margin-top: 14px;
+  margin-top: 12px;
   max-width: 760px;
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1.5;
-  color: var(--ghost, #a0a0a0);
+  color: #aaa39c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rcc-fill {
+    transition: none;
+  }
 }
 
 @media (max-width: 760px) {
-  .rcc-lead {
+  .rcc-card {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rcc-card-desc {
+    max-width: none;
+  }
+
+  .rcc-row-head {
+    font-size: 13px;
   }
 }
 </style>

@@ -372,7 +372,7 @@ section {
 }
 
 .decline-stats {
-  padding: 30px 0 28px;
+  padding: 28px 0 26px;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   margin: var(--space-4) 0;
@@ -383,7 +383,7 @@ section {
   align-items: baseline;
   gap: 12px;
   font-family: var(--sans);
-  font-size: clamp(48px, 5.8vw, 76px);
+  font-size: clamp(44px, 5.2vw, 68px);
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 0.95;
@@ -391,12 +391,12 @@ section {
 
 .decline-from {
   color: var(--data-historic);
-  cursor: pointer;
-  transition: opacity 0.2s;
+  cursor: default;
+  transition: none;
 }
 
 .decline-from:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .decline-arrow {
@@ -407,12 +407,12 @@ section {
 
 .decline-to {
   color: var(--ink);
-  cursor: pointer;
-  transition: opacity 0.2s;
+  cursor: default;
+  transition: none;
 }
 
 .decline-to:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .decline-sub {
@@ -427,9 +427,34 @@ section {
 .decline-loss {
   margin-top: 14px;
   font-family: var(--sans);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
   color: var(--accent);
+}
+
+.decline-stats.visible .decline-loss {
+  animation: declineKick 680ms cubic-bezier(0.16, 1, 0.3, 1) 180ms both;
+}
+
+@keyframes declineKick {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.decline-note {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #7a746e;
 }
 
 .decline-map-wrap {
@@ -453,10 +478,10 @@ section {
 
 .decline-legend {
   display: flex;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
-  font-size: 12px;
-  color: #666666;
+  gap: 18px;
+  margin-top: 14px;
+  font-size: 11px;
+  color: #7a746e;
 }
 
 .legend-row {
@@ -491,10 +516,6 @@ section {
   background: #111111;
 }
 
-.decline-note {
-  color: #7a746e;
-  font-size: 0.95em;
-}
 /* ======================== */
 /* S3: VISIBILITY           */
 /* ======================== */
@@ -794,92 +815,144 @@ section {
   max-width: 760px;
 }
 
-/* Editorial public comments */
+/* Public comments editorial spread */
+
 .comment-editorial {
-  margin: 38px 0 58px;
-  padding: 34px 36px 34px;
-  border: 1px solid rgba(17, 17, 17, 0.10);
-  background: #fafaf8;
+  margin: 44px 0 56px;
+  padding: 38px 0 44px;
+  border-top: 1px solid rgba(17, 17, 17, 0.10);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+  border-left: none;
+  border-right: none;
+  background: transparent;
 }
 
 .editorial-kicker {
-  font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #9b948d;
+  display: none;
 }
 
 .editorial-subhead {
-  margin-top: 10px;
+  margin-top: 0;
+  max-width: 620px;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: clamp(26px, 2.6vw, 36px);
+  font-size: clamp(30px, 3vw, 42px);
   line-height: 1.04;
   letter-spacing: -0.045em;
   font-weight: 700;
   color: #111111;
 }
 
-.editorial-quotes {
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 0;
-  margin: 30px 0 24px;
-  align-items: stretch;
+.subtle-label {
+  display: none;
 }
 
-.editorial-quote {
-  padding-right: 30px;
+.editorial-stagger {
+  position: relative;
+  margin-top: 34px;
+  min-height: 360px;
 }
 
-.editorial-quote-right {
-  padding-left: 30px;
-  padding-right: 0;
+.stagger-quote {
+  position: relative;
 }
 
-.editorial-divider {
-  width: 1px;
-  background: rgba(17, 17, 17, 0.12);
+.stagger-quote-left {
+  width: min(620px, 78%);
+  margin-left: 0;
+}
+
+.stagger-quote-right {
+  width: min(520px, 64%);
+  margin-top: 28px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border-left: none;
 }
 
 .quote-type {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #9b948d;
 }
 
-.editorial-quote-left .quote-type {
+.stagger-quote-left .quote-type {
   color: var(--accent);
 }
 
-.editorial-quote blockquote {
+.stagger-quote-right .quote-type {
+  color: #8b857f;
+}
+
+.stagger-quote blockquote,
+.stagger-quote-right blockquote {
   margin: 0;
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: clamp(25px, 2.55vw, 36px);
-  line-height: 1.12;
-  letter-spacing: -0.045em;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
   font-weight: 700;
+}
+
+.stagger-quote blockquote {
   color: #111111;
 }
 
-.editorial-quote-right blockquote {
+.stagger-quote-right blockquote {
   color: #3e3a36;
 }
 
 .editorial-note {
-  max-width: 760px;
-  margin: 0;
-  padding-top: 22px;
+  max-width: 720px;
+  margin: 32px 0 0;
+  padding-top: 18px;
   border-top: 1px solid rgba(17, 17, 17, 0.08);
   font-family: var(--sans, "IBM Plex Sans", sans-serif);
   font-size: 15px;
   line-height: 1.55;
   color: #6e6862;
+}
+
+@media (max-width: 900px) {
+  .comment-editorial {
+    margin: 36px 0 54px;
+    padding: 30px 0 32px;
+  }
+
+  .editorial-subhead {
+    font-size: clamp(28px, 7.2vw, 38px);
+  }
+
+  .editorial-stagger {
+    min-height: 0;
+    margin-top: 32px;
+  }
+
+  .stagger-quote-left,
+  .stagger-quote-right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .stagger-quote-right {
+    margin-top: 34px;
+    padding: 0;
+    background: transparent;
+    border-left: none;
+  }
+
+  .stagger-quote blockquote,
+  .stagger-quote-right blockquote {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  .editorial-note {
+    margin-top: 34px;
+  }
 }
 
 /* 311 complaints */
@@ -990,36 +1063,33 @@ section {
   }
 
   .comment-editorial {
-    margin: 34px 0 50px;
-    padding: 26px 24px 28px;
+    margin: 36px 0 54px;
+    padding: 30px 24px 30px;
   }
 
   .editorial-subhead {
-    font-size: clamp(24px, 7vw, 34px);
+    font-size: clamp(28px, 2.7vw, 38px);
   }
 
-  .editorial-quotes {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    margin: 28px 0 22px;
+  .editorial-stagger {
+    margin-top: 32px;
   }
 
-  .editorial-divider {
-    display: none;
+  .stagger-quote {
+    width: 100%;
   }
 
-  .editorial-quote,
-  .editorial-quote-right {
-    padding: 0;
+  .stagger-quote-right {
+    margin-top: 34px;
+    margin-left: 0;
   }
 
-  .editorial-quote blockquote {
-    font-size: clamp(25px, 7.4vw, 36px);
+  .stagger-quote blockquote {
+    font-size: clamp(28px, 8vw, 42px);
   }
 
   .editorial-note {
-    font-size: 15px;
-    padding-top: 20px;
+    margin-top: 34px;
   }
 
   .subhed {
