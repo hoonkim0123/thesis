@@ -2,12 +2,10 @@
 import { onMounted, ref } from 'vue'
 import DeclineMap from './components/DeclineMap.vue'
 import CorridorStreetMap from './components/CorridorStreetMap.vue'
-import PublicVoices from './components/PublicVoices.vue'
 import CorridorGuideMap from './components/CorridorGuideMap.vue'
 import RepetitionProfile from './components/RepetitionProfile.vue'
 import CorridorStripDiagram from './components/CorridorStripDiagram.vue'
 import LandingHero from './components/LandingHero.vue'
-import StreetConflictDiagram from './components/StreetConflictDiagram.vue'
 import ReportedConflictChart from './components/ReportedConflictChart.vue'
 
 const activeLayer = ref(null)
