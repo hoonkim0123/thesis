@@ -159,11 +159,11 @@ onMounted(() => {
           </h1>
 
           <p class="body-l">
-            A few streets still show repeated setups.
+            Only a few streets still show repeated setups.
           </p>
 
           <p class="body-l">
-            Here, visibility comes from repetition along the same corridor.
+            On these streets, visibility comes from locations appearing close enough to be noticed together.
           </p>
 
           <div class="corridor-street-list-wrap">
@@ -185,15 +185,15 @@ onMounted(() => {
         <div class="s-num fade">MODEL READING</div>
 
         <h1 class="hed fade">
-          The model reads where repetition remains.
+          The model reads the same street pattern.
         </h1>
 
         <p class="body-l fade">
-          I tested whether the model would read the same pattern.
+          I used the model to test whether the same pattern appeared in the data.
         </p>
 
         <p class="body-l fade">
-          The model does not prove why each restaurant stayed or left. But among the features tested, same street repetition was the strongest signal.
+          It does not prove why each restaurant stayed or left. But among the features tested, same-street repetition was the strongest signal.
         </p>
 
         <RepetitionProfile class="fade" />
@@ -213,16 +213,12 @@ onMounted(() => {
         </h1>
 
         <p class="body-l fade contested-intro">
-          Spatial repetition explains where outdoor dining remains visible. But it does not explain the public debate around it.
-        </p>
-
-        <p class="body-l fade contested-intro">
-          Public comments show what people argued. 311 complaints show what people reported.
+          Repetition explains where outdoor dining remains visible. But public comments and 311 complaints show why that visibility became contested.
         </p>
 
         <!-- Editorial public comments block -->
         <div class="comment-editorial fade">
-          <div class="editorial-subhead">Two readings of the same street</div>
+          <div class="editorial-subhead">The same street can be read two ways.</div>
 
           <div class="editorial-stagger">
             <div class="stagger-quote stagger-quote-left">
@@ -241,7 +237,7 @@ onMounted(() => {
           </div>
 
           <p class="editorial-note">
-            Public comments show two readings of outdoor dining: street life and recovery for some, obstruction and loss of public space for others.
+            For some, outdoor dining brought street life. For others, it meant obstruction and lost public space.
           </p>
         </div>
 
@@ -253,7 +249,7 @@ onMounted(() => {
           </h2>
 
           <p class="body-l complaints-intro">
-            311 records show how those arguments appeared as recurring street-level problems.
+            311 records show how the conflict appeared as recurring problems on the street.
           </p>
 
           <ReportedConflictChart />
@@ -273,15 +269,15 @@ onMounted(() => {
         </h1>
 
         <p class="body-l fade">
-          Outdoor dining still exists in Manhattan, but it no longer appears as a broad street level condition.
+          The city still has outdoor dining, but it no longer appears as a broad street level condition.
         </p>
 
         <p class="body-l fade">
-          What remains is concentrated on fewer streets, shaped by new rules, and negotiated through public conflict.
+          What remains is shaped by fewer streets, new rules, and public conflict.
         </p>
 
         <p class="body-l fade">
-          This is why outdoor dining can still be present in the city, but feel absent from everyday streets.
+          To see that change, the project returns to the street.
         </p>
       </div>
     </section>
@@ -298,11 +294,7 @@ onMounted(() => {
         </h1>
 
         <p class="body-l fade">
-          Outdoor dining is still visible, but not everywhere.
-        </p>
-
-        <p class="body-l fade">
-          The remaining pattern is easiest to see from the street, where repeated locations make some corridors feel active while others feel empty.
+          At street level, outdoor dining is still visible, but not everywhere. Repeated locations make some corridors feel present while other streets feel absent.
         </p>
       </div>
 

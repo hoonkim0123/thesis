@@ -20,7 +20,7 @@
         </div>
 
         <p>
-          They are not evenly spread across Manhattan. They appear again and again along a smaller set of streets.
+          The map pattern becomes a signal: whether remaining locations cluster along the same street.
         </p>
       </div>
 
@@ -36,7 +36,7 @@
         <div class="model-signal-stack" aria-hidden="true">
           <div class="signal-rank signal-rank-main">
             <span>01</span>
-            <strong>Same street repetition</strong>
+            <strong>Same-street repetition</strong>
           </div>
           <div class="signal-rank">
             <span>02</span>
@@ -49,7 +49,7 @@
         </div>
 
         <p>
-          Among the features tested, the model read same street repetition as the strongest signal.
+          The strongest signal was repetition along the same street.
         </p>
       </div>
     </div>
@@ -63,7 +63,6 @@
         <span>Nearby outdoor dining</span>
         <span>Subway distance</span>
         <span>Street width</span>
-        <span>Corridor presence</span>
         <span>Transit proximity</span>
       </div>
     </div>

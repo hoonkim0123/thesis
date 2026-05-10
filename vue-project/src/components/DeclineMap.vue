@@ -49,33 +49,33 @@ function updateHighlight(mode) {
 
   if (mode === 'historic') {
     setLayerStyle(historicLayer, {
-      radius: 2.5,
-      fillColor: '#9f9a93',
-      color: '#9f9a93',
-      fillOpacity: 0.26,
-      opacity: 0.26,
+      radius: 1.8,
+      fillColor: '#6f6a64',
+      color: '#6f6a64',
+      fillOpacity: 0.30,
+      opacity: 0.30,
       weight: 0,
     })
 
     setCurrentMarkersVisible(false)
   } else if (mode === 'current') {
     setLayerStyle(historicLayer, {
-      radius: 2.2,
+      radius: 1.6,
       fillColor: '#b8b2ab',
       color: '#b8b2ab',
-      fillOpacity: 0.035,
-      opacity: 0.035,
+      fillOpacity: 0.025,
+      opacity: 0.025,
       weight: 0,
     })
 
     setCurrentMarkersVisible(true)
   } else {
     setLayerStyle(historicLayer, {
-      radius: 2.2,
-      fillColor: '#9f9a93',
-      color: '#9f9a93',
-      fillOpacity: 0.20,
-      opacity: 0.20,
+      radius: 1.7,
+      fillColor: '#8f8982',
+      color: '#8f8982',
+      fillOpacity: 0.11,
+      opacity: 0.11,
       weight: 0,
     })
 
@@ -138,12 +138,12 @@ onMounted(async () => {
     historicLayer = L.geoJSON(historic, {
       pointToLayer: (_, latlng) =>
         L.circleMarker(latlng, {
-          radius: 2.2,
-          fillColor: '#9f9a93',
-          color: '#9f9a93',
+          radius: 1.7,
+          fillColor: '#8f8982',
+          color: '#8f8982',
           weight: 0,
-          fillOpacity: 0.20,
-          opacity: 0.20,
+          fillOpacity: 0.11,
+          opacity: 0.11,
           className: 'historic-dot',
           interactive: false,
         }),
@@ -281,7 +281,7 @@ onBeforeUnmount(() => {
 }
 
 :deep(.leaflet-tile) {
-  opacity: 0.24;
+  opacity: 0.18;
 }
 
 :deep(.historic-dot) {

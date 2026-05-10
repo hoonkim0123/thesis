@@ -17,8 +17,8 @@ const streets = [
         restaurant: 'The Wolfe · Momoya',
         caption: 'Repeated setups remain visible along the avenue.',
         base: '/images/s8/amsterdam/amsterdam_corridor_the-wolfe-momoya_angle_visible_001.jpg',
-        streetOrder: 72,
-        streetAddress: 'W 72nd St',
+        streetOrder: 426,
+        streetAddress: '425-427 Amsterdam Ave',
         mask: '',
       },
       {
@@ -53,11 +53,11 @@ const streets = [
       {
         id: 'columbus-papardella-corner',
         type: 'Street view',
-        restaurant: 'Papardella · Columbus Avenue',
+        restaurant: 'Pappardella',
         caption: 'Separated setups appear across the same street view.',
         base: '/images/s8/columbus/columbus_papardella_corner_wide_visible_001.jpg',
-        streetOrder: 240,
-        streetAddress: '240 Columbus Ave',
+        streetOrder: 316,
+        streetAddress: '316 Columbus Ave',
         mask: '',
       },
       {
@@ -77,8 +77,8 @@ const streets = [
         restaurant: 'El Mitote',
         caption: 'A larger setup makes one pocket of the avenue more visible.',
         base: '/images/s8/columbus/columbus_el-mitote_angle_visible_001.jpg',
-        streetOrder: 359,
-        streetAddress: '359 Columbus Ave',
+        streetOrder: 208,
+        streetAddress: '208 Columbus Ave',
         mask: '',
       },
     ],
@@ -188,6 +188,11 @@ function selectStreet(index) {
 function selectImage(index) {
   activeImageIndex.value = index
 }
+
+function selectImageById(id) {
+  const index = activeStreet.value.images.findIndex((image) => image.id === id)
+  if (index !== -1) activeImageIndex.value = index
+}
 </script>
 
 <template>
@@ -282,12 +287,12 @@ function selectImage(index) {
 
         <div class="s8-thumbs" aria-label="Photo selector">
           <button
-            v-for="(image, index) in activeStreet.images"
+            v-for="image in activeStreetOrder"
             :key="image.id"
             class="s8-thumb"
-            :class="{ 'is-active': activeImageIndex === index }"
+            :class="{ 'is-active': activeImage.id === image.id }"
             type="button"
-            @click="selectImage(index)"
+            @click="selectImageById(image.id)"
           >
             <span class="s8-thumb-img">
               <img
