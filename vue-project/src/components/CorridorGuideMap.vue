@@ -311,7 +311,7 @@ function selectImageById(id) {
       </div>
 
       <p class="s8-note">
-        Field photos by Saehun Kim. Columbus Avenue night photo courtesy of Nichos. Photos were taken after the March 2026 dataset snapshot and are used as field observations.
+        Field photos by Saehun Kim. Columbus Avenue night photo courtesy of Nichos. Photos were taken after the March 2026 dataset snapshot.
       </p>
     </div>
   </div>

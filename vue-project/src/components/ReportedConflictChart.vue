@@ -234,7 +234,7 @@ onBeforeUnmount(() => {
   margin-top: 12px;
   max-width: 760px;
   font-family: var(--mono, "IBM Plex Mono", monospace);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.5;
   color: #aaa39c;
 }

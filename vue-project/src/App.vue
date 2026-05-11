@@ -235,10 +235,6 @@ onMounted(() => {
               </blockquote>
             </div>
           </div>
-
-          <p class="editorial-note">
-            For some, outdoor dining brought street life. For others, it meant obstruction and lost public space.
-          </p>
         </div>
 
         <!-- 311 complaints section -->

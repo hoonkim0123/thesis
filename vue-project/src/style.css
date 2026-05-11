@@ -982,17 +982,6 @@ section {
   color: #3e3a36;
 }
 
-.editorial-note {
-  max-width: 720px;
-  margin: 32px 0 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(17, 17, 17, 0.08);
-  font-family: var(--sans, "IBM Plex Sans", sans-serif);
-  font-size: 15px;
-  line-height: 1.55;
-  color: #6e6862;
-}
-
 @media (max-width: 900px) {
   .comment-editorial {
     margin: 36px 0 54px;
