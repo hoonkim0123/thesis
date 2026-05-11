@@ -18,13 +18,13 @@ https://hoonkim0123.github.io/thesis/
 
 Outdoor dining once appeared everywhere in New York City. At its peak, thousands of temporary structures filled streets across neighborhoods, reshaping how people experienced the city. Today, far fewer remain. But this project argues that the change is not only about decline.
 
-Outdoor dining did not simply disappear. It became uneven.
+Outdoor dining did not simply disappear. It was reduced, concentrated, and contested.
 
 This project examines how the transition from an emergency program to a permanent system reshaped where outdoor dining persists. Using spatial analysis and visualization, it reveals that what remains is concentrated along a small number of streets rather than distributed across the city.
 
 By comparing historic and current locations, the project shifts the focus from how much was lost to where it was lost from. It shows how urban systems, regulations, and local conditions influence not only what exists, but what is visible and experienced in everyday life.
 
-In doing so, the project reframes outdoor dining as a spatial phenomenon—one that changes how the city is perceived depending on where you are.
+In doing so, the project reframes outdoor dining as a spatial condition: still present in the city, but no longer present across most everyday streets.
 
 ---
 
