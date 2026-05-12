@@ -256,8 +256,8 @@ onMounted(() => {
     <!-- ======================== -->
     <!-- S7: CONCLUSION -->
     <!-- ======================== -->
-    <section id="s7">
-      <div class="w">
+    <section id="s7" class="section-what-changed">
+      <div class="w what-changed-wrap">
         <div class="s-num fade">WHAT CHANGED</div>
 
         <h1 class="hed fade">
@@ -268,9 +268,25 @@ onMounted(() => {
           The city still has outdoor dining, but it no longer appears as a broad street level condition.
         </p>
 
-        <p class="body-l fade">
-          What remains is shaped by fewer streets, new rules, and public conflict.
-        </p>
+        <div class="change-summary fade" aria-label="What changed summary">
+          <div class="change-row">
+            <span class="change-word">Reduced</span>
+            <span class="change-line"></span>
+            <span class="change-copy">4,660 locations became 318.</span>
+          </div>
+
+          <div class="change-row">
+            <span class="change-word">Concentrated</span>
+            <span class="change-line"></span>
+            <span class="change-copy">What remains repeats on fewer streets.</span>
+          </div>
+
+          <div class="change-row">
+            <span class="change-word">Contested</span>
+            <span class="change-line"></span>
+            <span class="change-copy">Public comments and 311 records show conflict over street use.</span>
+          </div>
+        </div>
 
         <p class="body-l fade">
           To see that change, the project returns to the street.

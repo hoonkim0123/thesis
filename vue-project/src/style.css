@@ -86,6 +86,172 @@ section {
   border-bottom: none;
 }
 
+/* ======================== */
+/* S7: WHAT CHANGED SUMMARY */
+/* ======================== */
+
+.section-what-changed {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.what-changed-wrap {
+  max-width: 900px;
+}
+
+.section-what-changed .hed {
+  max-width: 900px;
+}
+
+.change-summary {
+  margin: 46px 0 42px;
+  border-top: 1px solid var(--rule, #e6e6e6);
+  border-bottom: 1px solid var(--rule, #e6e6e6);
+}
+
+.change-summary .change-row {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.change-summary.visible .change-row {
+  animation: changeRowIn 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.change-summary.visible .change-row:nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.change-summary.visible .change-row:nth-child(2) {
+  animation-delay: 220ms;
+}
+
+.change-summary.visible .change-row:nth-child(3) {
+  animation-delay: 360ms;
+}
+
+.change-row {
+  display: grid;
+  grid-template-columns: 190px 1fr minmax(280px, 420px);
+  gap: 24px;
+  align-items: center;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule, #e6e6e6);
+}
+
+.change-row:first-child {
+  border-top: none;
+}
+
+.change-word {
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 750;
+  color: var(--ink, #111);
+}
+
+.change-line {
+  display: block;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.14);
+}
+
+.change-copy {
+  font-family: var(--sans, "IBM Plex Sans", sans-serif);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--muted, #555);
+}
+
+@media (max-width: 900px) {
+  .change-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 24px 0;
+  }
+
+  .change-line {
+    width: 72px;
+  }
+}
+
+/* ======================== */
+/* S3: DOT REVEAL           */
+/* ======================== */
+
+.visibility-pattern .dot {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.65);
+}
+
+.visibility-pattern.visible .dot {
+  animation: visibilityDotIn 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.visibility-pattern.visible .isolated-field .dot-a {
+  animation-delay: 120ms;
+}
+
+.visibility-pattern.visible .repeated-field .dot-a {
+  animation-delay: 360ms;
+}
+
+.visibility-pattern.visible .repeated-field .dot-b {
+  animation-delay: 460ms;
+}
+
+.visibility-pattern.visible .repeated-field .dot-c {
+  animation-delay: 560ms;
+}
+
+.visibility-pattern.visible .repeated-field .dot-d {
+  animation-delay: 660ms;
+}
+
+.visibility-pattern.visible .repeated-field .dot-e {
+  animation-delay: 760ms;
+}
+
+@keyframes changeRowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes visibilityDotIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.65);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visibility-pattern .dot,
+  .change-summary .change-row {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+}
+
 .w,
 .public-wrap,
 .decline-grid,

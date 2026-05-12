@@ -126,4 +126,58 @@ onMounted(() => {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+
+/* Initial reveal when S4 enters viewport */
+
+.corridor-row,
+.st-note {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.corridor-grid.visible .corridor-row,
+.corridor-grid.visible .st-note {
+  animation: corridorRowIn 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.corridor-grid.visible .corridor-row:nth-of-type(1) {
+  animation-delay: 120ms;
+}
+
+.corridor-grid.visible .corridor-row:nth-of-type(2) {
+  animation-delay: 220ms;
+}
+
+.corridor-grid.visible .corridor-row:nth-of-type(3) {
+  animation-delay: 320ms;
+}
+
+.corridor-grid.visible .corridor-row:nth-of-type(4) {
+  animation-delay: 420ms;
+}
+
+.corridor-grid.visible .st-note {
+  animation-delay: 520ms;
+}
+
+@keyframes corridorRowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corridor-row,
+  .st-note {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+}
 </style>
