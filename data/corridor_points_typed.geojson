@@ -1,0 +1,1839 @@
+{
+  "type": "FeatureCollection",
+  "name": "corridor_points_typed",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 83.86127944543706,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "271 1/2 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MADE IN NEW YORK PIZZA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981310731227,
+          40.77901791977299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 140.52543266583626,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "283 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "SALUMERIA ROSI",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98098563266402,
+          40.77947349550201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 229.76330142936763,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 7,
+        "complaints_clean": 7,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "300 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "MIRIAM",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980490745124,
+          40.780189793146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 199.06131969142902,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 3,
+        "complaints_clean": 3,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "373 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "CHAMA MAMA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978922976444,
+          40.78230846548399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 195.16518385879485,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "375 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "DAILY PROVISIONS",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978879627755,
+          40.782363352574976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 170.8770046818419,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 2,
+        "complaints_clean": 2,
+        "complaint_level": "1-5",
+        "cluster_id": 7,
+        "is_clustered": true,
+        "experience_type": "High access, low friction",
+        "Street": "416 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "LA SIRENE UWS",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977911443232,
+          40.783724567735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 186.0760915854719,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 8,
+        "complaints_clean": 8,
+        "complaint_level": "6-14",
+        "cluster_id": 7,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "421 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MADE IN NEW YORK PIZZA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977712759219,
+          40.783957833302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 191.66283078417192,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 15,
+        "complaints_clean": 15,
+        "complaint_level": "15+",
+        "cluster_id": 7,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "425 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "THE WOLFE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977651341293,
+          40.78404839819501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 194.7807189007396,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 15,
+        "complaints_clean": 15,
+        "complaint_level": "15+",
+        "cluster_id": 7,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "427 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MOMOYA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977618827214,
+          40.78409230790001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 216.92281780387117,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 11,
+        "complaints_clean": 11,
+        "complaint_level": "6-14",
+        "cluster_id": 7,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "429 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MAMAN",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977365323332,
+          40.78416629265301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 259.4024613004073,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "450 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "THE DEAD POET",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977091354051,
+          40.784852500266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 234.74300577230247,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 13,
+        "complaints_clean": 13,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "502 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "CELESTE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.975852138569,
+          40.78654850307701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 141.70060545518783,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 6,
+        "complaints_clean": 6,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "551 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "THE GRANOLA BAR",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.974724878768,
+          40.78806061860202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 231.235124907695,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 6,
+        "complaints_clean": 6,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "668 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "TALIA'S STEAKHOUSE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.971978728216,
+          40.79185322704101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 143.21802941303744,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "886 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "ARCO CAFE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96695537348201,
+          40.798743957381994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 265.104595980059,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "938 AMSTERDAM AVENUE",
+        "license_type": "Roadway",
+        "business_name": "DIVE 106",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.965614432776,
+          40.80057980034301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 273.63463601902794,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "1018 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "MARLOW BISTRO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.963937246851,
+          40.80287938456701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 276.438058002702,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 2,
+        "complaints_clean": 2,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "1135 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "ARTS & CRAFTS BEER PARLOR",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.961124830344,
+          40.806696410041006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "AMSTERDAM",
+        "dist_subway_m": 280.43846191224924,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 6,
+        "complaints_clean": 6,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "1600 AMSTERDAM AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "FUMO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Amsterdam Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.950475789991,
+          40.82132454480799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 99.48188605320699,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "152 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MAMAN",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981286872189,
+          40.77399776003501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 138.29614576292425,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "157 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "THE MIGRANT KITCHEN",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.981037659502,
+          40.774310621209004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 252.06181438326422,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "193 COLUMBUS AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "EMPIRE SZECHUAN KYOTO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.980373055668,
+          40.77523000237802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 302.7347187981222,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "208 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "EL MITOTE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979986557182,
+          40.77579261035401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 279.8610576840351,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 20,
+        "complaints_clean": 20,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "225 COLUMBUS AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "MANNY'S BISTRO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97959646179,
+          40.776289342251985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 273.8162138268423,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 15,
+        "complaints_clean": 15,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "240 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "FELICE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.979220791054,
+          40.77682450197602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 409.1541944699479,
+        "is_near_transit": false,
+        "access_label": "Further from transit",
+        "complaints_nearby": 21,
+        "complaints_clean": 21,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Low access, high friction",
+        "Street": "320 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "PARLA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.977306253658,
+          40.779456358561006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 380.2404163251047,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 9,
+        "complaints_clean": 9,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "359 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "LA PECORA BIANCA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.976489835309,
+          40.780534882409015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 385.1507114841656,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 15,
+        "complaints_clean": 15,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "491 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "NOI DUE CAFE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.973303313477,
+          40.784914811178005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 338.1957962032858,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 14,
+        "complaints_clean": 14,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "510 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MOTORINO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.972895018486,
+          40.785510326739995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 329.56954424596915,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 7,
+        "complaints_clean": 7,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "513 COLUMBUS AVENUE",
+        "license_type": "Roadway",
+        "business_name": "COTTA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.972804703637,
+          40.785600882202004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 283.92527445905733,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 1,
+        "complaints_clean": 1,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "574 COLUMBUS AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "BELLA LUNA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.971334096733,
+          40.78764536456401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "COLUMBUS",
+        "dist_subway_m": 372.52153608562384,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "667 COLUMBUS AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "PICKY BARISTA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Columbus Ave (Upper West Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968978089057,
+          40.790828663519015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 394.03879644229363,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 18,
+        "complaints_clean": 18,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "88 2 AVENUE",
+        "license_type": "Roadway",
+        "business_name": "FRANK",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988909258942,
+          40.72686297359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 331.0256728748654,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 1,
+        "complaints_clean": 1,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "127 SECOND AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "B&H DAIRY",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987851866135,
+          40.72835327439502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 330.81553948088975,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 11,
+        "complaints_clean": 11,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "132 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "CAFE MAUD",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.987599246192,
+          40.728674384957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 264.4548381096462,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "175 SECOND AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "BAR VELOCE",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.986314421583,
+          40.73047206029201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 167.07015322791543,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 2,
+        "complaints_clean": 2,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "200 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "LITTLE POLAND",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985617855678,
+          40.731394216196016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 132.1811544873589,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 10,
+        "complaints_clean": 10,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "213 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "JACKDAW",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.985336324858,
+          40.731819619144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 535.8663027312642,
+        "is_near_transit": false,
+        "access_label": "Further from transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "519 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "PADDY REILLY'S MUSIC BAR",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978243046895,
+          40.74154868154799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 535.4158939882211,
+        "is_near_transit": false,
+        "access_label": "Further from transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "581 2 AVENUE",
+        "license_type": "Roadway",
+        "business_name": "HILL AND BAY",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.976867504059,
+          40.743332508220995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 364.7379738522114,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 3,
+        "complaints_clean": 3,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "924 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "CHÂTEAU 49",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968948258633,
+          40.754268512125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 278.3478772355411,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 10,
+        "complaints_clean": 10,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "950 2 AVENUE",
+        "license_type": "Roadway",
+        "business_name": "LA PECORA BIANCA",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968337869203,
+          40.755105497114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 329.7374351693731,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "1155 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "FESTIVAL",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.963584234172,
+          40.761653082303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 365.75323499704126,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 0,
+        "complaints_clean": 0,
+        "complaint_level": "0",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "1228 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "BAGEL EXPRESS II",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.961864623756,
+          40.763985568121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 151.16227760103106,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "1417 2 AVENUE",
+        "license_type": "Roadway",
+        "business_name": "A LA TURKA",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.957518035217,
+          40.769973101491985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 371.0802191618196,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 2,
+        "complaints_clean": 2,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "High access, low friction",
+        "Street": "1475 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "PICK A BAGEL",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.956141280439,
+          40.77185548637201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 397.2316168628382,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 4,
+        "complaints_clean": 4,
+        "complaint_level": "1-5",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "1562 2 AVENUE",
+        "license_type": "Roadway",
+        "business_name": "LA PECORA BIANCA",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95401277583701,
+          40.774739391413014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 148.87449600446507,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 20,
+        "complaints_clean": 20,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "1621 SECOND AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "ELIO'S",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.952606878844,
+          40.77670406410899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 47.29015296759979,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 21,
+        "complaints_clean": 21,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "1648 2 AVENUE",
+        "license_type": "Sidewalk",
+        "business_name": "HEIDELBERG",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95199971924,
+          40.777497045911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "2",
+        "dist_subway_m": 220.7770130821087,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 8,
+        "complaints_clean": 8,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "1715 2 AVENUE",
+        "license_type": "Roadway",
+        "business_name": "MIDNIGHT EXPRESS DINER",
+        "license_status": "Issued",
+        "corridor_label_clean": "2nd Ave (Upper East Side)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.950485266076,
+          40.779615352945015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 184.44401949423403,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 29,
+        "complaints_clean": 29,
+        "complaint_level": "15+",
+        "cluster_id": 0,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "133 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "OSTERIA BAROCCA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997759766673,
+          40.71844803228801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 191.61420752286622,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 40,
+        "complaints_clean": 30,
+        "complaint_level": "15+",
+        "cluster_id": 0,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "136 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "PAESANO'S",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997694829896,
+          40.718519394966016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 196.85911657420365,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 36,
+        "complaints_clean": 30,
+        "complaint_level": "15+",
+        "cluster_id": 0,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "138 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "ZIA MARIA LITTLE ITALY",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997655145358,
+          40.718588013358016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 218.50751032791382,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 22,
+        "complaints_clean": 22,
+        "complaint_level": "15+",
+        "cluster_id": 0,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "146 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "CASA D' ANGELO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997510836423,
+          40.718859742332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 224.36284072195488,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 21,
+        "complaints_clean": 21,
+        "complaint_level": "15+",
+        "cluster_id": 0,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "148 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "CAFFE PALERMO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997474758979,
+          40.718928360738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 273.2033288977102,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 19,
+        "complaints_clean": 19,
+        "complaint_level": "15+",
+        "cluster_id": 1,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "164 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "DA NICO RISTORANTE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997092326151,
+          40.719823145948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 274.5633155219417,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 19,
+        "complaints_clean": 19,
+        "complaint_level": "15+",
+        "cluster_id": 1,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "165 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "AMICI RISTORANTE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997110363591,
+          40.719828635938995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 265.4607293738816,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 25,
+        "complaints_clean": 25,
+        "complaint_level": "15+",
+        "cluster_id": 1,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "167 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "LA MELA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997077892142,
+          40.719910978144014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 247.35601598844676,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 36,
+        "complaints_clean": 30,
+        "complaint_level": "15+",
+        "cluster_id": 1,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "171 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "L'AMORE",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.997012949003,
+          40.72007566252501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 220.51184756226922,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 29,
+        "complaints_clean": 29,
+        "complaint_level": "15+",
+        "cluster_id": 1,
+        "is_clustered": true,
+        "experience_type": "Mixed conditions",
+        "Street": "177 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "GROTTA AZZURRA",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996915533689,
+          40.72032268902303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 164.11019395431202,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 6,
+        "complaints_clean": 6,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "181 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "LEON'S BAGELS",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99670626835,
+          40.72086065762199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 83.17077417584763,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 20,
+        "complaints_clean": 20,
+        "complaint_level": "15+",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "214 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "AIME LEON DORE SOHO",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.996175877837,
+          40.72215342653699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_name": "MULBERRY",
+        "dist_subway_m": 132.9945516528014,
+        "is_near_transit": true,
+        "access_label": "Near transit",
+        "complaints_nearby": 9,
+        "complaints_clean": 9,
+        "complaint_level": "6-14",
+        "cluster_id": -1,
+        "is_clustered": false,
+        "experience_type": "Mixed conditions",
+        "Street": "244 MULBERRY STREET",
+        "license_type": "Roadway",
+        "business_name": "THE GREY DOG",
+        "license_status": "Issued",
+        "corridor_label_clean": "Mulberry St (Little Italy / SoHo)",
+        "corridor_type": "corridor",
+        "neighbor_count": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.995843921175,
+          40.72297958986201
+        ]
+      }
+    }
+  ]
+}

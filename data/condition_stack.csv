@@ -1,0 +1,16 @@
+group,condition,description,status,role
+Measured signals,Outdoor dining nearby,Whether other outdoor dining locations appear close by.,measured,Shows repeated street level patterns.
+Measured signals,Restaurant and bar activity,How active the surrounding food and nightlife environment is.,measured,Acts as a proxy for local restaurant activity.
+Measured signals,Reported issues nearby,Whether 311 complaints appear near outdoor dining locations.,measured,Shows where outdoor dining overlapped with reported street issues.
+Measured signals,Street context,Local street conditions that may affect where outdoor dining can fit.,partial,Represents physical street constraints.
+Regulatory constraints,Roadway seasonality,Roadway cafes operate under seasonal rules in the permanent program.,context,Explains why the permanent program differs from the emergency program.
+Regulatory constraints,Sidewalk clearance,Outdoor dining must leave required pedestrian space.,context,Limits where sidewalk dining can physically fit.
+Regulatory constraints,Siting and design rules,New rules shape what can be built and where it can be placed.,context,Explains why some locations may not continue under the new program.
+Regulatory constraints,Permit requirements,Restaurants must apply under the permanent Dining Out NYC program.,context,Adds administrative requirements to participation.
+Operational constraints,Setup and removal,"Outdoor dining structures may need to be installed, removed, or redesigned.",context,Creates labor and logistical burden.
+Operational constraints,Storage,Seasonal roadway setups create storage needs during off months.,context,Adds a practical challenge for restaurants.
+Operational constraints,Cost,"Fees, materials, labor, and maintenance affect participation.",context,Explains why continuation may not be realistic for every restaurant.
+Operational constraints,Maintenance,"Outdoor spaces require cleaning, repairs, and upkeep.",context,Connects the program to sanitation and street management.
+Local decisions,Restaurant choice,"Restaurants decide whether to apply, rebuild, maintain, or stop outdoor dining.",context,Acknowledges decisions that are not visible in public datasets.
+Local decisions,Neighborhood pressure,Local support or opposition may shape how outdoor dining is received.,context,Connects public response to local conditions.
+Local decisions,Street level fit,Some streets can absorb outdoor dining more easily than others.,context,Connects the model back to street level visibility.

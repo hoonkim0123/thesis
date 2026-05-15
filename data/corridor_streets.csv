@@ -1,0 +1,135 @@
+street_name,point_count,is_corridor
+Amsterdam Avenue,19,True
+2nd Avenue,18,True
+Mulberry Street,13,True
+Columbus Avenue,13,True
+3rd Avenue,9,True
+1st Avenue,7,True
+8th Avenue,7,True
+Greenwich Avenue,7,True
+Canal Street,7,True
+Hudson Street,6,True
+Bleecker Street,6,True
+Avenue A,6,True
+West Broadway,5,True
+Thompson Street,5,True
+York Avenue,5,True
+5th Avenue,5,True
+9th Avenue,5,True
+10th Avenue,4,False
+Duane Street,3,False
+West 58th Street,3,False
+West 48th Street,3,False
+West 47th Street,3,False
+West 46th Street,3,False
+West 44th Street,3,False
+Washington Street,3,False
+Spring Street,3,False
+Madison Avenue,3,False
+MacDougal Street,3,False
+East 6th Street,3,False
+Lexington Avenue,3,False
+Broadway,3,False
+Broome Street,3,False
+North Moore Street,2,False
+Lafayette Street,2,False
+Grand Street,2,False
+Chrystie Street,2,False
+West 3rd Street,2,False
+West 33rd Street,2,False
+Irving Place,2,False
+John Street,2,False
+LaGuardia Place,2,False
+West 26th Street,2,False
+West 51st Street,2,False
+Baxter Street,2,False
+West 25th Street,2,False
+Charles Street,2,False
+Mott Street,2,False
+7th Avenue,2,False
+West 19th Street,2,False
+Orchard Street,2,False
+Park Avenue South,2,False
+West 10th Street,2,False
+West 4th Street,2,False
+Sullivan Street,2,False
+East 3rd Street,2,False
+East 5th Street,2,False
+East 27th Street,2,False
+Bond Street,2,False
+West 85th Street,2,False
+East 7th Street,2,False
+West 75th Street,2,False
+West 74th Street,2,False
+East 18th Street,2,False
+West Houston Street,2,False
+East 20th Street,2,False
+East 11th Street,2,False
+East 60th Street,2,False
+Bowery,2,False
+West 56th Street,2,False
+Avenue B,2,False
+West 91st Street,1,False
+West 13th Street,1,False
+West 16th Street,1,False
+West 104th Street,1,False
+Central Park South,1,False
+University Place,1,False
+Union Square West,1,False
+West 12th Street,1,False
+West 52nd Street,1,False
+West 21st Street,1,False
+West 24th Street,1,False
+West 8th Street,1,False
+West 31st Street,1,False
+West 71st Street,1,False
+West 70th Street,1,False
+West 32nd Street,1,False
+West 63rd Street,1,False
+West 40th Street,1,False
+6th Avenue,1,False
+Bank Street,1,False
+West 49th Street,1,False
+West 54th Street,1,False
+Carmine Street,1,False
+Cornelia Street,1,False
+Stanton Street,1,False
+Centre Street,1,False
+East 91st Street,1,False
+East 88th Street,1,False
+East 84th Street,1,False
+East 81st Street,1,False
+East 75th Street,1,False
+East 68th Street,1,False
+East 61st Street,1,False
+East 51st Street,1,False
+East 4th Street,1,False
+East 49th Street,1,False
+East 48th Street,1,False
+East 41st Street,1,False
+East 34th Street,1,False
+East 2nd Street,1,False
+East 22nd Street,1,False
+East 1st Street,1,False
+East 14th Street,1,False
+East 9th Street,1,False
+Eldridge Street,1,False
+Front Street,1,False
+Market Street,1,False
+South Street,1,False
+Reade Street,1,False
+Perry Street,1,False
+Park Avenue Tunnel,1,False
+Park Avenue,1,False
+East 10th Street,1,False
+Murray Street,1,False
+Madison Street,1,False
+Fulton Street,1,False
+Christopher Street,1,False
+Leonard Street,1,False
+La Salle Street,1,False
+7th Avenue South,1,False
+Harrison Street,1,False
+Grove Street,1,False
+Greenwich Street,1,False
+Beekman Street,1,False
