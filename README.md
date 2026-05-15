@@ -1,5 +1,5 @@
-# Where Outdoor Dining Remains
-How outdoor dining in NYC became uneven
+# New York Outdoor Dining
+Visibility, Repetition, and Contested Street Space in Manhattan
 
 This repository is part of a thesis project for the Master of Science in Data Visualization at Parsons School of Design, The New School.
 
@@ -16,15 +16,19 @@ https://hoonkim0123.github.io/thesis/
 
 ## Abstract
 
-Outdoor dining once appeared everywhere in New York City. At its peak, thousands of temporary structures filled streets across neighborhoods, reshaping how people experienced the city. Today, far fewer remain. But this project argues that the change is not only about decline.
+Outdoor dining once appeared across many everyday streets in Manhattan. During the COVID-19 pandemic, emergency policies allowed restaurants to expand into sidewalks and roadways, making outdoor dining one of the most visible changes to New York City’s street life.
+
+Today, far fewer locations remain. But this project argues that the change is not only about decline.
 
 Outdoor dining did not simply disappear. It was reduced, concentrated, and contested.
 
-This project examines how the transition from an emergency program to a permanent system reshaped where outdoor dining persists. Using spatial analysis and visualization, it reveals that what remains is concentrated along a small number of streets rather than distributed across the city.
+Using historic Open Restaurants data, current Dining Out NYC licensed locations, 311 complaints, public comments, and street-level spatial analysis, this project examines how outdoor dining changed from a widespread emergency condition into a smaller permanent program.
 
-By comparing historic and current locations, the project shifts the focus from how much was lost to where it was lost from. It shows how urban systems, regulations, and local conditions influence not only what exists, but what is visible and experienced in everyday life.
+The analysis shows that Manhattan outdoor dining declined from 4,660 historic locations to 318 current unique point locations. A 200-foot grid analysis also suggests that only about 10 percent of the former spatial coverage remains.
 
-In doing so, the project reframes outdoor dining as a spatial condition: still present in the city, but no longer present across most everyday streets.
+The project shifts the question from whether outdoor dining still exists to where it remains visible. It shows that remaining locations are concentrated along a smaller set of streets, where repeated nearby setups can still make outdoor dining noticeable. At the same time, 311 complaints and public comments show how outdoor dining became contested shared street space.
+
+In doing so, the project reframes outdoor dining as a spatial condition: still present in Manhattan, but no longer present across most everyday streets.
 
 ---
 
@@ -38,11 +42,12 @@ In doing so, the project reframes outdoor dining as a spatial condition: still p
 
 ## Data Sources
 
-- NYC Open Data — Open Restaurants (Historic)
-- NYC Open Data — Dining Out NYC (Current Locations)
-- NYC Department of City Planning — Neighborhood Tabulation Areas
-- MTA — Subway Stations Data
-- NYC 311 Service Requests (Outdoor Dining Related)
+NYC Open Data: Open Restaurants Applications Historic  
+NYC Open Data: Dining Out NYC Locations  
+NYC Open Data: 311 Service Requests from 2020 to Present  
+MTA Open Data: Subway Stations  
+NYC public process: public comments related to outdoor dining policy  
+Derived street labels and spatial analysis datasets
 
 ---
 
