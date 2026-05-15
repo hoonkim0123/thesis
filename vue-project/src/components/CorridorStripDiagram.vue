@@ -56,7 +56,7 @@ const CORRIDORS = [
   {
     name: '2nd Avenue',
     area: 'Upper East Side',
-    count: 19,
+    count: 18,
     keys: ['2 AVENUE', '2ND AVENUE', 'SECOND AVENUE'],
     guideLabels: ['E 86th St', 'E 79th St', 'E 72nd St', 'E 66th St'],
   },
