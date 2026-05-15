@@ -59,3 +59,4 @@ Live Project:
 https://hoonkim0123.github.io/thesis/
 
 Full Written Thesis:  
+[New York Outdoor Dining Written Thesis](written-thesis/New_York_Outdoor_Dining_Written_Thesis_Saehun_Kim.pdf)
